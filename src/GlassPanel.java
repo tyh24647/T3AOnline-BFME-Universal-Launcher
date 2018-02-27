@@ -37,7 +37,7 @@ public class GlassPanel extends JPanel implements FocusListener {
         addFocusListener(this);
         setOpaque(false);
         setFocusable(true);
-        setBackground(new Color(0, 0, 0, 190));
+        setBackground(new Color(1, 1, 1, 0.10f));
     }
 
     @Override

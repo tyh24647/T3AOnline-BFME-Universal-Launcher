@@ -1,9 +1,16 @@
 
 
 import com.sun.istack.internal.Nullable;
+import javafx.scene.layout.Background;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.AbstractBorder;
+import javax.swing.border.Border;
+import javax.swing.plaf.BorderUIResource;
+import javax.swing.plaf.ComboBoxUI;
+import javax.swing.plaf.basic.BasicComboBoxUI;
+import javax.swing.plaf.metal.MetalComboBoxUI;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -29,21 +36,19 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
     private JMenuBar menuBar;
     private JMenu fileMenu, editMenu, viewMenu, windowMenu, devMenu, helpMenu;
     private JMenuItem saveMI, exitMI, undoMI, redoMI, showDebugMI;
-    private JRadioButton b1Btn, b2Btn, rotwkBtn;//, previousBtn, currentBtn;
+    private JRadioButton b1Btn, b2Btn, rotwkBtn;
     private JLabel lotrTitleTxt1, bkgdImgLabel, imgLbl2;
     private FadeInPanel bkgdImgPanel;
-    //private BackgroundImageFadePanel bkgdImgPanel;
     private JComboBox<String> resChooser;
     private String selectedGame;
     private ButtonGroup radioBtns;
 
 
+    /**
+     * Create a new instance of the UI
+     */
     public MainGUI() {
-        //this.previousBtn = b1Btn;
-    }
-
-    public void generateViewComponents() {
-
+        /* Do nothing */
     }
 
     public JLayeredPane generateMainPanel() {
@@ -101,36 +106,26 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
         centerPanel = new JPanel(new BorderLayout(30, 60));
         //centerContents = new JPanel(new BorderLayout(60, 30));
         centerContents = new GlassPanel(new BorderLayout(60, 30));
-        resChoosingPanel = new JPanel(new FlowLayout());
 
-
-        centerContents.setOpaque(true);
-        centerContents.setBackground(new Color(1, 1, 1, 0.20f));
-        centerContents.setPreferredSize(new Dimension(400, 300));
-
-        resChooser = new JComboBox<>(new String[] {
-                "Select...", "800x600", "1280x800", "1440x900", "1680x1050", "1920x1080"
-        }) {
+        resChoosingPanel = new JPanel(new FlowLayout()) {
             @Override
             public boolean isOpaque() {
                 return false;
             }
+        };
 
-            @Nullable
-            @Override
-            public Object getSelectedItem() {
-                return super.getSelectedItem();
-            }
+        centerContents.setOpaque(true);
 
-            @Override
-            public void setSelectedIndex(int anIndex) {
-                //super.setSelectedIndex(anIndex == 0 ? 1 : anIndex);
-                super.setSelectedIndex(anIndex);
-            }
+        centerContents.setPreferredSize(new Dimension(400, 300));
 
+        String[] resOptions = new String[] {
+                "Select...", "800x600", "1280x800", "1440x900", "1680x1050", "1920x1080"
+        };
+
+        resChooser = new JComboBox<>(resOptions) {
             @Override
-            public void setSelectedItem(Object anObject) {
-                super.setSelectedItem(anObject);
+            public boolean isOpaque() {
+                return false;
             }
 
             @Override
@@ -138,25 +133,30 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
                 if (getSelectedIndex() > 0) {
                     super.selectedItemChanged();
                 }
+
+                layeredPane.repaint();
             }
 
+            @Override
+            protected void fireActionEvent() {
+                super.fireActionEvent();
+                layeredPane.repaint();
+            }
 
+            @Override
+            public void firePopupMenuCanceled() {
+                super.firePopupMenuCanceled();
+                layeredPane.repaint();
+            }
         };
 
-        resChooser.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                super.mouseReleased(e);
-            }
-        });
+        resChooser.setOpaque(true);
+        resChooser.setSize(new Dimension(400, (int)super.getPreferredSize().getHeight() + 4));
 
         JLabel resolutionLbl = new JLabel("Display Resolution:");
         resolutionLbl.setForeground(Color.WHITE);
         resolutionLbl.setFont(resolutionLbl.getFont().deriveFont(Font.PLAIN, 14f));
         resChoosingPanel.add(resolutionLbl);
-
-        resChooser.setOpaque(true);
-        //resChooser.setSize(new Dimension(300, (int)super.getPreferredSize().getHeight() + 4));
         resChoosingPanel.add(resChooser, BorderLayout.CENTER);
 
         JLabel label = new JLabel();
@@ -183,28 +183,8 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
 
         mainPanel.add(centerPanel, BorderLayout.CENTER);
 
-        try {
-            /*
-            Image bkgd1 = ImageIO.read(getClass().getResource("assets/BFME1.png"));
-            Image bkgd2 = ImageIO.read(getClass().getResource("assets/BFME2.png"));
-            Image bkgd3 = ImageIO.read(getClass().getResource("assets/ROTWK.png"));
-            */
-
-            Image bkgd1 = ImageAsset.BFME1.getImage();
-            Image bkgd2 = ImageAsset.BFME2.getImage();
-            Image bkgd3 = ImageAsset.ROTWK.getImage();
-
-            //bkgdImgPanel = new FadeInPanel(bkgd1, bkgd2, bkgd3);
-            bkgdImgPanel = new FadeInPanel();
-            //bkgdImgPanel = new FadeInPanel(bkgd1, bkgd2);
-            //bkgdImgPanel = new BackgroundImageFadePanel(bkgd1, bkgd2, bkgd3);
-            bkgdImgPanel.setOpaque(true);
-        } catch (Exception e) {
-            LOG.err(e);
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            bkgdImgPanel = new FadeInPanel();
-            //bkgdImgPanel = new BackgroundImageFadePanel();
-        }
+        bkgdImgPanel = new FadeInPanel();
+        bkgdImgPanel.setOpaque(true);
 
         lotrTitleTxt1 = new JLabel(DEFAULT_LOTR_TITLE_TXT);
         lotrTitleTxt1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -213,67 +193,27 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
 
         titleTxtPanel = new JPanel(new FlowLayout());
         titleTxtPanel.add(lotrTitleTxt1);
-        //titleTxtPanel.setBounds(0, 40, 800, 600);
+        //titleTxtPanel.setBounds(0, 40, 800, 600);  <-- TODO fix this
         titleTxtPanel.setPreferredSize(new Dimension(800, 600));
         titleTxtPanel.setOpaque(true);
-
 
         mainPanel.add(gameSelectionPanel, BorderLayout.NORTH);
         gameSelectionPanel.setOpaque(true);
         gameSelectionPanel.setPreferredSize(new Dimension(800, 40));
 
-
-        //mainPanel.setPreferredSize(new Dimension(800, 600));
+        bkgdImgPanel.setBounds(0, 40, 800, 600);
 
         mainPanel.setOpaque(false);
+        mainPanel.setBounds(0, 0, 800, 640);
 
         layeredPane.add(bkgdImgPanel, BorderLayout.CENTER, DEFAULT_LAYER);
         layeredPane.add(mainPanel, BorderLayout.CENTER, DEFAULT_LAYER);
-
-
-        bkgdImgPanel.setBounds(0, 40, 800, 600);
-        mainPanel.setBounds(0, 0, 800, 640);
-
-
         layeredPane.setLayer(bkgdImgPanel, FRAME_CONTENT_LAYER);
         layeredPane.setLayer(mainPanel, DEFAULT_LAYER);
-
-
-        //layeredPane.setBackground(Color.BLACK.brighter());
-        //layeredPane.setPreferredSize(new Dimension(800, 640));
         layeredPane.setBounds(0, 0, 800, 640);
-
-        /*
-        empty.add(layeredPane, BorderLayout.CENTER);
         layeredPane.setOpaque(true);
-        empty.setPreferredSize(new Dimension(800, 640));
-        empty.setBorder(null);
 
-        setContentPane(layeredPane);
-
-        return empty;
-        */
-        //layeredPane.add(centerPanel, BorderLayout.CENTER, DEFAULT_LAYER);
-
-        layeredPane.setOpaque(true);
         return layeredPane;
-    }
-
-    @Override
-    public void setVisible(boolean b) {
-        if (b) {
-            super.requestFocus();
-        }
-
-        super.setVisible(b);
-    }
-
-    private ImageIcon getImgResource(String imgPath) throws Exception {
-        BufferedImage bufferedImage = ImageIO.read(getClass().getResource(imgPath));
-        ImageIcon imgIcon = new ImageIcon(bufferedImage);
-        Image formattedImg = imgIcon.getImage();
-        imgIcon.setImage(formattedImg);
-        return imgIcon;
     }
 
     public JMenuBar generateMenuBar() {
@@ -318,9 +258,6 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
 
         configureMainWindow();
         launchMainWindow();
-
-
-
     }
 
     private void configureMainWindow() {
@@ -332,12 +269,22 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
         setLocationRelativeTo(null);
     }
 
-    private void launchMainWindow() {
+    public void launchMainWindow() {
         pack();
         setVisible(true);
     }
 
     //region INHERITED METHODS
+    @Override
+    public void setVisible(boolean b) {
+        if (b) {
+            super.requestFocus();
+            repaint();
+        }
+
+        super.setVisible(b);
+    }
+
     @Override
     public void windowGainedFocus(WindowEvent e) {
         setAlwaysOnTop(true);
@@ -347,6 +294,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
     public void windowLostFocus(WindowEvent e) {
         setAlwaysOnTop(true);
     }
+
     //endregion
 
     //region SETTERS AND GETTERS
@@ -384,29 +332,13 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
         return imgLbl2;
     }
 
-    ///*
     public void setBkgdImgPanel(FadeInPanel bkgdImgPanel) {
         this.bkgdImgPanel = bkgdImgPanel;
     }
-    //*/
 
-    /*
-    public void setBkgdImgPanel(BackgroundImageFadePanel bkgdImgPanel) {
-        this.bkgdImgPanel = bkgdImgPanel;
-    }
-    */
-
-    ///*
     public FadeInPanel getBkgdImgPanel() {
         return bkgdImgPanel;
     }
-    //*/
-
-    /*
-    public BackgroundImageFadePanel getBkgdImgPanel() {
-        return bkgdImgPanel;
-    }
-    */
 
     public void setBkgdImgLabel(JLabel bkgdImgLabel) {
         this.bkgdImgLabel = bkgdImgLabel;
@@ -563,34 +495,5 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
     public void setB2Btn(JRadioButton b2Btn) {
         this.b2Btn = b2Btn;
     }
-
-    /*
-    public JRadioButton getPreviousBtn() {
-        return previousBtn;
-    }
-
-    public void setPreviousBtn(JRadioButton previousBtn) {
-        this.previousBtn = previousBtn == null ? this.b1Btn : previousBtn;
-    }
-
-    public JRadioButton getCurrentBtn() {
-        JRadioButton[] tmpBtnLst = new JRadioButton[] {
-            b1Btn, b2Btn, rotwkBtn
-        };
-
-        for (JRadioButton btn : tmpBtnLst) {
-            if (btn.isSelected()) {
-                return btn;
-            }
-        }
-
-        return b1Btn;
-    }
-
-    public void setCurrentBtn(JRadioButton currentBtn) {
-        this.currentBtn = currentBtn == null ? this.b1Btn : currentBtn;
-    }
-    */
-
     //endregion
 }

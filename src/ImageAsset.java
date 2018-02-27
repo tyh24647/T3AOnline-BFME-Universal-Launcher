@@ -16,23 +16,9 @@ public enum ImageAsset {
     ROTWK("assets/ROTWK.png");
 
     private final String srcPath;
-    //private Image image;
 
     ImageAsset(final String srcPath) {
         this.srcPath = srcPath;
-
-        /*
-        this.image = image;
-
-        if (this.image == null) {
-            try {
-                this.image = ImageIO.read(getClass().getResource(srcPath));
-            } catch (Exception e) {
-                Log.e(e, e.getMessage());
-                this.image = new ImageIcon(srcPath).getImage();
-            }
-        }
-        */
     }
 
     public final String getSrcPath() {
