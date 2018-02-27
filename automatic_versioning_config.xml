@@ -1,0 +1,19 @@
+<project name="T3AOnline BFME Universal Launcher" default="init" basedir=".">
+    <description>
+        simple example increment build variable
+    </description>
+    <!-- set global properties for this build -->
+    <property name="src" location="../src"/>
+
+    <target name="init">
+        <echo file="versioningAntOut.txt">Ant ${src} ${line.separator}</echo>
+
+        <buildnumber/>
+        <replaceregexp file="T3AOnline\s+BFME\s+Universal\s+Launcher/${src}/StringConstants.java"
+                       match="public\s+static\s+final\s+String\s+BUILD_NUMBER\s+=\s+&quot;.*&quot;;"
+                       replace="public static final String BUILD_NUMBER = &quot;${build.number}&quot;;"
+                       byline="true"
+        />
+
+    </target>
+</project>
