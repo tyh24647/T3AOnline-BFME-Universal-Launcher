@@ -22,10 +22,9 @@
  *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JRadioButton;
 import java.awt.Image;
-import java.io.IOException;
 
 /**
  * <p></p>
@@ -38,6 +37,7 @@ public class BackgroundImageFadePanel extends FadeInPanel {
     private Image b1Img, b2Img, rotwkImg;
     private String b1ImgPath, b2ImgPath, rotwkImgPath;
 
+
     public BackgroundImageFadePanel() {
 
     }
@@ -46,8 +46,12 @@ public class BackgroundImageFadePanel extends FadeInPanel {
 
     }
 
-    public BackgroundImageFadePanel(Image b1Img, Image b2Img, Image rotwkImg) {
+    public BackgroundImageFadePanel(Image b1Img, Image b2Img) {
+        //super(b1Img, b2Img);
+    }
 
+    public BackgroundImageFadePanel(Image b1Img, Image b2Img, Image rotwkImg) {
+        super(b1Img, b2Img, rotwkImg);
     }
 
     public BackgroundImageFadePanel(ImageIcon b1Img, ImageIcon b2Img, ImageIcon rotwkImg) {
@@ -58,37 +62,26 @@ public class BackgroundImageFadePanel extends FadeInPanel {
         setOpaque(true);
     }
 
-    public void setB1Img(Image b1Img) {
-        this.b1Img = b1Img;
+    //region INHERITED METHODS
+
+
+    @Override
+    public void fireImgShouldChange() {
+        super.fireImgShouldChange();
     }
 
-    public void setB2Img(Image b2Img) {
-        this.b2Img = b2Img;
+    public void fireImageShouldChange(JRadioButton b1, JRadioButton b2) {
+        Image tmpImg1 = new ImageIcon("assets/" + b1.getActionCommand() + ".png").getImage();
+        Image tmpImg2 = new ImageIcon("assets/" + b2.getActionCommand() + ".png").getImage();
+        tmpImg1 = tmpImg1 == null ? FadeInPanel.INITIAL_IMG : tmpImg1;
+
+        //setImg1(tmpImg1);
+        //setImg2(tmpImg2);
+
+        repaint();
     }
 
-    public void setRotwkImg(Image rotwkImg) {
-        this.rotwkImg = rotwkImg;
-    }
 
-    public Image getB1Img() {
-        Image tmp = null;
+    //endregion
 
-        if (b1Img == null) {
-            try {
-                ImageIO.read(getClass().getResource("assets/b1.png"));
-            } catch (IOException e) {
-
-            }
-        }
-
-        return tmp;
-    }
-
-    public Image getB2Img() {
-        return b2Img;
-    }
-
-    public Image getRotwkImg() {
-        return rotwkImg;
-    }
 }

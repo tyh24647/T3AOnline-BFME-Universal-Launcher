@@ -7,7 +7,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @version 1.0.0
  * @since 2/18/18
  */
-public class T3ALauncher {
+public class T3ALauncher implements SharedApplicationObjects {
     private static ViewController vc;
     private static T3ALauncherModel model;
     private static MainGUI ui;
@@ -16,14 +16,11 @@ public class T3ALauncher {
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException e) {
-
-        } catch (InstantiationException e) {
-
-        } catch (IllegalAccessException e) {
-            // TODO: Add err messages
-        } catch (UnsupportedLookAndFeelException e) {
-
+        } catch (ClassNotFoundException
+                | InstantiationException
+                | IllegalAccessException
+                | UnsupportedLookAndFeelException e) {
+            LOG.err(e);
         }
 
 

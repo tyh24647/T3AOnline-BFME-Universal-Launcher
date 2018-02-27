@@ -9,7 +9,7 @@
         <echo file="versioningAntOut.txt">Ant ${src} ${line.separator}</echo>
 
         <buildnumber/>
-        <replaceregexp file="T3AOnline\s+BFME\s+Universal\s+Launcher/${src}/StringConstants.java"
+        <replaceregexp file="T3AOnline\s+BFME\s+Universal\s+Launcher/src/StringConstants.java"
                        match="public\s+static\s+final\s+String\s+BUILD_NUMBER\s+=\s+&quot;.*&quot;;"
                        replace="public static final String BUILD_NUMBER = &quot;${build.number}&quot;;"
                        byline="true"

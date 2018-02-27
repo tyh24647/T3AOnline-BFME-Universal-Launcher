@@ -1,18 +1,17 @@
-import org.jetbrains.annotations.Nullable;
+
+
+import com.sun.istack.internal.Nullable;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
-import static java.awt.BorderLayout.CENTER;
 import static java.awt.BorderLayout.EAST;
 import static java.awt.BorderLayout.WEST;
 import static javax.swing.JLayeredPane.DEFAULT_LAYER;
 import static javax.swing.JLayeredPane.FRAME_CONTENT_LAYER;
-import static javax.swing.JLayeredPane.MODAL_LAYER;
 
 
 /**
@@ -20,27 +19,28 @@ import static javax.swing.JLayeredPane.MODAL_LAYER;
  * @version 1.0.0
  * @since 2/18/18
  */
-public class MainGUI extends JFrame implements WindowFocusListener {
+public class MainGUI extends JFrame implements WindowFocusListener, SharedApplicationObjects {
     public static final String DEFAULT_LOTR_TITLE_TXT = "Lord of the Rings - The Battle for Middle-Earth";
     public static final String ROTWK_TXT = " II + Rise of the Witch King";
 
     private JLayeredPane layeredPane;
-    private JPanel mainPanel, gameSelectionPanel, backgroundPanel, titleTxtPanel, centerPanel, centerContents, resChoosingPanel, btnPanel;
+    private JPanel mainPanel, gameSelectionPanel, backgroundPanel, titleTxtPanel, centerPanel, resChoosingPanel, btnPanel; //, centerContents;
+    private GlassPanel centerContents;
     private JMenuBar menuBar;
     private JMenu fileMenu, editMenu, viewMenu, windowMenu, devMenu, helpMenu;
     private JMenuItem saveMI, exitMI, undoMI, redoMI, showDebugMI;
-    private JRadioButton b1Btn, b2Btn;
+    private JRadioButton b1Btn, b2Btn, rotwkBtn;//, previousBtn, currentBtn;
     private JLabel lotrTitleTxt1, bkgdImgLabel, imgLbl2;
     private FadeInPanel bkgdImgPanel;
+    //private BackgroundImageFadePanel bkgdImgPanel;
     private JComboBox<String> resChooser;
     private String selectedGame;
     private ButtonGroup radioBtns;
 
+
     public MainGUI() {
-
+        //this.previousBtn = b1Btn;
     }
-
-
 
     public void generateViewComponents() {
 
@@ -57,6 +57,7 @@ public class MainGUI extends JFrame implements WindowFocusListener {
 
         b1Btn = new JRadioButton("BFME1");
         b2Btn = new JRadioButton("BFME2");
+        rotwkBtn = new JRadioButton("ROTWK");
 
         gameSelectionPanel = new JPanel(new BorderLayout());
         gameSelectionPanel.setOpaque(false);
@@ -75,9 +76,16 @@ public class MainGUI extends JFrame implements WindowFocusListener {
         b2Btn.setSelected(false);
         b2Btn.setBackground(Color.BLACK);
         b2Btn.setForeground(Color.WHITE);
+        btnPanel.add(rotwkBtn);
+        rotwkBtn.setOpaque(false);
+        rotwkBtn.setContentAreaFilled(true);
+        rotwkBtn.setSelected(false);
+        rotwkBtn.setBackground(Color.BLACK);
+        rotwkBtn.setForeground(Color.WHITE);
         radioBtns = new ButtonGroup();
         radioBtns.add(b1Btn);
         radioBtns.add(b2Btn);
+        radioBtns.add(rotwkBtn);
 
         //btnPanel.setBackground(Color.BLACK);
         btnPanel.setAlignmentX(CENTER_ALIGNMENT);
@@ -91,7 +99,8 @@ public class MainGUI extends JFrame implements WindowFocusListener {
 
 
         centerPanel = new JPanel(new BorderLayout(30, 60));
-        centerContents = new JPanel(new BorderLayout(60, 30));
+        //centerContents = new JPanel(new BorderLayout(60, 30));
+        centerContents = new GlassPanel(new BorderLayout(60, 30));
         resChoosingPanel = new JPanel(new FlowLayout());
 
 
@@ -102,6 +111,11 @@ public class MainGUI extends JFrame implements WindowFocusListener {
         resChooser = new JComboBox<>(new String[] {
                 "Select...", "800x600", "1280x800", "1440x900", "1680x1050", "1920x1080"
         }) {
+            @Override
+            public boolean isOpaque() {
+                return false;
+            }
+
             @Nullable
             @Override
             public Object getSelectedItem() {
@@ -125,6 +139,8 @@ public class MainGUI extends JFrame implements WindowFocusListener {
                     super.selectedItemChanged();
                 }
             }
+
+
         };
 
         resChooser.addMouseListener(new MouseAdapter() {
@@ -134,13 +150,13 @@ public class MainGUI extends JFrame implements WindowFocusListener {
             }
         });
 
-        JLabel resolutionLbl = new JLabel("Select a resolution...");
+        JLabel resolutionLbl = new JLabel("Display Resolution:");
         resolutionLbl.setForeground(Color.WHITE);
         resolutionLbl.setFont(resolutionLbl.getFont().deriveFont(Font.PLAIN, 14f));
         resChoosingPanel.add(resolutionLbl);
 
-        resChooser.setOpaque(false);
-        resChooser.setSize(new Dimension(300, (int)super.getPreferredSize().getHeight() + 4));
+        resChooser.setOpaque(true);
+        //resChooser.setSize(new Dimension(300, (int)super.getPreferredSize().getHeight() + 4));
         resChoosingPanel.add(resChooser, BorderLayout.CENTER);
 
         JLabel label = new JLabel();
@@ -159,6 +175,7 @@ public class MainGUI extends JFrame implements WindowFocusListener {
         centerPanel.add(label, WEST);
         label = new JLabel("");
         label.setPreferredSize(new Dimension(super.getWidth(), 40));
+
         centerPanel.add(label, BorderLayout.SOUTH);
         centerPanel.add(new JLabel(""), BorderLayout.NORTH);
         centerPanel.setOpaque(false);
@@ -167,14 +184,26 @@ public class MainGUI extends JFrame implements WindowFocusListener {
         mainPanel.add(centerPanel, BorderLayout.CENTER);
 
         try {
-            Image bkgd1 = ImageIO.read(getClass().getResource("assets/b1.png"));
-            Image bkgd2 = ImageIO.read(getClass().getResource("assets/b2.png"));
+            /*
+            Image bkgd1 = ImageIO.read(getClass().getResource("assets/BFME1.png"));
+            Image bkgd2 = ImageIO.read(getClass().getResource("assets/BFME2.png"));
+            Image bkgd3 = ImageIO.read(getClass().getResource("assets/ROTWK.png"));
+            */
 
-            bkgdImgPanel = new FadeInPanel(bkgd1, bkgd2);
+            Image bkgd1 = ImageAsset.BFME1.getImage();
+            Image bkgd2 = ImageAsset.BFME2.getImage();
+            Image bkgd3 = ImageAsset.ROTWK.getImage();
+
+            //bkgdImgPanel = new FadeInPanel(bkgd1, bkgd2, bkgd3);
+            bkgdImgPanel = new FadeInPanel();
+            //bkgdImgPanel = new FadeInPanel(bkgd1, bkgd2);
+            //bkgdImgPanel = new BackgroundImageFadePanel(bkgd1, bkgd2, bkgd3);
             bkgdImgPanel.setOpaque(true);
-        } catch (IOException e) {
+        } catch (Exception e) {
+            LOG.err(e);
             JOptionPane.showMessageDialog(this, e.getMessage());
             bkgdImgPanel = new FadeInPanel();
+            //bkgdImgPanel = new BackgroundImageFadePanel();
         }
 
         lotrTitleTxt1 = new JLabel(DEFAULT_LOTR_TITLE_TXT);
@@ -228,6 +257,15 @@ public class MainGUI extends JFrame implements WindowFocusListener {
 
         layeredPane.setOpaque(true);
         return layeredPane;
+    }
+
+    @Override
+    public void setVisible(boolean b) {
+        if (b) {
+            super.requestFocus();
+        }
+
+        super.setVisible(b);
     }
 
     private ImageIcon getImgResource(String imgPath) throws Exception {
@@ -299,6 +337,18 @@ public class MainGUI extends JFrame implements WindowFocusListener {
         setVisible(true);
     }
 
+    //region INHERITED METHODS
+    @Override
+    public void windowGainedFocus(WindowEvent e) {
+        setAlwaysOnTop(true);
+    }
+
+    @Override
+    public void windowLostFocus(WindowEvent e) {
+        setAlwaysOnTop(true);
+    }
+    //endregion
+
     //region SETTERS AND GETTERS
 
 
@@ -334,13 +384,29 @@ public class MainGUI extends JFrame implements WindowFocusListener {
         return imgLbl2;
     }
 
+    ///*
     public void setBkgdImgPanel(FadeInPanel bkgdImgPanel) {
         this.bkgdImgPanel = bkgdImgPanel;
     }
+    //*/
 
+    /*
+    public void setBkgdImgPanel(BackgroundImageFadePanel bkgdImgPanel) {
+        this.bkgdImgPanel = bkgdImgPanel;
+    }
+    */
+
+    ///*
     public FadeInPanel getBkgdImgPanel() {
         return bkgdImgPanel;
     }
+    //*/
+
+    /*
+    public BackgroundImageFadePanel getBkgdImgPanel() {
+        return bkgdImgPanel;
+    }
+    */
 
     public void setBkgdImgLabel(JLabel bkgdImgLabel) {
         this.bkgdImgLabel = bkgdImgLabel;
@@ -490,18 +556,41 @@ public class MainGUI extends JFrame implements WindowFocusListener {
         return b2Btn;
     }
 
+    public JRadioButton getRotwkBtn() {
+        return rotwkBtn;
+    }
+
     public void setB2Btn(JRadioButton b2Btn) {
         this.b2Btn = b2Btn;
     }
 
-    @Override
-    public void windowGainedFocus(WindowEvent e) {
-        setAlwaysOnTop(true);
+    /*
+    public JRadioButton getPreviousBtn() {
+        return previousBtn;
     }
 
-    @Override
-    public void windowLostFocus(WindowEvent e) {
-        setAlwaysOnTop(true);
+    public void setPreviousBtn(JRadioButton previousBtn) {
+        this.previousBtn = previousBtn == null ? this.b1Btn : previousBtn;
     }
+
+    public JRadioButton getCurrentBtn() {
+        JRadioButton[] tmpBtnLst = new JRadioButton[] {
+            b1Btn, b2Btn, rotwkBtn
+        };
+
+        for (JRadioButton btn : tmpBtnLst) {
+            if (btn.isSelected()) {
+                return btn;
+            }
+        }
+
+        return b1Btn;
+    }
+
+    public void setCurrentBtn(JRadioButton currentBtn) {
+        this.currentBtn = currentBtn == null ? this.b1Btn : currentBtn;
+    }
+    */
+
     //endregion
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="T3AOnline BFME Universal Launcher" options="--add-exports=java.xml.bind/com.sun.istack.internal=ALL-UNNAMED --add-modules=java.xml.bind" />
+    </option>
+  </component>
+</project>

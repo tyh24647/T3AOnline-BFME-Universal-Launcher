@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_t3aonline_bfme_universal_launcher" default="compile.module.t3aonline_bfme_universal_launcher">
+  <dirname property="module.t3aonline_bfme_universal_launcher.basedir" file="${ant.file.module_t3aonline_bfme_universal_launcher}"/>
+  
+  <property name="module.jdk.home.t3aonline_bfme_universal_launcher" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.t3aonline_bfme_universal_launcher" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.t3aonline_bfme_universal_launcher" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.t3aonline_bfme_universal_launcher" value="-encoding UTF-8 -source 9 -target 9 ${compiler.args}"/>
+  
+  <property name="t3aonline_bfme_universal_launcher.output.dir" value="${module.t3aonline_bfme_universal_launcher.basedir}/out/production/T3AOnline BFME Universal Launcher"/>
+  <property name="t3aonline_bfme_universal_launcher.testoutput.dir" value="${module.t3aonline_bfme_universal_launcher.basedir}/out/test/T3AOnline BFME Universal Launcher"/>
+  
+  <path id="t3aonline_bfme_universal_launcher.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="t3aonline_bfme_universal_launcher.module.production.classpath">
+    <path refid="${module.jdk.classpath.t3aonline_bfme_universal_launcher}"/>
+    <pathelement location="${idea.home}/redist/annotations-java8.jar"/>
+  </path>
+  
+  <path id="t3aonline_bfme_universal_launcher.runtime.production.module.classpath">
+    <pathelement location="${t3aonline_bfme_universal_launcher.output.dir}"/>
+    <pathelement location="${idea.home}/redist/annotations-java8.jar"/>
+  </path>
+  
+  <path id="t3aonline_bfme_universal_launcher.module.classpath">
+    <path refid="${module.jdk.classpath.t3aonline_bfme_universal_launcher}"/>
+    <pathelement location="${t3aonline_bfme_universal_launcher.output.dir}"/>
+    <pathelement location="${idea.home}/redist/annotations-java8.jar"/>
+  </path>
+  
+  <path id="t3aonline_bfme_universal_launcher.runtime.module.classpath">
+    <pathelement location="${t3aonline_bfme_universal_launcher.testoutput.dir}"/>
+    <pathelement location="${t3aonline_bfme_universal_launcher.output.dir}"/>
+    <pathelement location="${idea.home}/redist/annotations-java8.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.t3aonline_bfme_universal_launcher">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.t3aonline_bfme_universal_launcher">
+    <patternset refid="excluded.from.module.t3aonline_bfme_universal_launcher"/>
+  </patternset>
+  
+  <path id="t3aonline_bfme_universal_launcher.module.sourcepath">
+    <dirset dir="${module.t3aonline_bfme_universal_launcher.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.t3aonline_bfme_universal_launcher" depends="compile.module.t3aonline_bfme_universal_launcher.production,compile.module.t3aonline_bfme_universal_launcher.tests" description="Compile module T3AOnline BFME Universal Launcher"/>
+  
+  <target name="compile.module.t3aonline_bfme_universal_launcher.production" depends="register.custom.compilers" description="Compile module T3AOnline BFME Universal Launcher; production classes">
+    <mkdir dir="${t3aonline_bfme_universal_launcher.output.dir}"/>
+    <javac2 destdir="${t3aonline_bfme_universal_launcher.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.t3aonline_bfme_universal_launcher}/javac">
+      <compilerarg line="${compiler.args.t3aonline_bfme_universal_launcher}"/>
+      <bootclasspath refid="t3aonline_bfme_universal_launcher.module.bootclasspath"/>
+      <classpath refid="t3aonline_bfme_universal_launcher.module.production.classpath"/>
+      <src refid="t3aonline_bfme_universal_launcher.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.t3aonline_bfme_universal_launcher"/>
+    </javac2>
+    
+    <copy todir="${t3aonline_bfme_universal_launcher.output.dir}">
+      <fileset dir="${module.t3aonline_bfme_universal_launcher.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.t3aonline_bfme_universal_launcher.tests" depends="register.custom.compilers,compile.module.t3aonline_bfme_universal_launcher.production" description="compile module T3AOnline BFME Universal Launcher; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.t3aonline_bfme_universal_launcher" description="cleanup module">
+    <delete dir="${t3aonline_bfme_universal_launcher.output.dir}"/>
+    <delete dir="${t3aonline_bfme_universal_launcher.testoutput.dir}"/>
+  </target>
+</project>

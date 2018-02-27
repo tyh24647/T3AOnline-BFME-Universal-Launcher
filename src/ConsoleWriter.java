@@ -54,6 +54,7 @@ public interface ConsoleWriter {
     void err(Class currentClass, String errorTitle, String errorMessage);
     void err(Class currentClass, Object sender, String errorMessage);
     void err(Class currentClass, Object sender, String errorTitle, String errorMessage);
+    void err(Exception e);
     void err(Exception e, String errorMessage);
     void err(Exception e, String errorTitle, String errorMessage);
     void err(Exception e, Object sender, String errorMessage);
@@ -62,6 +63,7 @@ public interface ConsoleWriter {
     void err(Exception e, Class currentClass, String errorTitle, String errorMessage);
     void err(Exception e, Class currentClass, Object sender, String errorMessage);
     void err(Exception e, Class currentClass, Object sender, String errorTitle, String errorMessage);
+    void err(Error e);
     void err(Error e, String errorMessage);
     void err(Error e, String errorTitle, String errorMessage);
     void err(Error e, Object sender, String errorMessage);

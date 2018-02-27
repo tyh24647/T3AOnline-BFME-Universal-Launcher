@@ -22,11 +22,9 @@
  *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.util.List;
 
 /**
  * <p></p>
@@ -35,16 +33,16 @@ import java.util.List;
  * @version ${build.number}
  * @since 2/26/18
  */
-public class Log implements ConsoleWriter {
+public final class Log implements ConsoleWriter {
     private static final String DEBUG_HEADER = "/> ";
     private static final String ERROR_HEADER = "ERROR/> ";
     private File logFile;
 
-    private static void d() {
+    public static void d() {
         System.out.println("> ");
     }
 
-    private static void d(@Nullable String message) {
+    public static void d(@Nullable String message) {
         message = message == null ? "" : message;
 
         String msg = DEBUG_HEADER.concat(message);
@@ -53,7 +51,7 @@ public class Log implements ConsoleWriter {
         //TODO: Add write to log file
     }
 
-    private static void d(Object...args) {
+    public static void d(Object...args) {
         StringBuilder sb = new StringBuilder();
 
         if (args.length == 0) {
@@ -73,14 +71,14 @@ public class Log implements ConsoleWriter {
         d(sb.toString());
     }
 
-    private static void e(String message) {
+    public static void e(String message) {
         String msg = ERROR_HEADER.concat(message);
         System.out.println(msg);
 
         //TODO: Add write to log file
     }
 
-    private static void e(Object...args) {
+    public static void e(Object...args) {
         if (args.length == 0) {
             return;
         }
@@ -185,6 +183,11 @@ public class Log implements ConsoleWriter {
     }
 
     @Override
+    public void err(Exception e) {
+        e(e, e.getMessage());
+    }
+
+    @Override
     public void err(Exception e, String errorMessage) {
         e(e, errorMessage);
     }
@@ -222,6 +225,11 @@ public class Log implements ConsoleWriter {
     @Override
     public void err(Exception e, Class currentClass, Object sender, String errorTitle, String errorMessage) {
         e(e, currentClass, sender, errorTitle, errorMessage);
+    }
+
+    @Override
+    public void err(Error e) {
+        e(e, e.getMessage());
     }
 
     @Override

@@ -31,7 +31,8 @@
  */
 public enum Game {
     BFME1("BFME1"),
-    BFME2("BFME2");
+    BFME2("BFME2"),
+    ROTWK("ROTWK");
 
     private String name;
 
