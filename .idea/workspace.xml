@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a7fd658-b391-4ba4-a1e1-76769d64b6a8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tyhostager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/tyhostager.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/BackgroundImageFadePanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/FadeInPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/GlassPanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/GlassPanel$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/GlassPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/MainGUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/MainGUI$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/MainGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/ViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackgroundImageFadePanel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FadeInPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FadeInPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GlassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GlassPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageAsset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageAsset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,11 +63,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="FadeInPanel.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="FadeInPanel.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/FadeInPanel.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="576">
-                  <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+                <state relative-caret-position="344">
+                  <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                     <element signature="imports" expanded="true" />
@@ -109,7 +94,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ImageAsset.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ImageAsset.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ImageAsset.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="177">
@@ -305,11 +290,11 @@
         <option value="$PROJECT_DIR$/src/Utils/Game.java" />
         <option value="$PROJECT_DIR$/src/Utils/GameConstants.java" />
         <option value="$PROJECT_DIR$/src/BackgroundImageFadePanel.java" />
-        <option value="$PROJECT_DIR$/src/FadeInPanel.java" />
         <option value="$PROJECT_DIR$/src/MainGUI.java" />
         <option value="$PROJECT_DIR$/src/ViewController.java" />
         <option value="$PROJECT_DIR$/src/GlassPanel.java" />
         <option value="$PROJECT_DIR$/src/ImageAsset.java" />
+        <option value="$PROJECT_DIR$/src/FadeInPanel.java" />
       </list>
     </option>
   </component>
@@ -466,12 +451,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1519707161924</updated>
-      <workItem from="1519707165156" duration="42318000" />
+      <workItem from="1519707165156" duration="42389000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42318000" />
+    <option name="totallyTimeSpent" value="42389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -727,19 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FadeInPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#2169#2170#0" expanded="true" />
-            <element signature="e#2194#2195#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BackgroundImageFadePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
@@ -942,6 +914,19 @@
             <element signature="e#990#991#0" expanded="true" />
             <element signature="e#1549#1550#0" expanded="true" />
             <element signature="e#1589#1590#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FadeInPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2169#2170#0" expanded="true" />
+            <element signature="e#2194#2195#0" expanded="true" />
           </folding>
         </state>
       </provider>
