@@ -1,9 +1,10 @@
-import org.jetbrains.annotations.NotNull;
+import com.sun.istack.internal.NotNull;
 
 import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 /**
  * ViewController object acts as a delegate between the model and view objects
@@ -89,10 +90,15 @@ public class ViewController implements ActionListener, SharedApplicationObjects 
         dThread = new Thread(dialogTask);
         dThread.start();
 
+        ArrayList<String> tmpResArr = new ArrayList<>(view.getResChooser().getItemCount());
         for (int i = 0; i < view.getResChooser().getItemCount() - 1; i++) {
+
             if (((String) view.getResChooser().getItemAt(i)).substring(0, 2).contains(x.toString().substring(0, 2))) {
+                tmpResArr.add(view.getResChooser().getItemAt(i).concat(" (Recommended)"));
                 view.getResChooser().setSelectedItem(view.getResChooser().getItemAt(i));
                 view.getResChooser().setSelectedIndex(i);
+            } else {
+                tmpResArr.add(view.getResChooser().getItemAt(i));
             }
         }
     }
@@ -155,8 +161,6 @@ public class ViewController implements ActionListener, SharedApplicationObjects 
                     currentBtn = btn;
 
                     if (!btn.getActionCommand().equals(previousCmd) && !btn.getActionCommand().equals(model.getSelectedGame().getName())) {
-
-                        // TODO change this
                         String btmTxt = "Lord of the Rings - The Battle for Middle-Earth";
                         view.getLotrTitleTxt1().setText(btmTxt);
 
@@ -171,7 +175,6 @@ public class ViewController implements ActionListener, SharedApplicationObjects 
                             );
                         }
 
-                        // TODO change this
                         String selectedGame = model.getSelectedGame().getName();
 
                         String newTxt = btmTxt.concat(
@@ -239,3 +242,5 @@ public class ViewController implements ActionListener, SharedApplicationObjects 
         }
     }
 }
+
+
