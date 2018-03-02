@@ -10,6 +10,7 @@ public class UserInfo {
     private static OS_Type osType;
     private static Game selectedGame;
     private static ResObject targetRes;
+    private static String selectedCBoxItem;
 
     public UserInfo() {
         determineOSType();
@@ -21,7 +22,7 @@ public class UserInfo {
         } else if (osStr.contains("mac")) {
             osType = OS_Type.MAC;
         } else if (osStr.contains("nix")) {
-            osType = OS_Type.UNIX;
+            osType = OS_Type.Linux;
         } else if (osStr.contains("nux")) {
             osType = OS_Type.LINUX;
         } else if (osStr.contains("sunos")) {
@@ -49,7 +50,7 @@ public class UserInfo {
         return (osStr.contains("mac"));
     }
 
-    public static boolean isUnix() {
+    public static boolean isLinux() {
         return (osStr.contains("nix") || osStr.contains("nux"));
     }
 
@@ -59,6 +60,14 @@ public class UserInfo {
 
     public void setSelectedGame(@NotNull Game selectedGame) {
         this.selectedGame = selectedGame;
+    }
+
+    public static void setSelectedCBoxItem(String selectedCBoxItem) {
+        UserInfo.selectedCBoxItem = selectedCBoxItem;
+    }
+
+    public static String getSelectedCBoxItem() {
+        return selectedCBoxItem;
     }
 
     @NotNull

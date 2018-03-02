@@ -35,7 +35,7 @@ import java.util.regex.Pattern;
 public class SysInfo implements SharedApplicationObjects {
     public static final Boolean DEBUG_MODE = isDebugging();
 
-    private final static Pattern debugPattern = Pattern.compile("-Xdebug|jdwp");
+    private static final Pattern debugPattern = Pattern.compile("-Xdebug|jdwp");
 
     private static boolean isDebugging() {
         try {
@@ -49,4 +49,7 @@ public class SysInfo implements SharedApplicationObjects {
         }
         return false;
     }
+
+
+
 }

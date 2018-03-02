@@ -1,19 +1,10 @@
 
 
 import com.sun.istack.internal.Nullable;
-import javafx.scene.layout.Background;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.AbstractBorder;
-import javax.swing.border.Border;
-import javax.swing.plaf.BorderUIResource;
-import javax.swing.plaf.ComboBoxUI;
-import javax.swing.plaf.basic.BasicComboBoxUI;
-import javax.swing.plaf.metal.MetalComboBoxUI;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.BufferedImage;
 
 import static java.awt.BorderLayout.EAST;
 import static java.awt.BorderLayout.WEST;
@@ -30,6 +21,10 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
     public static final String DEFAULT_LOTR_TITLE_TXT = "Lord of the Rings - The Battle for Middle-Earth";
     public static final String ROTWK_TXT = " II + Rise of the Witch King";
 
+    private static final String[] DEFAULT_RES_OPTIONS = {
+            "Select...", "800x600", "1280x800", "1440x900", "1680x1050", "1920x1080"
+    };
+
     private JLayeredPane layeredPane;
     private JPanel mainPanel, gameSelectionPanel, backgroundPanel, titleTxtPanel, centerPanel, resChoosingPanel, btnPanel; //, centerContents;
     private GlassPanel centerContents;
@@ -42,13 +37,13 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
     private JComboBox<String> resChooser;
     private String selectedGame;
     private ButtonGroup radioBtns;
-
+    private String[] resOptions;
 
     /**
      * Create a new instance of the UI
      */
     public MainGUI() {
-        /* Do nothing */
+        this.resOptions = DEFAULT_RES_OPTIONS;
     }
 
     public JLayeredPane generateMainPanel() {
@@ -117,10 +112,6 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
         centerContents.setOpaque(true);
 
         centerContents.setPreferredSize(new Dimension(400, 300));
-
-        String[] resOptions = new String[] {
-                "Select...", "800x600", "1280x800", "1440x900", "1680x1050", "1920x1080"
-        };
 
         resChooser = new JComboBox<>(resOptions) {
             @Override
@@ -297,8 +288,13 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
 
     //endregion
 
+
     //region SETTERS AND GETTERS
 
+
+    public void setResOptions(String[] resOptions) {
+        this.resOptions = resOptions;
+    }
 
     public JComboBox<String> getResChooser() {
         return resChooser;
