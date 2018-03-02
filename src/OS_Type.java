@@ -30,5 +30,5 @@
  * @since 2/18/18
  */
 public enum OS_Type {
-    WINDOWS, MAC, UNIX, LINUX, SOLARIS, UNKNOWN
+    WINDOWS, MAC, Linux, LINUX, SOLARIS, UNKNOWN
 }
