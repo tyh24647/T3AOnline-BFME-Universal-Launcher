@@ -1,6 +1,33 @@
-**/jre-9.0.4*
-**/workspace.xml*
-**/artifacts/**
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
 *.jar
-*.exe
+*.war
+*.ear
+*.zip
 *.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Large files (over the limit for github)
+**/jre-9.0.4*
+**/artifacts/**
+
+# Personal computer files
+**/workspace.xml*
+
+# Other extensions
+*.exe
+
