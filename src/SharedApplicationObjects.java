@@ -1,3 +1,5 @@
+import java.io.Console;
+
 /**
  * <p></p>
  *
@@ -7,7 +9,7 @@
  */
 public interface SharedApplicationObjects {
 
-    Log LOG = new Log();
+    public static final Log LOG = new Log();
 
     static void LOG(Object...args) {
         Log.d(args);

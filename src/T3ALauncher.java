@@ -1,14 +1,39 @@
+import com.sun.istack.internal.NotNull;
 import javafx.concurrent.Task;
 import javafx.scene.control.ScrollPane;
-import org.jetbrains.annotations.NotNull;
+
+import org.jdesktop.animation.timing.Animator;
+import org.jdesktop.animation.timing.interpolation.PropertySetter;
+import org.jdesktop.swingx.JXPanel;
+import org.jdesktop.swingx.graphics.GraphicsUtilities;
+import org.jdesktop.swingx.image.GaussianBlurFilter;
+import org.softsmithy.lib.swing.JXScrollPane;
+import org.w3c.dom.css.Rect;
 
 import javax.annotation.processing.ProcessingEnvironment;
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.event.AncestorListener;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DefaultCaret;
 import java.awt.*;
+import java.awt.event.*;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.awt.image.ConvolveOp;
+import java.awt.image.Kernel;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.Window;
+
+//import static com.sun.awt.AWTUtilities.setWindowOpacity;
+import static java.awt.GraphicsDevice.WindowTranslucency.*;
 
 /**
  * @author Tyler Hostager
@@ -23,6 +48,9 @@ public class T3ALauncher implements SharedApplicationObjects {
     private static Thread javaVersionCheckTask;
     private static Thread graphicsThread;
     private static Runnable showUITask;
+    private static Console console;
+    private static DetailsView glassPane;
+
 
     public static void main(String[] args) {
         try {
@@ -133,78 +161,439 @@ public class T3ALauncher implements SharedApplicationObjects {
                         //Desktop.getDesktop().open(dmg);
                         //Runtime.getRuntime().exec(new String[] { "open", "-j", "-g", fmtdDmgPath });
 
-                        Runtime.getRuntime().exec(new String[] {
-                                "/bin/sh", "-c", "hdiutil attach \"" + fmtdDmgPath + "\"; wait;",
+                        //"/bin/sh", "-c", "open", "-a", "Terminal", "-n",  //"/usr/bin/sh",
+
+                        proc = Runtime.getRuntime().exec(new String[] {
+                                "osascript", "-e", "do shell script \"hdiutil attach -debug -verbose '" + fmtdDmgPath + "'\""
                         });
 
-                        JFrame tmp = new JFrame("Java 9.0.4 Installer");
+                        BufferedReader stdIn = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+                        BufferedReader stdErr = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
+
+                        // read the output from the command
+                        String s = null;
+                        JFrame tmp = new JFrame("T3ALauncher Console Output (Debug)") {
+                            @Override
+                            public boolean isOpaque() {
+                                return false;
+                            }
+
+                            @Override
+                            public void paint(Graphics g) {
+                                super.paint(g);
+                                Graphics2D g2d = (Graphics2D) g.create();
+                                //g2d.setComposite(AlphaComposite.SrcOver.derive(0.85f));
+                                //g2d.setColor(new Color(1, 1, 1, 1));
+                                //g2d.setComposite(AlphaComposite.SrcIn.derive(0.01f));
+                                g2d.setComposite(AlphaComposite.SrcOver.derive(0.90f));
+                                //g2d.setComposite(AlphaComposite.SrcOver.derive(0f));
+                                g2d.setColor(Color.BLACK);
+
+                                g2d.fillRect(0, 0, getWidth(), getHeight());
+                            }
+
+                            @Override
+                            public void setVisible(boolean b) {
+                                if (b) {
+                                    super.requestFocus();
+                                }
+
+                                super.setVisible(b);
+                            }
+                        };
+
                         tmp.setVisible(false);
                         tmp.setPreferredSize(new Dimension(600, 350));
                         tmp.setLocationRelativeTo(null);
                         tmp.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
-                        JPanel mainPanel = new JPanel(new BorderLayout());
+                        DetailPanel mainPanel = new DetailPanel(new BorderLayout());
                         mainPanel.setPreferredSize(new Dimension(tmp.getWidth(), tmp.getHeight()));
-                        JTextArea cmdOutput = new JTextArea();
-                        cmdOutput.setBackground(Color.BLACK);
+
+                        JTextArea cmdOutput = new JTextArea() {
+                            public void paintComponent (Graphics g) {
+                                super.paintComponent(g);
+
+                                Graphics2D g2d = (Graphics2D) g;
+                                g2d.setFont(new Font("Verdana", Font.ITALIC,20));
+                                g2d.setColor(Color.BLACK);
+                                g2d.setComposite(AlphaComposite.SrcOut.derive(0.1f));
+
+                                Rectangle rect = getVisibleRect();
+
+                                Rectangle tmp = new Rectangle(
+                                        rect.x + 5,
+                                        rect.y + 5,
+                                        Double.valueOf(rect.getWidth() - 5).intValue(),
+                                        Double.valueOf(rect.getHeight() - 5).intValue()
+                                );
+
+                                rect = tmp;
+
+
+                                int x = rect.width + rect.x - 14*getText().length();
+
+                                int y = rect.y + 20;
+                                g2d.drawString(getText(), x, y);
+                                setEnabled(true);
+                                setCaretPosition(getDocument().getLength());
+                            }
+
+
+                            /*
+                            public void fadeIn() {
+                                createBlur();
+
+                                setVisible(true);
+                                SwingUtilities.invokeLater(new Runnable() {
+                                    public void run() {
+                                        Animator animator = PropertySetter.createAnimator(
+                                                400, this, "alpha", 1.0f);
+                                        animator.setAcceleration(0.2f);
+                                        animator.setDeceleration(0.3f);
+                                        animator.addTarget(
+                                                new PropertySetter(this, "alpha", 1.0f));
+                                        animator.start();
+                                    }
+                                });
+                            }
+                            */
+
+                            @Override
+                            public synchronized void addFocusListener(FocusListener l) {
+
+
+                                super.addFocusListener(new FocusListener() {
+                                    @Override
+                                    public void focusGained(FocusEvent e) {
+                                        setEnabled(true);
+                                        //setCaretPosition(getDocument().getLength());
+                                        requestFocus();
+                                        repaint();
+                                    }
+
+                                    @Override
+                                    public void focusLost(FocusEvent e) {
+                                        setEnabled(true);
+                                        setCaretPosition(getDocument().getLength());
+                                        requestFocus();
+                                        repaint();
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void requestFocus() {
+                                super.requestFocus();
+                                setEnabled(true);
+                                setCaretPosition(getDocument().getLength());
+                                repaint();
+                            }
+
+                            @Override
+                            public void scrollRectToVisible(Rectangle aRect) {
+                                super.scrollRectToVisible(aRect);
+                                setEnabled(true);
+                                setCaretPosition(getDocument().getLength());
+                                repaint();
+                            }
+
+                            @Override
+                            public boolean requestFocusInWindow() {
+                                setEnabled(true);
+                                setCaretPosition(getDocument().getLength());
+                                repaint();
+                                return true;
+                            }
+
+                            @Override
+                            protected void processFocusEvent(FocusEvent e) {
+                                super.processFocusEvent(e);
+                                setEnabled(true);
+                                setCaretPosition(getDocument().getLength());
+                                repaint();
+                            }
+
+
+                        };
+
+                        cmdOutput.setBackground(new Color(0, 0, 0, 0.5f));
                         cmdOutput.setForeground(Color.WHITE);
-                        cmdOutput.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 14));
+                        cmdOutput.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
                         cmdOutput.setOpaque(true);
+                        cmdOutput.addFocusListener(null);
                         cmdOutput.setLineWrap(true);
-                        JScrollPane scrollPane = new JScrollPane(cmdOutput);
-                        scrollPane.setPreferredSize(cmdOutput.getSize());
+                        cmdOutput.setAutoscrolls(true);
+                        cmdOutput.setWrapStyleWord(true);
+                        cmdOutput.setEditable(true);
+                        cmdOutput.setMargin(new Insets(0, 5, 0, 5));
+
+                        DefaultCaret caret = (DefaultCaret) cmdOutput.getCaret();
+                        caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
+                        caret.setBlinkRate(1);
+                        cmdOutput.setCaret(caret);
+
+                        JXScrollPane scrollPane = new JXScrollPane(cmdOutput) {
+                            /*
+                            private BufferedImage blurBuffer;
+                            private BufferedImage backBuffer = ImageIO.read(getClass().getResource("assets/WHITE_BLANK.png"));
+                            private float alpha = 0.5f;
+                            private final JXScrollPane SCROLL_PANE = this;
+                            private DetailPanel detailPanel = new DetailPanel();
+                            private DetailsView detailsView = new DetailsView(detailPanel);
+
+                            @Override
+                            protected void paintComponent(Graphics g) {
+                                if (isVisible() && blurBuffer != null) {
+                                    Graphics2D g2 = (Graphics2D) g.create();
+
+                                    g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
+                                            RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+                                    g2.drawImage(backBuffer, 0, 0, null);
+
+                                    alpha = 0.9f;
+                                    g2.setComposite(AlphaComposite.SrcOver.derive(alpha));
+                                    g2.drawImage(blurBuffer, 0, 0, 350, 175, null);
+                                    g2.dispose();
+                                    super.paintComponent(g2);
+                                    //return;
+                                }
+
+                                super.paintComponent(g);
+                            }
+
+                            @Override
+                            public void setEnabled(boolean enabled) {
+                                super.setEnabled(enabled);
+                                setLayout(new GridBagLayout());
+
+                                this.detailPanel.setAlpha(0.0f);
+                                add(detailPanel, new GridBagConstraints());
+
+                                // Should also disable key events...
+                                addMouseListener(new MouseAdapter() { });
+                            }
+
+                            public void fadeIn() {
+                                createBlur();
+
+                                setVisible(true);
+                                SwingUtilities.invokeLater(() -> {
+
+                                    Animator animator = PropertySetter.createAnimator(
+                                            400, detailPanel, "alpha", 1.0f);
+                                    animator.setAcceleration(0.2f);
+                                    animator.setDeceleration(0.3f);
+                                    animator.addTarget(
+                                            new PropertySetter(SCROLL_PANE, "alpha", 1.0f));
+                                    animator.start();
+                                });
+                            }
+
+                            private void createBlur() {
+                                JRootPane root = SwingUtilities.getRootPane(this);
+                                blurBuffer = GraphicsUtilities.createCompatibleImage(
+                                        800, 600);
+                                Graphics2D g2 = blurBuffer.createGraphics();
+                                root.paint(g2);
+                                g2.dispose();
+
+
+                                backBuffer = blurBuffer;
+                                blurBuffer = GraphicsUtilities.createThumbnailFast(
+                                        blurBuffer, 600);
+                                blurBuffer = new GaussianBlurFilter(5).filter(blurBuffer, backBuffer);
+                            }
+
+                            @Override
+                            public void addAncestorListener(AncestorListener listener) {
+                                fadeIn();
+                                super.addAncestorListener(listener);
+                            }
+                            */
+                        };
+
+                        scrollPane.setPreferredSize(new Dimension (
+                                Double.valueOf(cmdOutput.getWidth() + 5).intValue(),
+                                Double.valueOf(cmdOutput.getHeight() + 5).intValue()
+                        ));
+
+
                         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-                        scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-                        scrollPane.setAutoscrolls(true);
+                        scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+                        scrollPane.setBorder(BorderFactory.createEmptyBorder());
+                        scrollPane.setWheelScrollingEnabled(true);
+                        //scrollPane.getViewport().setBackground(new Color(0, 0, 0, 0f));
+                        scrollPane.setBackground(new Color(0, 0, 0, 0.3f));
+                        scrollPane.setForeground(new Color(0, 0, 0, 0f));
+                        //scrollPane.setForeground(Color.GREEN);
+
+
+                        scrollPane.setViewportView(cmdOutput);
+                        mainPanel.setOpaque(true);
+                        //mainPanel.setOpaque(false);
+
+
+
+                        DetailPanel popup = new DetailPanel();
+                        popup.setPreferredSize(new Dimension(20, 20));
+
+                        //cmdOutput.add(popup, BorderLayout.CENTER);
+                        glassPane = new DetailsView(popup);
+
+                        //glassPane = new DetailsView(popup);
+
+                        //scrollPane.setViewportViewGlassPane(glassPane);
+                        //scrollPane.setViewportViewGlassed(true);
+                        //glassPane.setRoot(tmp.getRootPane());
+                        //glassPane.setSize(20, 20);
+                        glassPane.setPreferredSize(new Dimension(tmp.getWidth(), tmp.getHeight()));
+                        //scrollPane.setViewportViewGlassPane(glassPane);
+                        //tmp.getRootPane().setGlassPane(glassPane);
+
                         mainPanel.add(scrollPane, BorderLayout.CENTER);
+
                         tmp.add(mainPanel);
+                        tmp.setContentPane(mainPanel);
                         tmp.validate();
                         tmp.setVisible(true);
                         tmp.pack();
 
+                        //scrollPane.setViewportViewGlassPane(glassPane);
+                        //tmp.setComponentZOrder(glassPane, 0);
+                        tmp.setGlassPane(glassPane);
+
+
+                        //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                        //SwingUtilities.updateComponentTreeUI(tmp);
+
+                        Thread.sleep(100L);
+                        cmdOutput.append("T3ALauncher:~ " + "Attempting to mount disk image...");
+                        cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                        Thread.sleep(100L);
+                        cmdOutput.append("\nT3ALauncher:~ " + "osascript -e 'do shell script \"hdiutil attach -debug -verbose '" + fmtdDmgPath + "''");
+                        cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                        Thread.sleep(100L);
+
+                        while ((s = stdIn.readLine()) != null) {
+                            //System.out.println(s);
+                            //console.writer().println(s);
+                            cmdOutput.append("\nhdutil:~ " + s);
+                            cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                            cmdOutput.requestFocus();
+                            Thread.sleep(102L);
+                        }
+
+                        // read any errors from the attempted command
+                        while ((s = stdErr.readLine()) != null) {
+                            //System.out.println(s);
+                            //console.writer().println(s);
+                            cmdOutput.append("\nhdutil:~ " + s);
+                            cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                            cmdOutput.requestFocus();
+                            Thread.sleep(105L);
+                        }
+
+                        cmdOutput.append("\nT3ALauncher:~ " + "Disk image mounted successfully!");
+                        cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                        cmdOutput.requestFocus();
+                        Thread.sleep(100L);
+                        cmdOutput.append("\nT3ALauncher:~ " + "Running installer package...");
+                        cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                        cmdOutput.requestFocus();
+                        Thread.sleep(100L);
+                        proc.destroy();
+
+                        cmdOutput.append("\nT3ALauncher:~ " + "osascript -e 'do shell script \"sudo " +
+                                "installer -verbose -pkg '/Volumes/Java 9.0.4/Java 9.0.4.app/" +
+                                "Contents/Resources/JavaAppletPlugin.pkg' -target /\" " +
+                                "with administrator privileges'");
+                        cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                        Thread.sleep(100L);
                         proc = Runtime.getRuntime().exec(new String[] {
-                                "osascript", "-e", "do shell script \"sudo installer -verbose -pkg '/Volumes/Java 9.0.4/Java 9.0.4.app/Contents/Resources/JavaAppletPlugin.pkg' -target /; echo; echo;\" with administrator privileges"
+                                "osascript", "-e", "do shell script \"sudo installer -verbose -pkg " +
+                                "'/Volumes/Java 9.0.4/Java 9.0.4.app/Contents/Resources/" +
+                                "JavaAppletPlugin.pkg' -target /; \" with administrator privileges"
                         });
+
+                        cmdOutput.requestFocus();
 
                         BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
                         BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
 
                         // read the output from the command
-                        String s = null;
+                        //String
+                                s = null;
                         while ((s = stdInput.readLine()) != null) {
-                            System.out.println(s);
-                            cmdOutput.append("\n" + s);
-                            Thread.sleep(100L);
+                            //System.out.println(s);
+                            cmdOutput.append("\nJavaAppletPlugin:~ " + s);
                             cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                            cmdOutput.requestFocus();
+                            Thread.sleep(100L);
                         }
 
                         // read any errors from the attempted command
                         while ((s = stdError.readLine()) != null) {
-                            System.out.println(s);
-                            cmdOutput.append("\n" + s);
-                            Thread.sleep(100L);
+                            //System.out.println(s);
+                            cmdOutput.append("\nJavaAppletPluginInstaller:~ " + s);
                             cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
-                            tmp.repaint();
+                            cmdOutput.requestFocus();
+                            Thread.sleep(103L);
                         }
+
+                        cmdOutput.append("\nT3ALauncher:~ Java applet plugin updated successfully!");
+                        cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                        cmdOutput.requestFocus();
+                        Thread.sleep(100L);
 
                         while (true) {
-                            int exitVal = proc.waitFor();
+                            //int exitVal = proc.waitFor();
 
-                            if (exitVal == 0) {
+                            if (proc.exitValue() == 0) {
                                 proc.destroy();
-                                Thread.sleep(1200L);
-                                tmp.dispose();
-                                Thread.sleep(500L);
-                                initApplication();
+                                //Thread.sleep(1200L);
+                                //tmp.dispose();
+                                //Thread.sleep(500L);
+                                cmdOutput.append("\nT3ALauncher:~ Initializing application...");
+                                cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                                cmdOutput.requestFocus();
+                                Thread.sleep(100L);
+
+                                Runnable initApp = T3ALauncher::initApplication;
+                                Thread initTask = new Thread(initApp);
+                                initTask.run();
+
+                                cmdOutput.append("\nT3ALauncher:~ Launcher initialized successfully!");
+                                cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                                cmdOutput.requestFocus();
+                                Thread.sleep(100L);
                                 break;
                             }
+
+                            cmdOutput.requestFocus();
                         }
 
+                        cmdOutput.append("\nT3ALauncher:~ " + "diskutil unmount /Volumes/Java 9.0.4/; wait;");
+                        cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                        cmdOutput.requestFocus();
+                        Thread.sleep(100L);
+                        cmdOutput.append("\nT3ALauncher:~ " + "Unmounting disk...");
+                        cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                        cmdOutput.requestFocus();
+                        Thread.sleep(100L);
                         Runtime.getRuntime().exec("diskutil unmount /Volumes/Java\\ 9.0.4/; wait;");
+                        cmdOutput.append("\nT3ALauncher:~ " + "Disk unmounted successfully!");
+                        cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                        cmdOutput.requestFocus();
+                        Thread.sleep(100L);
+                        cmdOutput.append("\nT3ALauncher:~ ");
+                        cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
+                        cmdOutput.requestFocus();
                     }
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Your version of Java is up to date!\nJava version: " + System.getProperty("java.version"));
+                JOptionPane.showMessageDialog(null,
+                        "Your version of Java is up to date!\nJava version: " + System.getProperty("java.version"));
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -239,10 +628,12 @@ public class T3ALauncher implements SharedApplicationObjects {
         return needsJavaUpdate = getJavaVersion() < Integer.valueOf("904");
     }
 
-    private static @NotNull Double getJavaVersion() {
+    @NotNull
+    private static Double getJavaVersion() {
         String version = System.getProperty("java.version");
         int pos = version.indexOf('.');
         pos = version.indexOf('.', pos + 1);
         return Double.parseDouble(version.substring(0, pos));
     }
+
 }
