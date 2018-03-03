@@ -13,22 +13,22 @@ import java.awt.LayoutManager;
  * @version ${build.number}
  * @since 3/2/18
  */
-public class DetailPanel extends JXPanel {
+public class TDetailPanel extends JXPanel {
 
-    public DetailPanel() {
+    public TDetailPanel() {
 
     }
 
-    public DetailPanel(boolean isDoubleBuffered) {
+    public TDetailPanel(boolean isDoubleBuffered) {
         super(isDoubleBuffered);
     }
 
-    public DetailPanel(LayoutManager layout) {
+    public TDetailPanel(LayoutManager layout) {
         super(layout);
     }
 
 
-    public DetailPanel(LayoutManager layout, boolean isDoubleBuffered) {
+    public TDetailPanel(LayoutManager layout, boolean isDoubleBuffered) {
         super(layout, isDoubleBuffered);
     }
 
