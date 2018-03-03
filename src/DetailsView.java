@@ -25,8 +25,8 @@ import java.awt.image.BufferedImage;
  * 
  * @see org.jdesktop.swingx.JXPanel for Inherited superclass method implementations.
  * @see T3ALauncher#performJava9UpdateBeforeLaunch() for a usage example
- * @see <a href="http://www.curious-creature.com/2007/08/01/blurred-background-for-dialogs-extreme-gui-makeover-2007/>Curious-Creature</a>
- *     for original process used in these classes
+ * @see <a href="http://www.curious-creature.com/2007/08/01/blurred-background-for-dialogs-extreme-gui-makeover-2007>Curious-Creature</a>
+ *     for original process used in these classes.
  * 
  * 
  * @author Tyler Hostager
