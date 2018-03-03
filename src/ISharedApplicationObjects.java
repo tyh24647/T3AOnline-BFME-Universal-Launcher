@@ -7,7 +7,7 @@ import java.io.Console;
  * @version ${build.number}
  * @since 2/26/18
  */
-public interface SharedApplicationObjects {
+public interface ISharedApplicationObjects {
 
     public static final Log LOG = new Log();
 

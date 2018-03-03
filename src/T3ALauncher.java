@@ -1,52 +1,28 @@
 
 import com.sun.istack.internal.NotNull;
-import javafx.concurrent.Task;
-import javafx.scene.control.ScrollPane;
 
-import javax.annotation.processing.ProcessingEnvironment;
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.event.AncestorListener;
-import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultCaret;
-
-import org.jdesktop.animation.timing.Animator;
-import org.jdesktop.animation.timing.interpolation.PropertySetter;
-import org.jdesktop.swingx.JXPanel;
-import org.jdesktop.swingx.graphics.GraphicsUtilities;
-import org.jdesktop.swingx.image.GaussianBlurFilter;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.geom.Rectangle2D;
-import java.awt.image.BufferedImage;
-import java.awt.image.ConvolveOp;
-import java.awt.image.Kernel;
-
-import javafx.concurrent.Task;
-import javafx.scene.control.ScrollPane;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Random;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
-import java.awt.Window;
 
 import java.io.*;
 import org.softsmithy.lib.swing.JXScrollPane;
-
-import static java.awt.GraphicsDevice.WindowTranslucency.*;
 
 /**
  * @author Tyler Hostager
  * @version 1.0.0
  * @since 2/18/18
  */
-public class T3ALauncher implements SharedApplicationObjects {
+public class T3ALauncher implements ISharedApplicationObjects {
     private static ViewController vc;
     private static T3ALauncherModel model;
     private static MainGUI ui;
