@@ -5,10 +5,6 @@ import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.*;
-import java.io.IOException;
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * ViewController object acts as a delegate between the model and view objects
@@ -78,14 +74,14 @@ public class ViewController implements ActionListener, SharedApplicationObjects 
         this.isDebug = isDebug;
 
         try {
+            view.initUI();
             Runnable prompt = this::promptResolutionDetectionDialog;
             Thread promptThread = new Thread(prompt);
             promptThread.start();
 
             while (true) {
                 if (!promptThread.isAlive()) {
-                    view.showUI();
-
+                    view.launchMainWindow();
                     break;
                 }
             }
@@ -127,45 +123,65 @@ public class ViewController implements ActionListener, SharedApplicationObjects 
     }
 
     private void promptResolutionDetectionDialog() {
-        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-        Double x = dimension.getWidth();
-        Double y = dimension.getHeight();
-        Integer xInt = Math.round(x.intValue());
-        Integer yInt = Math.round(y.intValue());
 
-        if (!hasSeenResPrompt) {
-            Runnable dialogTask = () -> JOptionPane.showMessageDialog(
-                    new JFrame() {
-                        @Override
-                        public int getDefaultCloseOperation() {
-                            view.repaint();
-                            return DISPOSE_ON_CLOSE;
-                        }
-                    },
+        try {
+            //Runtime.getRuntime().exec(new String[] { "/bin/sh", "-c", "open -n \"Terminal\"" });
+            Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+            Double x = dimension.getWidth();
+            Double y = dimension.getHeight();
+            Integer xInt = Math.round(x.intValue());
+            Integer yInt = Math.round(y.intValue());
 
-                    "RESOLUTION AUTO-DETECTION:\n\nDetected Resolution: \""
-                            .concat(String.valueOf(xInt))
-                            .concat("x")
-                            .concat(String.valueOf(yInt))
-                            .concat("\"\nSetting value as default...")
-            );
 
-            hasSeenResPrompt = true;
+            if (!hasSeenResPrompt) {
+                Runnable dialogTask = () -> JOptionPane.showMessageDialog(
+                        new JFrame() {
+                            @Override
+                            public int getDefaultCloseOperation() {
+                                view.repaint();
+                                return DISPOSE_ON_CLOSE;
+                            }
+                        },
 
-            Thread dThread = new Thread(dialogTask);
-            dThread.start();
-        }
+                        "RESOLUTION AUTO-DETECTION:\n\nDetected Resolution: \""
+                                .concat(String.valueOf(xInt))
+                                .concat("x")
+                                .concat(String.valueOf(yInt))
+                                .concat("\"\nSetting value as default...")
+                );
 
-        if (view.getResChooser().getItemCount() > 0) {
-            for (int i = 0; i < view.getResChooser().getItemCount() - 1; i++) {
-                if (((String) view.getResChooser().getItemAt(i)).substring(0, 2).contains(x.toString().substring(0, 2))) {
-                    view.getResChooser().setSelectedItem(view.getResChooser().getItemAt(i));
-                    view.getResChooser().setSelectedIndex(i);
-                }
+                hasSeenResPrompt = true;
+
+                Thread dThread = new Thread(dialogTask);
+                dThread.start();
             }
-        }
 
-        view.repaint();
+            Runnable detectResolution;
+            if (view != null && view.getResChooser() != null && view.getResChooser().getItemCount() > 0) {
+                detectResolution = () -> {
+                    if (view.getResChooser().getItemCount() > 0) {
+                        for (int i = 0; i < view.getResChooser().getItemCount() - 1; i++) {
+                            if (((String) view.getResChooser().getItemAt(i)).substring(0, 2).contains(x.toString().substring(0, 2))) {
+                                view.getResChooser().setSelectedItem(view.getResChooser().getItemAt(i));
+                                view.getResChooser().setSelectedIndex(i);
+                            }
+                        }
+                    }
+                };
+
+                detectResolution.run();
+                view.repaint();
+            } else {
+                view.initUI();
+                promptResolutionDetectionDialog();  //recurse back in
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            System.out.println();
+            e.printStackTrace();
+            /* DO NOTHING -- triggered a few times during instantiation */
+        }
     }
 
     @Override
@@ -260,8 +276,4 @@ public class ViewController implements ActionListener, SharedApplicationObjects 
             previousCmd = e.getActionCommand();
         }
     }
-
-
 }
-
-

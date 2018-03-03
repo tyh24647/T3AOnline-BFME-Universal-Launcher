@@ -26,11 +26,14 @@
 
 
 import com.sun.istack.internal.NotNull;
+import org.jdesktop.swingx.graphics.GraphicsUtilities;
+import org.jdesktop.swingx.image.GaussianBlurFilter;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 
 /**
  * <p></p>
@@ -76,6 +79,7 @@ public class FadeInPanel extends JPanel implements ActionListener {
                         )
                 )
         );
+
 
         g2d.drawImage(
                 selectedImg2 != null ? this.selectedImg2 : (

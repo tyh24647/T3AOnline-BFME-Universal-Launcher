@@ -1,3 +1,5 @@
+import java.io.Console;
+
 /**
  * @author Tyler Hostager
  * @version 1.0.0
@@ -8,6 +10,8 @@ public class T3ALauncherModel {
     private Game selectedGame;
     private Integer xRes;
     private Integer yRes;
+
+    public static final Console CONSOLE = System.console();
 
     public T3ALauncherModel() {
         setSelectedGame(Game.BFME1);

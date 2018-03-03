@@ -10,6 +10,7 @@ import static java.awt.BorderLayout.EAST;
 import static java.awt.BorderLayout.WEST;
 import static javax.swing.JLayeredPane.DEFAULT_LAYER;
 import static javax.swing.JLayeredPane.FRAME_CONTENT_LAYER;
+import static javax.swing.JLayeredPane.POPUP_LAYER;
 
 
 /**
@@ -26,7 +27,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
     };
 
     private JLayeredPane layeredPane;
-    private JPanel mainPanel, gameSelectionPanel, backgroundPanel, titleTxtPanel, centerPanel, resChoosingPanel, btnPanel; //, centerContents;
+    private JPanel mainPanel, gameSelectionPanel, backgroundPanel, centerPanel, titleTxtPanel, resChoosingPanel, btnPanel; //, centerContents;
     private GlassPanel centerContents;
     private JMenuBar menuBar;
     private JMenu fileMenu, editMenu, viewMenu, windowMenu, devMenu, helpMenu;
@@ -144,7 +145,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
         resChooser.setOpaque(true);
         resChooser.setSize(new Dimension(400, (int)super.getPreferredSize().getHeight() + 4));
 
-        JLabel resolutionLbl = new JLabel("Display Resolution:");
+        JLabel resolutionLbl = new JLabel("Display Resolution:", FlowLayout.LEFT);
         resolutionLbl.setForeground(Color.WHITE);
         resolutionLbl.setFont(resolutionLbl.getFont().deriveFont(Font.PLAIN, 14f));
         resChoosingPanel.add(resolutionLbl);
@@ -172,7 +173,10 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
         centerPanel.setOpaque(false);
         centerPanel.setPreferredSize(new Dimension(800, 600));
 
+
         mainPanel.add(centerPanel, BorderLayout.CENTER);
+
+
 
         bkgdImgPanel = new FadeInPanel();
         bkgdImgPanel.setOpaque(true);
@@ -206,6 +210,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
 
         return layeredPane;
     }
+
 
     public JMenuBar generateMenuBar() {
         menuBar = new JMenuBar();
@@ -241,14 +246,16 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
         return menuBar;
     }
 
-    public void showUI() throws NullPointerException {
+    public void initUI() throws NullPointerException {
         setJMenuBar(generateMenuBar());
         //add(generateMainPanel());
         setLayeredPane(generateMainPanel());
         //setContentPane(mainPanel);
 
         configureMainWindow();
-        launchMainWindow();
+        pack();
+        setVisible(false);
+        //launchMainWindow();
     }
 
     private void configureMainWindow() {
@@ -261,7 +268,6 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
     }
 
     public void launchMainWindow() {
-        pack();
         setVisible(true);
     }
 
