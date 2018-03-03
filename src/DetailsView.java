@@ -1,10 +1,9 @@
+import com.sun.istack.internal.NotNull;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.interpolation.PropertySetter;
 import org.jdesktop.swingx.graphics.GraphicsUtilities;
 import org.jdesktop.swingx.image.GaussianBlurFilter;
 import org.jdesktop.swingx.JXPanel;
-import org.jetbrains.annotations.NotNull;
-import org.softsmithy.lib.swing.JXScrollPane;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,20 +16,19 @@ import java.awt.image.BufferedImage;
  *     of the main window. This allows for functionality such as animation effects,
  *     view blurring, and alpha modification.
  * </p>
- * &nbsp;
  * <p>
  *     This class should be used as a <code>GlassPane</code> object in most cases,
  *     and shouldn't be used to modify the alpha values of primary views. Instead,
  *     it should overlay on top of the frame, and blur the specified background panel
  *     behind it with the given bounds.
  * </p>
- * <br>
+ * 
  * @see org.jdesktop.swingx.JXPanel for Inherited superclass method implementations.
  * @see T3ALauncher#performJava9UpdateBeforeLaunch() for a usage example
  * @see <a href="http://www.curious-creature.com/2007/08/01/blurred-background-for-dialogs-extreme-gui-makeover-2007/>Curious-Creature</a>
  *     for original process used in these classes
- * <br>
- * <br>
+ * 
+ * 
  * @author Tyler Hostager
  * @version ${build.number}
  * @since 3/2/18
@@ -46,7 +44,7 @@ public class DetailsView extends JXPanel {
      * Constructs a <code>DetailsView</code> object using the given <code>TDetailPanel</code>
      * view panel (custom subclass of {@code JFXPanel}).
      * </p>
-     * <br>
+     * 
      * @param detailPanel   The <code>TDetailPanel</code> object in which the images
      *                      and other details should display.
      */
@@ -63,7 +61,7 @@ public class DetailsView extends JXPanel {
      * <p>
      *     Causes a fade effect as the popup panel is displayed.
      * </p>
-     * <br>
+     * 
      * <p>
      *     This method blurs and darkens the background image while leaving the
      *     foreground image as it is, giving the effect of a popup window as an
@@ -85,17 +83,17 @@ public class DetailsView extends JXPanel {
 
     /**
      * <p>
-     * Changes the background image to a blurry, darkened version in order to provide
-     * contrast between the layers when displaying a message to the user.
+     *     Changes the background image to a blurry, darkened version in order to provide
+     *     contrast between the layers when displaying a message to the user.
      * </p>
-     * <br>
+     * 
      * @apiNote Make sure to create this object with a <code>TDetailPanel</code> object that
      * has both a root pane and a frame object. Otherwise, if the object is by itself, this will
      * throw a <code>NullPointerException</code>.
-     * <br>
+     * 
      * If the object doesn't have a specified size, an exception will be thrown in the
      * method: <code>GraphicsUtilities.createThumbnail(BufferedImage image, int newSize)</code>
-     * <br>
+     * 
      * @see GraphicsUtilities for implementation details
       */
     private void applyBlurEffectToBkgdWindow() {
@@ -114,7 +112,7 @@ public class DetailsView extends JXPanel {
      * <p>
      *     Returns the alpha value for the object (inherited from <code>JXPanel</code>.
      * </p>
-     * <br>
+     * 
      * @return  The alpha transparency value of the panel
      */
     public float getAlpha() {
@@ -126,16 +124,17 @@ public class DetailsView extends JXPanel {
      *     Assigns the specified alpha transparency value to the current instance
      *     of the object, then repaints itself to apply the graphics changes.
      * </p>
-     * <br>
+     * 
      * @implNote Be sure to pass in a value greater than 0.0 and less than 1.0, otherwise
      * the value is invalid.
-     * <br>
+     * 
      * @implNote If the transparency doesn't change after changing the alpha value, make
      * sure that the <code>TDetailPanel</code>'s opacity is set to <code>true</code>, which
      * is counter-intuitive, however if the value is <code>false</code>, the alpha value cannot
      * be applied because it will always be transparent.
-     * <br>
-     * @param alpha
+     * 
+     * @param alpha     The desired transparency value in which to set the rendering panel
+     *                  when the <code>paintComponent()</code> method is called.
      */
     public void setAlpha(float alpha) {
         this.alpha = alpha;
@@ -152,7 +151,7 @@ public class DetailsView extends JXPanel {
      *     method is called, otherwise an <code>Exception</code> is thrown due to
      *     lacking the minimum size requirement to render the image.
      * </p>
-     * <br>
+     * 
      * @param g     The <code>Graphics</code> object in which the renderer should
      *              paint, and may be passed to its superclass using
      *              {@code super.paintComponent(g);} if the superclass painting methods
