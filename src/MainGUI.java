@@ -39,7 +39,6 @@ public class MainGUI extends JFrame implements WindowFocusListener, SharedApplic
     private String selectedGame;
     private ButtonGroup radioBtns;
     private String[] resOptions;
-    //private DetailPanel centerPanel;
 
     /**
      * Create a new instance of the UI

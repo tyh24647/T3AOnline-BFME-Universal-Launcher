@@ -1,14 +1,7 @@
+
 import com.sun.istack.internal.NotNull;
 import javafx.concurrent.Task;
 import javafx.scene.control.ScrollPane;
-
-import org.jdesktop.animation.timing.Animator;
-import org.jdesktop.animation.timing.interpolation.PropertySetter;
-import org.jdesktop.swingx.JXPanel;
-import org.jdesktop.swingx.graphics.GraphicsUtilities;
-import org.jdesktop.swingx.image.GaussianBlurFilter;
-import org.softsmithy.lib.swing.JXScrollPane;
-import org.w3c.dom.css.Rect;
 
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.imageio.ImageIO;
@@ -16,23 +9,36 @@ import javax.swing.*;
 import javax.swing.event.AncestorListener;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultCaret;
+
+import org.jdesktop.animation.timing.Animator;
+import org.jdesktop.animation.timing.interpolation.PropertySetter;
+import org.jdesktop.swingx.JXPanel;
+import org.jdesktop.swingx.graphics.GraphicsUtilities;
+import org.jdesktop.swingx.image.GaussianBlurFilter;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.ConvolveOp;
 import java.awt.image.Kernel;
-import java.io.*;
+
+import javafx.concurrent.Task;
+import javafx.scene.control.ScrollPane;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Window;
 
-//import static com.sun.awt.AWTUtilities.setWindowOpacity;
+import java.io.*;
+import org.softsmithy.lib.swing.JXScrollPane;
+
 import static java.awt.GraphicsDevice.WindowTranslucency.*;
 
 /**
@@ -48,9 +54,7 @@ public class T3ALauncher implements SharedApplicationObjects {
     private static Thread javaVersionCheckTask;
     private static Thread graphicsThread;
     private static Runnable showUITask;
-    private static Console console;
     private static DetailsView glassPane;
-
 
     public static void main(String[] args) {
         try {
@@ -160,9 +164,7 @@ public class T3ALauncher implements SharedApplicationObjects {
                     if (dmg.exists()) {
                         //Desktop.getDesktop().open(dmg);
                         //Runtime.getRuntime().exec(new String[] { "open", "-j", "-g", fmtdDmgPath });
-
-                        //"/bin/sh", "-c", "open", "-a", "Terminal", "-n",  //"/usr/bin/sh",
-
+                      
                         proc = Runtime.getRuntime().exec(new String[] {
                                 "osascript", "-e", "do shell script \"hdiutil attach -debug -verbose '" + fmtdDmgPath + "'\""
                         });
@@ -522,10 +524,8 @@ public class T3ALauncher implements SharedApplicationObjects {
                         BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
 
                         // read the output from the command
-                        //String
-                                s = null;
+                        s = null;
                         while ((s = stdInput.readLine()) != null) {
-                            //System.out.println(s);
                             cmdOutput.append("\nJavaAppletPlugin:~ " + s);
                             cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
                             cmdOutput.requestFocus();
@@ -534,7 +534,6 @@ public class T3ALauncher implements SharedApplicationObjects {
 
                         // read any errors from the attempted command
                         while ((s = stdError.readLine()) != null) {
-                            //System.out.println(s);
                             cmdOutput.append("\nJavaAppletPluginInstaller:~ " + s);
                             cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
                             cmdOutput.requestFocus();
@@ -551,9 +550,11 @@ public class T3ALauncher implements SharedApplicationObjects {
 
                             if (proc.exitValue() == 0) {
                                 proc.destroy();
+                              
                                 //Thread.sleep(1200L);
                                 //tmp.dispose();
                                 //Thread.sleep(500L);
+                              
                                 cmdOutput.append("\nT3ALauncher:~ Initializing application...");
                                 cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
                                 cmdOutput.requestFocus();
@@ -628,12 +629,10 @@ public class T3ALauncher implements SharedApplicationObjects {
         return needsJavaUpdate = getJavaVersion() < Integer.valueOf("904");
     }
 
-    @NotNull
-    private static Double getJavaVersion() {
+    private static @NotNull Double getJavaVersion() {
         String version = System.getProperty("java.version");
         int pos = version.indexOf('.');
         pos = version.indexOf('.', pos + 1);
         return Double.parseDouble(version.substring(0, pos));
     }
-
 }

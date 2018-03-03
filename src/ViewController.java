@@ -1,4 +1,5 @@
 import com.sun.istack.internal.NotNull;
+import org.intellij.lang.annotations.JdkConstants;
 
 import javax.swing.*;
 import java.awt.Dimension;
@@ -122,6 +123,7 @@ public class ViewController implements ActionListener, SharedApplicationObjects 
     }
 
     private void promptResolutionDetectionDialog() {
+
         try {
             //Runtime.getRuntime().exec(new String[] { "/bin/sh", "-c", "open -n \"Terminal\"" });
             Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
@@ -274,8 +276,4 @@ public class ViewController implements ActionListener, SharedApplicationObjects 
             previousCmd = e.getActionCommand();
         }
     }
-
-
 }
-
-
