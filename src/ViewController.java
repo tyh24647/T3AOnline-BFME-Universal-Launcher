@@ -1,5 +1,4 @@
 import com.sun.istack.internal.NotNull;
-import org.intellij.lang.annotations.JdkConstants;
 
 import javax.swing.*;
 import java.awt.Dimension;
@@ -13,7 +12,7 @@ import java.awt.event.*;
  * @version 1.0.0
  * @since 2/18/18
  */
-public class ViewController implements ActionListener, SharedApplicationObjects {
+public class ViewController implements ActionListener, ISharedApplicationObjects {
     private boolean isDebug;
     private T3ALauncherModel model;
     private MainGUI view;

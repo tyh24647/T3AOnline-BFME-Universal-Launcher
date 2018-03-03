@@ -31,7 +31,7 @@ import java.util.Date;
  * @version ${build.number}
  * @since 2/26/18
  */
-public interface ConsoleWriter {
+public interface IConsoleWriter {
     String sessionId = String.valueOf(String.valueOf(new Date().getTime()).hashCode());
 
     //region DEBUG MESSAGE HANDLING

@@ -1,7 +1,5 @@
 
 
-import com.sun.istack.internal.Nullable;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -10,7 +8,6 @@ import static java.awt.BorderLayout.EAST;
 import static java.awt.BorderLayout.WEST;
 import static javax.swing.JLayeredPane.DEFAULT_LAYER;
 import static javax.swing.JLayeredPane.FRAME_CONTENT_LAYER;
-import static javax.swing.JLayeredPane.POPUP_LAYER;
 
 
 /**
@@ -18,7 +15,7 @@ import static javax.swing.JLayeredPane.POPUP_LAYER;
  * @version 1.0.0
  * @since 2/18/18
  */
-public class MainGUI extends JFrame implements WindowFocusListener, SharedApplicationObjects {
+public class MainGUI extends JFrame implements WindowFocusListener, ISharedApplicationObjects {
     public static final String DEFAULT_LOTR_TITLE_TXT = "Lord of the Rings - The Battle for Middle-Earth";
     public static final String ROTWK_TXT = " II + Rise of the Witch King";
 

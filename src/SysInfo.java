@@ -32,7 +32,7 @@ import java.util.regex.Pattern;
  * @version ${build.number}
  * @since 2/26/18
  */
-public class SysInfo implements SharedApplicationObjects {
+public class SysInfo implements ISharedApplicationObjects {
     public static final Boolean DEBUG_MODE = isDebugging();
 
     private static final Pattern debugPattern = Pattern.compile("-Xdebug|jdwp");

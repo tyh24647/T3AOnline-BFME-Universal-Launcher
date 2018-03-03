@@ -33,7 +33,7 @@ import java.io.File;
  * @version ${build.number}
  * @since 2/26/18
  */
-public final class Log implements ConsoleWriter {
+public final class Log implements IConsoleWriter {
     private static final String DEBUG_HEADER = "/> ";
     private static final String ERROR_HEADER = "ERROR/> ";
     private File logFile;
