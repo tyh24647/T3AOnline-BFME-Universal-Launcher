@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="t3aonline-bfme-universal-launcher-v2" default="all">
+<project name="t3aonline_bfme_universal_launcher" default="all">
   
   
   <property file="t3aonline_bfme_universal_launcher.properties"/>
@@ -160,13 +160,6 @@
   <property name="project.jdk.home" value="${jdk.home.9}"/>
   <property name="project.jdk.bin" value="${jdk.bin.9}"/>
   <property name="project.jdk.classpath" value="jdk.classpath.9"/>
-  
-  
-  <!-- Project Libraries -->
-  
-  <path id="library.filters.classpath">
-    <pathelement location="${basedir}/../../Downloads/Filters/dist/Filters.jar"/>
-  </path>
   <!-- Register Custom Compiler Taskdefs -->
   <property name="javac2.home" value="${idea.home}/lib"/>
   <path id="javac2.classpath">
@@ -194,33 +187,5 @@
   
   <target name="build.modules" depends="init, clean, compile.module.t3aonline_bfme_universal_launcher" description="build all modules"/>
   
-  <target name="init.artifacts">
-    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
-    <property name="artifact.output.t3aonline_bfme_universal_launcher:jar" value="${basedir}/out/artifacts/T3AOnline_BFME_Universal_Launcher_jar"/>
-    <mkdir dir="${artifacts.temp.dir}"/>
-    <property name="temp.jar.path.T3AOnline BFME Universal Launcher.jar" value="${artifacts.temp.dir}/T3AOnline BFME Universal Launcher.jar"/>
-  </target>
-  
-  <target name="artifact.t3aonline_bfme_universal_launcher:jar" depends="init.artifacts, compile.module.t3aonline_bfme_universal_launcher" description="Build &#39;T3AOnline BFME Universal Launcher:jar&#39; artifact">
-    <property name="artifact.temp.output.t3aonline_bfme_universal_launcher:jar" value="${artifacts.temp.dir}/T3AOnline_BFME_Universal_Launcher_jar"/>
-    <mkdir dir="${artifact.temp.output.t3aonline_bfme_universal_launcher:jar}"/>
-    <jar destfile="${temp.jar.path.T3AOnline BFME Universal Launcher.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
-      <zipfileset dir="${t3aonline_bfme_universal_launcher.output.dir}"/>
-      <zipfileset src="${idea.home}/redist/annotations-java8.jar"/>
-      <zipfileset src="${basedir}/../../Downloads/Filters/dist/Filters.jar"/>
-    </jar>
-    <copy file="${temp.jar.path.T3AOnline BFME Universal Launcher.jar}" tofile="${artifact.temp.output.t3aonline_bfme_universal_launcher:jar}/T3AOnline BFME Universal Launcher.jar"/>
-  </target>
-  
-  <target name="build.all.artifacts" depends="artifact.t3aonline_bfme_universal_launcher:jar" description="Build all artifacts">
-    <mkdir dir="${artifact.output.t3aonline_bfme_universal_launcher:jar}"/>
-    <copy todir="${artifact.output.t3aonline_bfme_universal_launcher:jar}">
-      <fileset dir="${artifact.temp.output.t3aonline_bfme_universal_launcher:jar}"/>
-    </copy>
-    
-    <!-- Delete temporary files -->
-    <delete dir="${artifacts.temp.dir}"/>
-  </target>
-  
-  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+  <target name="all" depends="build.modules" description="build all"/>
 </project>
