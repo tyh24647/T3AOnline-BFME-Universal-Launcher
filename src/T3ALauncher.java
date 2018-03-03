@@ -185,7 +185,7 @@ public class T3ALauncher implements ISharedApplicationObjects {
                         tmp.setLocationRelativeTo(null);
                         tmp.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
-                        DetailPanel mainPanel = new DetailPanel(new BorderLayout());
+                        TDetailPanel mainPanel = new TDetailPanel(new BorderLayout());
                         mainPanel.setPreferredSize(new Dimension(tmp.getWidth(), tmp.getHeight()));
 
                         JTextArea cmdOutput = new JTextArea() {
@@ -317,7 +317,7 @@ public class T3ALauncher implements ISharedApplicationObjects {
                             private BufferedImage backBuffer = ImageIO.read(getClass().getResource("assets/WHITE_BLANK.png"));
                             private float alpha = 0.5f;
                             private final JXScrollPane SCROLL_PANE = this;
-                            private DetailPanel detailPanel = new DetailPanel();
+                            private TDetailPanel detailPanel = new TDetailPanel();
                             private DetailsView detailsView = new DetailsView(detailPanel);
 
                             @Override
@@ -413,7 +413,7 @@ public class T3ALauncher implements ISharedApplicationObjects {
 
 
 
-                        DetailPanel popup = new DetailPanel();
+                        TDetailPanel popup = new TDetailPanel();
                         popup.setPreferredSize(new Dimension(20, 20));
 
                         //cmdOutput.add(popup, BorderLayout.CENTER);
