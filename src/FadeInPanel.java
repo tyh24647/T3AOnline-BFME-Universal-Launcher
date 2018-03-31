@@ -62,6 +62,7 @@ public class FadeInPanel extends JPanel implements ActionListener {
         repaint();
     }
 
+    @Override
     public void paint(Graphics g) {
         super.paint(g);
         renderBackgroundImage(g);
@@ -90,6 +91,7 @@ public class FadeInPanel extends JPanel implements ActionListener {
         );
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         if (e != null) {
             if (shouldReverse) {

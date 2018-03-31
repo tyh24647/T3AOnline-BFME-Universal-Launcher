@@ -1,8 +1,11 @@
 
 
+import org.jdesktop.swingx.graphics.GraphicsUtilities;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 
 import static java.awt.BorderLayout.EAST;
 import static java.awt.BorderLayout.WEST;
@@ -24,7 +27,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
     };
 
     private JLayeredPane layeredPane;
-    private JPanel mainPanel, gameSelectionPanel, backgroundPanel, centerPanel, titleTxtPanel, resChoosingPanel, btnPanel; //, centerContents;
+    private JPanel mainPanel, gameSelectionPanel, backgroundPanel, centerPanel, titleTxtPanel, resChoosingPanel, btnPanel, testFormPanel; //, centerContents;
     private GlassPanel centerContents;
     private JMenuBar menuBar;
     private JMenu fileMenu, editMenu, viewMenu, windowMenu, devMenu, helpMenu;
@@ -96,7 +99,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         gameSelectionPanel.setPreferredSize(new Dimension(800, 40));
 
 
-        centerPanel = new JPanel(new BorderLayout(30, 60));
+        centerPanel = new JPanel(new BorderLayout(30, 30));
         //centerContents = new JPanel(new BorderLayout(60, 30));
         centerContents = new GlassPanel(new BorderLayout(60, 30));
 
@@ -108,8 +111,8 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         };
 
         centerContents.setOpaque(true);
-
         centerContents.setPreferredSize(new Dimension(400, 300));
+        centerContents.setVisible(true);
 
         resChooser = new JComboBox<>(resOptions) {
             @Override
@@ -140,9 +143,9 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         };
 
         resChooser.setOpaque(true);
-        resChooser.setSize(new Dimension(400, (int)super.getPreferredSize().getHeight() + 4));
+        resChooser.setSize(new Dimension(400, (int) super.getPreferredSize().getHeight() + 4));
 
-        JLabel resolutionLbl = new JLabel("Display Resolution:", FlowLayout.LEFT);
+        JLabel resolutionLbl = new JLabel("Display Resolution:", SwingConstants.LEFT);
         resolutionLbl.setForeground(Color.WHITE);
         resolutionLbl.setFont(resolutionLbl.getFont().deriveFont(Font.PLAIN, 14f));
         resChoosingPanel.add(resolutionLbl);
@@ -151,6 +154,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         JLabel label = new JLabel();
         label.setPreferredSize(new Dimension(150, 60));
         resChoosingPanel.setOpaque(false);
+        resChoosingPanel.setForeground(new Color(0,0, 0, 0f));
         resChoosingPanel.add(label);
         centerContents.add(resChoosingPanel, BorderLayout.NORTH);
         resChoosingPanel.setPreferredSize(new Dimension(800, 200));
@@ -170,9 +174,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         centerPanel.setOpaque(false);
         centerPanel.setPreferredSize(new Dimension(800, 600));
 
-
         mainPanel.add(centerPanel, BorderLayout.CENTER);
-
 
 
         bkgdImgPanel = new FadeInPanel();
@@ -200,10 +202,21 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
 
         layeredPane.add(bkgdImgPanel, BorderLayout.CENTER, DEFAULT_LAYER);
         layeredPane.add(mainPanel, BorderLayout.CENTER, DEFAULT_LAYER);
+
         layeredPane.setLayer(bkgdImgPanel, FRAME_CONTENT_LAYER);
         layeredPane.setLayer(mainPanel, DEFAULT_LAYER);
+
         layeredPane.setBounds(0, 0, 800, 640);
         layeredPane.setOpaque(true);
+
+        BufferedImage transparencyImg = GraphicsUtilities.convertToBufferedImage(ImageAsset.SHADED_BLUR.getImage());
+        if (transparencyImg != null) {
+            Graphics2D g2d = transparencyImg.createGraphics();
+            g2d.setComposite(AlphaComposite.SrcAtop.derive(0.75f));
+            g2d.drawImage(transparencyImg, 0, 0, 400, 300, null);
+            paint(g2d);
+            g2d.dispose();
+        }
 
         return layeredPane;
     }
@@ -253,10 +266,11 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         pack();
         setVisible(false);
         //launchMainWindow();
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     private void configureMainWindow() {
-        setPreferredSize(new Dimension(800,640));
+        setPreferredSize(new Dimension(800, 640));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         getRootPane().setWindowDecorationStyle(JRootPane.FRAME);
         setResizable(false);

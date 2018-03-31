@@ -1,0 +1,457 @@
+.subscribers .word,
+.users-online .word {
+    display: inline;
+}
+
+.subscribers .number:after {
+    content: " horny"
+}
+
+.users-online .word:after {
+    content: " fapping"
+}
+
+.pagename.redditname {
+    text-indent: -9999em;
+    display: inline-block
+}
+
+.link .down {
+    display: inline;
+    font-family: verdana;
+}
+
+#header .pagename a {
+    display: block;
+    background-position: 0 0;
+    width: 300px;
+    height: 80px;
+    margin: 0 0;
+    left: 430px;
+    position: absolute;
+    top: 70px;
+    font-size: 0px;
+    text-indent: -99999px;
+    font-family: "Verdana", Helvetica, sans-serif;
+}
+
+#header {
+    -webkit-animation: scroll 360s linear infinite;
+    animation: scroll 360s linear infinite;
+    -moz-animation: scroll 360s linear infinite;
+    -o-animation: scroll 360s linear infinite
+}
+
+.text-button a {
+    position: relative;
+    display: inline-block;
+    left: 100px;
+    top: 500px;
+    visibility: hidden
+}
+
+#header .pagename a {
+    display: block;
+    background-position: 0 0;
+    width: 430px;
+    height: 80px;
+    margin: 0 0;
+    left: 150px;
+    position: absolute;
+    top: 70px;
+    font-size: 0px;
+    text-indent: -99999px; 
+    font-family: "Verdana", Helvetica, sans-serif;
+}
+
+@-webkit-keyframes scroll {
+    from {
+        background-position: 0
+    }
+    to {
+        background-position: -6849px
+    }
+}
+
+@-moz-keyframes scroll {
+    from {
+        background-position: 0
+    }
+    to {
+        background-position: -6849px
+    }
+}
+
+@-o-keyframes scroll {
+    from {
+        background-position: 0
+    }
+    to {
+        background-position: -6849px
+    }
+}
+
+@keyframes scroll {
+    from {
+        background-position: 0
+    }
+    to {
+        background-position: -6849px
+    }
+}
+
+#header {
+    background: transparent url(%%-testBanner2%%) repeat scroll bottom left;
+    height: 230px;
+    border-color: pink;
+    border-width: 0px
+}
+
+#sr-header-area {
+    background: black;
+    color: white;
+}
+
+#header-img {
+    background: transparent;
+    border: 0;
+    position: absolute;
+    left: 45%;
+    top: 40%;
+}
+
+a img {
+    background: transparent;
+}
+
+#header-bottom-left {
+    background: transparent
+}
+
+#header-bottom-right {
+    background: black;
+}
+
+.dropdown.srdrop .selected {
+    color: pink;
+    font-size: 12px;
+}
+
+body:before {
+    font-family: verdana;
+    height: 230px;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    content: "";
+    text-indent: -9999px;
+    z-index: 9999;
+    font-family: "Verdana", Helvetica, sans-serif;
+}
+
+body {
+    background-color: #171111;
+    color: #c0f6ff;
+    font-family: "Verdana", Helvetica, sans-serif;
+}
+
+body h2 {
+    color: pink;
+    font-family: "Verdana", Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+.side:before {
+    background-color: black;
+    color: pink;
+    font-family: "Verdana", Helvetica, sans-serif;
+}
+
+.side {
+    background-color: black;
+    color: pink;
+}
+
+.side:after {
+    color: pink;
+}
+
+.md {
+    color: lightgray;
+}
+
+.titlebox .toggle {
+    background-color: black;
+    color: pink;
+}
+
+form input {
+    background-color: black;
+    color: pink;
+}
+
+form.toggle.leavecontributor-button {
+    background-color: black;
+}
+
+form.toggle.flairtoggle {
+    background-color: black;
+}
+
+a[href] {
+    color: #c0f6ff;
+}
+
+.tagline {
+    color: pink;
+}
+
+span {
+    background-color: black;
+    color: lightgray;
+}
+
+form:after {
+    background: green;
+}
+
+a[href="/sidebar"]:after {
+    background-color: transparent;
+}
+
+.leavemoderator {
+    background-color: black;
+    color: lightgray;
+}
+
+a[name=preview] {
+    color: pink;
+}
+
+.tabmenu {
+    position: absolute;
+    bottom: 0px;
+    left: 280px
+}
+
+.morelink {
+    background: black;
+    color: black;
+    font-family: verdana;
+    font-weight: plain;
+    border: 1px solid pink;
+}
+
+a.title:link {
+    font-size: 16px;
+    font-family: verdana;
+    font-weight: 400;
+    color: #ffffff !important;
+    padding-left: 3px;
+    padding-right: 4px
+}
+
+p.title a.title:visited {
+    color: #c58470 !important
+}
+
+.flair-trusted {
+    background: #000080;
+    color: #fffff5
+}
+
+.userflair-example .userflairlabel {
+    background: #f00;
+    color: #ff0
+}
+
+.linkflair-one .linkflairlabel {
+    background-color: #add5ab;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    border-color: #000000;
+    border-width: 1px;
+    border-radius: 3px
+}
+
+.side .flairselector {
+    left: auto !important;
+    right: 400px
+}
+
+.flair {
+    max-width: none;
+    font-weight: 900
+}
+
+.flair-green {
+    color: green
+}
+
+.flair-red {
+    color: red
+}
+
+.flair-orange {
+    color: orange
+}
+
+.flair-yellow {
+    color: yellow
+}
+
+.flair-purple {
+    color: purple
+}
+
+.flair-navy {
+    color: navy
+}
+
+.flair-black {
+    color: black
+}
+
+.flair-pink {
+    color: pink
+}
+
+.flair-cyan {
+    color: cyan
+}
+
+.icon-menu a {
+    background: black;
+}
+
+.flair-brown {
+    color: brown
+}
+
+.flair-white {
+    color: white
+}
+
+.flair-bluered {
+    color: blue;
+    background-color: red !important
+}
+
+.flair-green {
+    color: green;
+    background-color: blue !important
+}
+
+.side .spacer {
+    background: #171111;
+}
+
+.flair-cyanpink {
+    color: cyan;
+    background-color: pink;
+    font-style: italic !important
+}
+
+.flair-redblack {
+    margin-left: 5px;
+    margin-top: 0;
+    width: 100px;
+    height: 18px;
+    vertical-align: middle;
+    text-indent: -9999px
+}
+
+.flair-white {
+    margin-left: 5px;
+    margin-top: 0;
+    width: 87px;
+    height: 18px;
+    vertical-align: middle;
+    text-indent: -9999px
+}
+
+.flair-pink {
+    margin-top: 0;
+    width: 90px;
+    height: 18px;
+    vertical-align: middle;
+    text-indent: -9999px
+}
+
+.flair-pinkblack {
+    margin-left: 5px;
+    margin-top: 0;
+    width: 68px;
+    height: 18px;
+    vertical-align: middle;
+    text-indent: -9999px
+}
+
+.flair-red {
+    margin-left: 5px;
+    margin-top: 0;
+    width: 90px;
+    height: 18px;
+    vertical-align: middle;
+    text-indent: -9999px
+}
+
+.flairselector .customizer {
+    display: none !important
+}
+
+.flair {
+    border: none !important;
+    padding: 0px;
+    display: inline-block
+}
+
+.flair-5300-256x256x32 {
+    background-position: 0 0;
+    width: 256px;
+    height: 256px
+}
+
+.flair-blog_snoo {
+    background-position: 0 -306px;
+    width: 29px;
+    height: 40px
+}
+
+.flair-globe {
+    background-position: 0 -396px;
+    width: 256px;
+    height: 256px
+}
+
+textarea {
+    width: 550px;
+    background: black;
+    color: lightblue;
+    border-color: darkgrey;
+    font-family: "Arial", Helvetica, sans-serif;
+}
+
+.commentarea {
+    background-color: black;
+    color: white;
+    font-family: "Arial", Helvetica, sans-serif;
+}
+
+.commentarea>.usertext textarea {
+    background-color: black;
+    border: 1px solid #ccc;
+    -webkit-transition: background 0.15s linear;
+    -moz-transition: background 0.15s linear;
+    -o-transition: background 0.15s linear;
+    transition: background 0.15s linear
+}
+
+
+
+/*
+NOTE: Use "testBanner v4.jpg"
+*/
