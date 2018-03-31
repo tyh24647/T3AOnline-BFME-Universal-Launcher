@@ -23,10 +23,14 @@ hs_err_pid*
 
 # Large files (over the limit for github)
 **/jre-9.0.4*
+**/jre-10
 **/artifacts/**
 
 # Personal computer files
 **/workspace.xml*
+
+# Prod files
+out/**
 
 # Other extensions
 *.exe

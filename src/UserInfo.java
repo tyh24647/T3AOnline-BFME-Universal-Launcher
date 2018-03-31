@@ -16,7 +16,7 @@ public class UserInfo {
         determineOSType();
     }
 
-    private void determineOSType() {
+    private static void determineOSType() {
         if (osStr.contains("win")) {
             osType = OS_Type.WINDOWS;
         } else if (osStr.contains("mac")) {
@@ -39,6 +39,7 @@ public class UserInfo {
 
     @NotNull
     public static OS_Type getOsType() {
+        determineOSType();
         return osType;
     }
 
