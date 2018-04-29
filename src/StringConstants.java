@@ -24,6 +24,12 @@ public class StringConstants {
         public static String WINDOWS_INI_PATH = "C:\\Application Data\\My The Lord of the Rings, The Rise of the Witch-king Files\\options.ini";
     }
 
+    public static class ROTWK {
+        public static String MAC_APP_PATH = "";//WARNING TODO Add this !!!!
+        public static String WINDOWS_EXE_PATH = "";//WARNING TODO Add this !!!!
+        public static String LINUX_APP_PATH = "";//WARNING TODO Add this !!!!
+    }
+
     public static class Titles {
         public static final String EMPTY = "";
         public static final String GENERIC_PANEL = "Default Panel";
