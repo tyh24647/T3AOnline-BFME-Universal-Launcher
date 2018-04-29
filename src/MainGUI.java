@@ -27,7 +27,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
     };
 
     private JLayeredPane layeredPane;
-    private JPanel mainPanel, gameSelectionPanel, backgroundPanel, centerPanel, titleTxtPanel, resChoosingPanel, btnPanel, testFormPanel; //, centerContents;
+    private JPanel mainPanel, gameSelectionPanel, backgroundPanel, centerPanel, titleTxtPanel,  resChoosingPanel, btnPanel, testFormPanel; //, centerContents;
     private GlassPanel centerContents;
     private JMenuBar menuBar;
     private JMenu fileMenu, editMenu, viewMenu, windowMenu, devMenu, helpMenu;

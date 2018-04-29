@@ -1,27 +1,13 @@
-import javax.imageio.ImageIO;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import javax.swing.*;
-import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.charset.Charset;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-
-import com.sun.net.httpserver.Authenticator;
-import org.json.HTTP;
-import org.json.JSONException;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.*;
-import org.json.simple.parser.JSONParser;
 
 /**
  * <p></p>
@@ -31,30 +17,25 @@ import org.json.simple.parser.JSONParser;
  * @since 4/28/18
  */
 public class T3ACustomSettingsPanel extends JPanel implements ActionListener, ISharedApplicationObjects {
-
     private Settings settings;
-
     public JRadioButton advancedBtn;
     public JButton resetBtn, launchAppBtn, applyChangesBtn, cancelBtn;
 
+    /**
+     *
+     */
     public T3ACustomSettingsPanel() {
         this.settings = hasSavedSettings() ? loadSavedSettings() : new DefaultSettings();
 
         try {
             initComponents();
             initSettingsView();
-
+            setPreferredSize(new Dimension(800, 600));
             setVisible(true);
-            this.setPreferredSize(
-                    new Dimension(
-                            800,
-                            600
-                    )
-            );
         } catch (Exception e) {
             System.out.println(e);
+            e.printStackTrace();
         }
-
     }
 
     private void initComponents() {
@@ -84,129 +65,67 @@ public class T3ACustomSettingsPanel extends JPanel implements ActionListener, IS
         mainPanel.add(advancedBtn);
         mainPanel.add(new JLabel());
         mainPanel.add(resetBtn);
-
         mainPanel.setOpaque(false);
         mainPanel.setForeground(Color.WHITE);
 
-
         var southPanel = new JPanel(new FlowLayout());
 
-        /*
-        try {
-            var serverUrl = new URL("https://info.server.cnc-online.net");
-            Object obj = new JSONParser().parse(new FileReader(new File(serverUrl.toURI())));
-            var jsonObj = (JSONObject) obj;
+        URL url = new URL("https://info.server.cnc-online.net/");
+        HttpURLConnection request = (HttpURLConnection) url.openConnection();
+        request.setRequestMethod("GET");
+        request.setRequestProperty("Accept-Encoding", "br, gzip, deflate");
+        request.setRequestProperty("Connection", "keep-alive");
 
-            var bfme1Data = (Map) jsonObj.get("bfme");
-            var bfme2Data = (Map) jsonObj.get("bfme2");
-            var rotwkData = (Map) jsonObj.get("rotwk");
+        Log.d("Testing internet connectivity...");
 
-            Iterator<Map.Entry> itr = bfme1Data.entrySet().iterator();
-            Iterator<Map.Entry> itr2 = bfme2Data.entrySet().iterator();
-            Iterator<Map.Entry> itr3 = rotwkData.entrySet().iterator();
-
-            while (itr.hasNext()) {
-                Map.Entry pair = itr.next();
-                System.out.println(pair.getKey() + " : " + pair.getValue());
-                if (pair.getKey().toString().equals("numRealPlayers")) {
-                    southPanel.add(new JLabel("<< Number of online players >>"));
-                    southPanel.add(new JLabel("BFME1: " + pair.getValue().toString()));
-                }
-            }
-
-            while (itr2.hasNext()) {
-                Map.Entry pair = itr2.next();
-                System.out.println(pair.getKey() + " : " + pair.getValue());
-                if (pair.getKey().toString().equals("numRealPlayers")) {
-                    southPanel.add(new JLabel("BFME2: " + pair.getValue().toString()));
-                }
-            }
-
-            while (itr3.hasNext()) {
-                Map.Entry pair = itr2.next();
-                System.out.println(pair.getKey() + " : " + pair.getValue());
-                if (pair.getKey().toString().equals("lobbies")) {
-                    var tmp = (JSONArray) pair.getValue();
-
-                    int i = 0;
-                    for (Object o : tmp) {
-                        if (o.toString().equals("playing")) {
-                            southPanel.add(new JLabel("ROTWK: " + tmp.toArray()[i].toString()));
-                        }
-                    }
-
-                    southPanel.add(new JLabel("ROTWK: " + pair.getValue().toString()));
-                }
-            }
-
-        } catch (URISyntaxException | IOException | ParseException e) {
-            LOG.err(e);
-*/
-
-            URL url = new URL("https://info.server.cnc-online.net/");
-            HttpURLConnection request = (HttpURLConnection) url.openConnection();
-            request.setRequestMethod("GET");
-            request.setRequestProperty("Accept-Encoding", " br, gzip, deflate");
-            request.setRequestProperty("Connection", "keep-alive");
+        int responseCode = request.getResponseCode();
+        if (responseCode == 200) {
             request.connect();
+            Log.d("Successfully connected to the server.");
+        } else {
 
+            Log.d("No internet connection available.\nSkipping procedure.");
+        }
 
-            // Convert to a JSON object to print data
-            JSONParser parser = new JSONParser(); //from gson
-            Object root =  parser.parse(new InputStreamReader((InputStream) request.getContent())); //Convert the input stream to a json element
-            JSONObject object = (JSONObject) root;
+        Log.d("Downloading current server data...");
 
-            String content = object.toJSONString();
+        // Parse the JSON
+        JSONParser parser = new JSONParser(); // from gson
+        Object root =  parser.parse(new InputStreamReader((InputStream) request.getContent())); //Convert the input stream to a json element
+        var object = (JSONObject) root;
 
-                var bfme1Data = (Map) object.get("bfme");
-                var bfme2Data = (Map) object.get("bfme2");
-                var rotwkData = (Map) object.get("rotwk");
+        var bfme1Data = (JSONObject) ((JSONObject) object.get("bfme")).get("users");
+        var bfme2Data = (JSONObject) ((JSONObject) object.get("bfme2")).get("users");
+        var rotwkData = (JSONObject) ((JSONObject) object.get("rotwk")).get("users");
 
-                Iterator<Map.Entry> itr = bfme1Data.entrySet().iterator();
-                Iterator<Map.Entry> itr2 = bfme2Data.entrySet().iterator();
-                Iterator<Map.Entry> itr3 = rotwkData.entrySet().iterator();
+        var b1Ct = bfme1Data.size();
+        var b2Ct = bfme2Data.size();
+        var rkCt = rotwkData.size();
 
-                while (itr.hasNext()) {
-                    Map.Entry pair = itr.next();
-                    System.out.println(pair.getKey() + " : " + pair.getValue());
-                    if (pair.getKey().toString().equals("numplayers")) {
-                        southPanel.add(new JLabel("<< Number of online players >>"));
-                        southPanel.add(new JLabel("BFME1: " + pair.getValue().toString()));
-                        break;
-                    }
-                }
+        String content = object.toString();
+            /*
+            TODO use the "content" variable above to view the raw JSON if necessary
+             */
 
-                while (itr2.hasNext()) {
-                    Map.Entry pair = itr2.next();
-                    System.out.println(pair.getKey() + " : " + pair.getValue());
-                    if (pair.getKey().toString().equals("numplayers")) {
-                        southPanel.add(new JLabel("BFME2: " + pair.getValue().toString()));
-                        break;
-                    }
-                }
+        Log.d("Data downloaded successfully.");
+        var totalUsers = (b1Ct + b2Ct + rkCt);
 
-                while (itr3.hasNext()) {
-                    Map.Entry pair = itr2.next();
-                    System.out.println(pair.getKey() + " : " + pair.getValue());
-                    if (pair.getKey().toString().equals("lobbies")) {
-                        var tmp = (JSONArray) pair.getValue();
+        southPanel.add(new JLabel("TOTAL USERS: " + totalUsers));
+        Log.d();
+        Log.d("SERVER INFO:\nTotal users online: " + totalUsers);
 
-                        int i = 0;
-                        for (Object o : tmp) {
-                            if (o.toString().equals("playing")) {
-                                southPanel.add(new JLabel("ROTWK: " + tmp.toArray()[i].toString()));
-                                break;
-                            }
-                        }
+        southPanel.add(new JLabel("BFME1: " + b1Ct));
+        Log.d("BFME1: " + b1Ct);
 
-                        southPanel.add(new JLabel("ROTWK: " + pair.getValue().toString()));
-                    }
-            }
+        southPanel.add(new JLabel("BFME2: " + b2Ct));
+        Log.d("BFME2: " + b2Ct);
 
-            southPanel.setForeground(Color.WHITE);
-                southPanel.setOpaque(false);
+        southPanel.add(new JLabel("ROTWK: " + rkCt));
+        Log.d("ROTWK: " + rkCt);
+        Log.d();
 
-//        }
+        southPanel.setForeground(Color.WHITE);
+        southPanel.setOpaque(false);
 
         add(mainPanel, BorderLayout.CENTER);
 
@@ -214,26 +133,14 @@ public class T3ACustomSettingsPanel extends JPanel implements ActionListener, IS
         requestFocusInWindow();
     }
 
-    /*
-    public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
-        InputStream is = new URL(url).openStream();
-        try {
-            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-            String jsonText = readAll(rd);
-            JSONObject json = new JSONObject(jsonText);
-            return json;
-        } finally {
-            is.close();
-        }
-    }
-    */
-
     private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
+
         int cp;
         while ((cp = rd.read()) != -1) {
             sb.append((char) cp);
         }
+
         return sb.toString();
     }
 
@@ -278,9 +185,10 @@ public class T3ACustomSettingsPanel extends JPanel implements ActionListener, IS
                 }
             } else if (e.getSource() instanceof JRadioButton) {
                 var radioBtn = (JRadioButton) e.getSource();
-
                 radioBtn.setSelected(!radioBtn.isSelected());
                 radioBtn.setText(radioBtn.isSelected() ? "Show Advanced Settings" : "Hide Advanced Settings");
+                validate();
+                repaint();
             }
         } catch (Exception ex) {
             System.out.println("\n\nERROR: " + ex.getMessage());
