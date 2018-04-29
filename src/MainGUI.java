@@ -111,7 +111,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         };
 
         centerContents.setOpaque(true);
-        centerContents.setPreferredSize(new Dimension(400, 300));
+        centerContents.setPreferredSize(new Dimension(500, 300));
         centerContents.setVisible(true);
 
         resChooser = new JComboBox<>(resOptions) {
@@ -158,7 +158,21 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         resChoosingPanel.add(label);
         centerContents.add(resChoosingPanel, BorderLayout.NORTH);
         resChoosingPanel.setPreferredSize(new Dimension(800, 200));
+
+
+        //TODO TEST TEST TEST TEST
+
+        centerContents.add(new T3ACustomSettingsPanel(), BorderLayout.CENTER);
+
         centerPanel.add(centerContents, BorderLayout.CENTER);
+
+
+
+        //TODO TEST TEST TEST TEST
+        //centerPanel.add(new T3ACustomSettingsPanel(), BorderLayout.SOUTH);
+        //TODO TEST TEST TEST TEST
+
+
 
         label = new JLabel("");
         label.setPreferredSize(new Dimension(60, getContentPane().getHeight()));
@@ -169,7 +183,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         label = new JLabel("");
         label.setPreferredSize(new Dimension(super.getWidth(), 40));
 
-        centerPanel.add(label, BorderLayout.SOUTH);
+        centerPanel.add(label, BorderLayout.AFTER_LAST_LINE);
         centerPanel.add(new JLabel(""), BorderLayout.NORTH);
         centerPanel.setOpaque(false);
         centerPanel.setPreferredSize(new Dimension(800, 600));
@@ -227,9 +241,9 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
 
         if (UserInfo.isMac()) {
             System.setProperty("apple.laf.useScreenMenuBar", "true");
-            System.setProperty("com.apple.mrj.application.apple.menu.about.name", "BFME Resolution Changer");
+            System.setProperty("com.apple.mrj.application.apple.menu.about.name", "T3AOnline Universal Launcher");
             System.setProperty("com.apple.macos.use-file-dialog-packages", "true");
-            System.setProperty("apple.awt.application.name", "BFME Resolution Changer");
+            System.setProperty("apple.awt.application.name", "T3AOnline Universal Launcher");
             System.setProperty("com.apple.smallTabs", "true");
         }
 

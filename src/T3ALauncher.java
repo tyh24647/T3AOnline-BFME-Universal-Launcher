@@ -16,6 +16,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.net.URL;
 import java.sql.Time;
+import java.time.temporal.ValueRange;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.awt.Color;
@@ -27,6 +28,15 @@ import java.util.Date;
 import org.softsmithy.lib.swing.JXScrollPane;
 
 /**
+ * The T3AOnline universal cross-platform launcher application provides mods installer/manager, settings modifications,
+ * multiplatform online games, game downloads (with current patches), and automatic updates and patching.
+ *
+ * This project was created as a joint effort between myself and the admins at Revora/T3AOnline in effort to
+ * create a smooth and cohesive way to install the correct versions of the games as well as have a shared version
+ * that can be played on all platforms.
+ *
+ *
+ *
  * @author Tyler Hostager
  * @version 1.0.0
  * @since 2/18/18
@@ -49,24 +59,40 @@ public class T3ALauncher implements ISharedApplicationObjects {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
-            javaInstallLoadingFrame = new JFrame("Installing Java 10...");
-            javaInstallLoadingFrame.setPreferredSize(new Dimension(200, 120));
+            javaInstallLoadingFrame = new JFrame("T3AOnline Helper");
+            //javaInstallLoadingFrame.setPreferredSize(new Dimension(200, 120));
+            javaInstallLoadingFrame.setPreferredSize(new Dimension(300, 200));
+            javaInstallLoadingFrame.setFocusable(false);
+
             JPanel instSpinnerPanel = new JPanel(new BorderLayout());
             instSpinnerPanel.setPreferredSize(new Dimension(200, 120));
-            var t = new JLabel("Performing Java Update...");
+            var t = new JLabel("Checking current Java version...");
+            t.setForeground(Color.WHITE);
+            //instSpinnerPanel.add(new JLabel(new ImageIcon(ClassLoader.getSystemClassLoader().getResource("assets/revoraCustomLogo.png"))));
             instSpinnerPanel.add(t, BorderLayout.NORTH);
+            instSpinnerPanel.setBackground(Color.BLACK);
+            instSpinnerPanel.setForeground(Color.WHITE);
 
             var i = new JLabel();
             var a = new JLabel();
             var b = new JLabel();
             var c = new JLabel();
-            var d = new JLabel("Installing Java v10.0...");
+            var d = new JLabel("Configuring...");
 
-            var lsURL = ClassLoader.getSystemClassLoader().getResource("assets/LoadingSpinner.gif");
+            var lsURL = ClassLoader.getSystemClassLoader().getResource("assets/wheel.gif");
+            javaInstallLoadingFrame.getRootPane().validate();
+            javaInstallLoadingFrame.getRootPane().repaint();
+            //var lsURL = ClassLoader.getSystemClassLoader().getResource("assets/LoadingSpinner.gif");
             if (lsURL != null) {
                 var lsIcon = new ImageIcon(lsURL);
-                i.setIcon(lsIcon);
+                i.setIcon(new ImageIcon(lsIcon.getImage()));
+                //i.setIcon(new ImageIcon(lsIcon.getImage().getScaledInstance(90, 220, Image.SCALE_SMOOTH)));
+                i.setFocusable(false);
+                javaInstallLoadingFrame.validate();
+                javaInstallLoadingFrame.repaint();
+                //i.setIcon(lsIcon);
             }
+
 
             a.setOpaque(false);
             b.setOpaque(false);
@@ -74,11 +100,36 @@ public class T3ALauncher implements ISharedApplicationObjects {
             d.setOpaque(false);
             i.setOpaque(false);
 
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/assets/_fonts/RINGM___.TTF")));
+
+            var titleFont = T3ALauncher.class.getResourceAsStream("src/assets/_fonts/RINGM___.TTF");
+
+            //d.setForeground(new Color(200, 175, 120));
+            //d.setForeground(new Color(250, 225, 200));
+            d.setForeground(new Color(215, 186, 147));
+            //d.setFont(new Font("RINGM___", Font.PLAIN, 28));
+
+            for (String fontName : ge.getAvailableFontFamilyNames()) {
+                if (fontName.toLowerCase().contains("ringm")) {
+                    d.setFont(new Font(fontName, Font.PLAIN, 24));
+                    break;
+                }
+            }
+
+            d.setBackground(Color.BLACK);
+            d.setFont(Font.getFont("RINGM___"));
+
+            var myStream = new BufferedInputStream(
+                    new FileInputStream("src/assets/_fonts/RINGM___.TTF"));
+            var ttfBase = Font.createFont(Font.TRUETYPE_FONT, myStream);
+            var newFont = ttfBase.deriveFont(Font.PLAIN, 28);
+            d.setFont(newFont);
+
             a.setPreferredSize(new Dimension(80, 120));
             b.setPreferredSize(new Dimension(200, 30));
             c.setPreferredSize(new Dimension(80, 120));
-            d.setPreferredSize(new Dimension(200, 50));
-            i.setPreferredSize(new Dimension(40, 40));
+            d.setPreferredSize(new Dimension(200, 75));
 
             i.setHorizontalAlignment(SwingConstants.CENTER);
             i.setVerticalAlignment(SwingConstants.CENTER);
@@ -90,8 +141,8 @@ public class T3ALauncher implements ISharedApplicationObjects {
             instSpinnerPanel.add(d, BorderLayout.NORTH);
             instSpinnerPanel.add(i, BorderLayout.CENTER);
 
-
             var cDialgFr = new JFrame();
+            cDialgFr.setResizable(false);
             var result = JOptionPane.showConfirmDialog(cDialgFr, "A Java update is required in order to launch this application.\n"
                             + "\n\t\t\t\t\t- Current Java Version: \"" + getJavaVersion() + "\""
                             + "\n\t\t\t\t\t- Required Java Version: " + "\"10.0\""
@@ -104,8 +155,11 @@ public class T3ALauncher implements ISharedApplicationObjects {
 
             if (result == JOptionPane.OK_OPTION) {
                 cDialgFr.dispose();
+                var bkdImgLabel = new JLabel(new ImageIcon(ImageIO.read(lsURL)));
+
+                javaInstallLoadingFrame.add(bkdImgLabel);
                 javaInstallLoadingFrame.add(instSpinnerPanel);
-                javaInstallLoadingFrame.setLocationRelativeTo(null);
+                javaInstallLoadingFrame.setLocationByPlatform(true);
                 javaInstallLoadingFrame.validate();
                 javaInstallLoadingFrame.repaint();
                 javaInstallLoadingFrame.setVisible(true);
@@ -151,9 +205,13 @@ public class T3ALauncher implements ISharedApplicationObjects {
     private static void performJavaUpdateBeforeLaunch() {
 
             try {
-                if (getJavaVersion()
+                if (
+                        !isDebug &&
+                        getJavaVersion()
                         //< 10 /*Integer.valueOf("9.0")*/) {//.substring(0, 4).replaceAll(".", ""))) {
-                                            < 11) {
+                                            < 11
+                                            //< 10
+                        ) {
 
 
 
@@ -649,7 +707,7 @@ public class T3ALauncher implements ISharedApplicationObjects {
                             proc = Runtime.getRuntime().exec(new String[]{
                                     "osascript", "-e", "do shell script \"sudo installer -verbose -pkg " +
                                     "'/Volumes/Java 10/Java 10.app/Contents/Resources/" +
-                                    "JavaAppletPlugin.pkg' -target /; \" with administrator privileges"
+                                    "JavaAppletPlugin.pkg' -target /; \" with prompt \"T3AOnline Launcher would like to make changes\" with administrator privileges"
                             });
 
                             appendCmdOutput("", true);
