@@ -1,11 +1,7 @@
 <component name="libraryTable">
   <library name="softsmithy-lib-swing-0.9">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/softsmithy-lib-swing-0.9.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$PROJECT_DIR$/lib/softsmithy-lib-swing-0.9-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

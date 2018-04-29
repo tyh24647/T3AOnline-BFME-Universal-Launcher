@@ -45,7 +45,7 @@ public class T3ALauncher implements ISharedApplicationObjects {
     private static ViewController vc;
     private static T3ALauncherModel model;
     private static MainGUI ui;
-    private static boolean isDebug, needsJavaUpdate = true;
+    private static boolean isDebug = true, needsJavaUpdate = true;
     private static Thread javaVersionCheckTask;
     private static Thread graphicsThread;
     private static Runnable showUITask;
@@ -59,127 +59,134 @@ public class T3ALauncher implements ISharedApplicationObjects {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
-            javaInstallLoadingFrame = new JFrame("T3AOnline Helper");
-            //javaInstallLoadingFrame.setPreferredSize(new Dimension(200, 120));
-            javaInstallLoadingFrame.setPreferredSize(new Dimension(300, 200));
-            javaInstallLoadingFrame.setFocusable(false);
+            if (!isDebug) {
 
-            JPanel instSpinnerPanel = new JPanel(new BorderLayout());
-            instSpinnerPanel.setPreferredSize(new Dimension(200, 120));
-            var t = new JLabel("Checking current Java version...");
-            t.setForeground(Color.WHITE);
-            //instSpinnerPanel.add(new JLabel(new ImageIcon(ClassLoader.getSystemClassLoader().getResource("assets/revoraCustomLogo.png"))));
-            instSpinnerPanel.add(t, BorderLayout.NORTH);
-            instSpinnerPanel.setBackground(Color.BLACK);
-            instSpinnerPanel.setForeground(Color.WHITE);
+                javaInstallLoadingFrame = new JFrame("T3AOnline Helper");
+                //javaInstallLoadingFrame.setPreferredSize(new Dimension(200, 120));
+                javaInstallLoadingFrame.setPreferredSize(new Dimension(300, 200));
+                javaInstallLoadingFrame.setFocusable(false);
 
-            var i = new JLabel();
-            var a = new JLabel();
-            var b = new JLabel();
-            var c = new JLabel();
-            var d = new JLabel("Configuring...");
+                JPanel instSpinnerPanel = new JPanel(new BorderLayout());
+                instSpinnerPanel.setPreferredSize(new Dimension(200, 120));
+                var t = new JLabel("Checking current Java version...");
+                t.setForeground(Color.WHITE);
+                //instSpinnerPanel.add(new JLabel(new ImageIcon(ClassLoader.getSystemClassLoader().getResource("assets/revoraCustomLogo.png"))));
+                instSpinnerPanel.add(t, BorderLayout.NORTH);
+                instSpinnerPanel.setBackground(Color.BLACK);
+                instSpinnerPanel.setForeground(Color.WHITE);
 
-            var lsURL = ClassLoader.getSystemClassLoader().getResource("assets/wheel.gif");
-            javaInstallLoadingFrame.getRootPane().validate();
-            javaInstallLoadingFrame.getRootPane().repaint();
-            //var lsURL = ClassLoader.getSystemClassLoader().getResource("assets/LoadingSpinner.gif");
-            if (lsURL != null) {
-                var lsIcon = new ImageIcon(lsURL);
-                i.setIcon(new ImageIcon(lsIcon.getImage()));
-                //i.setIcon(new ImageIcon(lsIcon.getImage().getScaledInstance(90, 220, Image.SCALE_SMOOTH)));
-                i.setFocusable(false);
-                javaInstallLoadingFrame.validate();
-                javaInstallLoadingFrame.repaint();
-                //i.setIcon(lsIcon);
-            }
+                var i = new JLabel();
+                var a = new JLabel();
+                var b = new JLabel();
+                var c = new JLabel();
+                var d = new JLabel("Configuring...");
 
-
-            a.setOpaque(false);
-            b.setOpaque(false);
-            c.setOpaque(false);
-            d.setOpaque(false);
-            i.setOpaque(false);
-
-            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/assets/_fonts/RINGM___.TTF")));
-
-            var titleFont = T3ALauncher.class.getResourceAsStream("src/assets/_fonts/RINGM___.TTF");
-
-            //d.setForeground(new Color(200, 175, 120));
-            //d.setForeground(new Color(250, 225, 200));
-            d.setForeground(new Color(215, 186, 147));
-            //d.setFont(new Font("RINGM___", Font.PLAIN, 28));
-
-            for (String fontName : ge.getAvailableFontFamilyNames()) {
-                if (fontName.toLowerCase().contains("ringm")) {
-                    d.setFont(new Font(fontName, Font.PLAIN, 24));
-                    break;
+                var lsURL = ClassLoader.getSystemClassLoader().getResource("assets/wheel.gif");
+                javaInstallLoadingFrame.getRootPane().validate();
+                javaInstallLoadingFrame.getRootPane().repaint();
+                //var lsURL = ClassLoader.getSystemClassLoader().getResource("assets/LoadingSpinner.gif");
+                if (lsURL != null) {
+                    var lsIcon = new ImageIcon(lsURL);
+                    i.setIcon(new ImageIcon(lsIcon.getImage()));
+                    //i.setIcon(new ImageIcon(lsIcon.getImage().getScaledInstance(90, 220, Image.SCALE_SMOOTH)));
+                    i.setFocusable(false);
+                    javaInstallLoadingFrame.validate();
+                    javaInstallLoadingFrame.repaint();
+                    //i.setIcon(lsIcon);
                 }
-            }
 
-            d.setBackground(Color.BLACK);
-            d.setFont(Font.getFont("RINGM___"));
 
-            var myStream = new BufferedInputStream(
-                    new FileInputStream("src/assets/_fonts/RINGM___.TTF"));
-            var ttfBase = Font.createFont(Font.TRUETYPE_FONT, myStream);
-            var newFont = ttfBase.deriveFont(Font.PLAIN, 28);
-            d.setFont(newFont);
+                a.setOpaque(false);
+                b.setOpaque(false);
+                c.setOpaque(false);
+                d.setOpaque(false);
+                i.setOpaque(false);
 
-            a.setPreferredSize(new Dimension(80, 120));
-            b.setPreferredSize(new Dimension(200, 30));
-            c.setPreferredSize(new Dimension(80, 120));
-            d.setPreferredSize(new Dimension(200, 75));
+                GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+                ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/assets/_fonts/RINGM___.TTF")));
 
-            i.setHorizontalAlignment(SwingConstants.CENTER);
-            i.setVerticalAlignment(SwingConstants.CENTER);
-            d.setHorizontalAlignment(SwingConstants.CENTER);
+                var titleFont = T3ALauncher.class.getResourceAsStream("src/assets/_fonts/RINGM___.TTF");
 
-            instSpinnerPanel.add(a, BorderLayout.WEST);
-            instSpinnerPanel.add(b, BorderLayout.SOUTH);
-            instSpinnerPanel.add(c, BorderLayout.EAST);
-            instSpinnerPanel.add(d, BorderLayout.NORTH);
-            instSpinnerPanel.add(i, BorderLayout.CENTER);
+                //d.setForeground(new Color(200, 175, 120));
+                //d.setForeground(new Color(250, 225, 200));
+                d.setForeground(new Color(215, 186, 147));
+                //d.setFont(new Font("RINGM___", Font.PLAIN, 28));
 
-            var cDialgFr = new JFrame();
-            cDialgFr.setResizable(false);
-            var result = JOptionPane.showConfirmDialog(cDialgFr, "A Java update is required in order to launch this application.\n"
-                            + "\n\t\t\t\t\t- Current Java Version: \"" + getJavaVersion() + "\""
-                            + "\n\t\t\t\t\t- Required Java Version: " + "\"10.0\""
-                            + "\n\nThe Battle for Middle-Earth Launcher will open automatically when\nthe update is finished."
-                            + "\n\nClick \"OK\" to perform the installation, \"Cancel\" to exit.",
-                    "The Lord of the Rings: The Battle for Middle-Earth Launcher", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+                for (String fontName : ge.getAvailableFontFamilyNames()) {
+                    if (fontName.toLowerCase().contains("ringm")) {
+                        d.setFont(new Font(fontName, Font.PLAIN, 24));
+                        break;
+                    }
+                }
+
+                d.setBackground(Color.BLACK);
+                d.setFont(Font.getFont("RINGM___"));
+
+                var myStream = new BufferedInputStream(
+                        new FileInputStream("src/assets/_fonts/RINGM___.TTF"));
+                var ttfBase = Font.createFont(Font.TRUETYPE_FONT, myStream);
+                var newFont = ttfBase.deriveFont(Font.PLAIN, 28);
+                d.setFont(newFont);
+
+                a.setPreferredSize(new Dimension(80, 120));
+                b.setPreferredSize(new Dimension(200, 30));
+                c.setPreferredSize(new Dimension(80, 120));
+                d.setPreferredSize(new Dimension(200, 75));
+
+                i.setHorizontalAlignment(SwingConstants.CENTER);
+                i.setVerticalAlignment(SwingConstants.CENTER);
+                d.setHorizontalAlignment(SwingConstants.CENTER);
+
+                instSpinnerPanel.add(a, BorderLayout.WEST);
+                instSpinnerPanel.add(b, BorderLayout.SOUTH);
+                instSpinnerPanel.add(c, BorderLayout.EAST);
+                instSpinnerPanel.add(d, BorderLayout.NORTH);
+                instSpinnerPanel.add(i, BorderLayout.CENTER);
+
+                var cDialgFr = new JFrame();
+                cDialgFr.setResizable(false);
+                var result = JOptionPane.showConfirmDialog(cDialgFr, "A Java update is required in order to launch this application.\n"
+                                + "\n\t\t\t\t\t- Current Java Version: \"" + getJavaVersion() + "\""
+                                + "\n\t\t\t\t\t- Required Java Version: " + "\"10.0\""
+                                + "\n\nThe Battle for Middle-Earth Launcher will open automatically when\nthe update is finished."
+                                + "\n\nClick \"OK\" to perform the installation, \"Cancel\" to exit.",
+                        "The Lord of the Rings: The Battle for Middle-Earth Launcher", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 //                    JOptionPane.showMessageDialog(null, "A Java update is required in order to launch this application.\n"
 //                            + "\nApplication requirement: " + "\"10\"" + "\nInstalled version: \"" + getJavaVersion()
 //                            + "\"\n\nPerforming Java update...");
 
-            if (result == JOptionPane.OK_OPTION) {
-                cDialgFr.dispose();
-                var bkdImgLabel = new JLabel(new ImageIcon(ImageIO.read(lsURL)));
+                if (result == JOptionPane.OK_OPTION) {
+                    cDialgFr.dispose();
+                    var bkdImgLabel = new JLabel(new ImageIcon(ImageIO.read(lsURL)));
 
-                javaInstallLoadingFrame.add(bkdImgLabel);
-                javaInstallLoadingFrame.add(instSpinnerPanel);
-                javaInstallLoadingFrame.setLocationByPlatform(true);
-                javaInstallLoadingFrame.validate();
-                javaInstallLoadingFrame.repaint();
-                javaInstallLoadingFrame.setVisible(true);
-                javaInstallLoadingFrame.pack();
-                javaInstallLoadingFrame.requestFocus();
-                javaInstallLoadingFrame.setAlwaysOnTop(true);
+                    javaInstallLoadingFrame.add(bkdImgLabel);
+                    javaInstallLoadingFrame.add(instSpinnerPanel);
+                    javaInstallLoadingFrame.setLocationByPlatform(true);
+                    javaInstallLoadingFrame.validate();
+                    javaInstallLoadingFrame.repaint();
+                    javaInstallLoadingFrame.setVisible(true);
+                    javaInstallLoadingFrame.pack();
+                    javaInstallLoadingFrame.requestFocus();
+                    javaInstallLoadingFrame.setAlwaysOnTop(true);
 
-                var javaChkTask = checkJavaInstallation();
-                var javaThread = new Thread(javaChkTask);
-                javaThread.start();
-            }
-        } catch (Exception e) {
-            if (isDebug) {
-                JOptionPane.showMessageDialog(null, e.getMessage());
+                    var javaChkTask = checkJavaInstallation();
+                    var javaThread = new Thread(javaChkTask);
+                    javaThread.start();
+                }
             } else {
-//                cmdOutput.append(e.getMessage());
-                appendCmdOutput(e.getMessage(), false, Color.RED);
-                e.printStackTrace();
+                Runnable initApp = T3ALauncher::initApplication;
+                Thread initTask = new Thread(initApp);
+                initTask.start();
             }
-        }
+            } catch(Exception e){
+                if (isDebug) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                } else {
+//                cmdOutput.append(e.getMessage());
+                    appendCmdOutput(e.getMessage(), false, Color.RED);
+                    e.printStackTrace();
+                }
+            }
     }
 
     private static void initApplication() {
@@ -206,7 +213,6 @@ public class T3ALauncher implements ISharedApplicationObjects {
 
             try {
                 if (
-                        !isDebug &&
                         getJavaVersion()
                         //< 10 /*Integer.valueOf("9.0")*/) {//.substring(0, 4).replaceAll(".", ""))) {
                                             < 11

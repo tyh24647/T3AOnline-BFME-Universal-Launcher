@@ -34,12 +34,12 @@ import java.io.File;
  * @since 2/26/18
  */
 public final class Log implements IConsoleWriter {
-    private static final String DEBUG_HEADER = "/> ";
-    private static final String ERROR_HEADER = "ERROR/> ";
+    private static final String DEBUG_HEADER = "T3AOnline:~ ";
+    private static final String ERROR_HEADER = "ERROR:~ ";
     private File logFile;
 
     public static void d() {
-        System.out.println("> ");
+        System.out.println(DEBUG_HEADER);
     }
 
     public static void d(@Nullable String message) {
