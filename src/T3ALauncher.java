@@ -1,31 +1,16 @@
 
-import javafx.concurrent.Task;
-import org.jdesktop.animation.timing.Animator;
-import org.jdesktop.animation.timing.interpolation.PropertySetter;
 import org.jetbrains.annotations.NotNull;
+import org.softsmithy.lib.swing.JXScrollPane;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.plaf.TextUI;
 import javax.swing.plaf.basic.BasicTextAreaUI;
 import javax.swing.text.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.awt.geom.AffineTransform;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.net.URL;
-import java.sql.Time;
-import java.time.temporal.ValueRange;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.io.*;
 import java.util.Date;
-
-import org.softsmithy.lib.swing.JXScrollPane;
 
 /**
  * The T3AOnline universal cross-platform launcher application provides mods installer/manager, settings modifications,
@@ -299,7 +284,6 @@ public class T3ALauncher implements ISharedApplicationObjects {
                         e.printStackTrace();
                     }
                     */
-
 
 
                     if (UserInfo.isMac()) {

@@ -8,6 +8,9 @@ public class StringConstants {
     public static final String VERSION = "v1.0.0";
     public static final String COPYRIGHT = "© Tyler Hostager, 2018. All Rights Reserved";
 
+    public static class T3AOnline {
+        public static String SERVER_JSON_DATA_URL = "https://info.server.cnc-online.net/";
+    }
 
     public static class BFME1 {
         public static String MAC_EXE_PATH = "/Applications/Battle for Middle-Earth/Battle for Middle-Earth.app/Contents/Resources/drive_c/Program Files/EA GAMES/The Battle for Middle-earth (tm)/lotrbfme.exe";

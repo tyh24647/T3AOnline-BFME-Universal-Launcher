@@ -23,17 +23,12 @@
  ******************************************************************************/
 
 
-
-
 import org.jetbrains.annotations.NotNull;
-import org.jdesktop.swingx.graphics.GraphicsUtilities;
-import org.jdesktop.swingx.image.GaussianBlurFilter;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 
 /**
  * <p></p>
@@ -61,11 +56,16 @@ public class FadeInPanel extends JPanel implements ActionListener {
     public FadeInPanel() {
         repaint();
     }
-
+;
     @Override
     public void paint(Graphics g) {
         super.paint(g);
         renderBackgroundImage(g);
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
     }
 
     private void renderBackgroundImage(@NotNull Graphics g) {
@@ -81,14 +81,18 @@ public class FadeInPanel extends JPanel implements ActionListener {
                 )
         );
 
-
         g2d.drawImage(
                 selectedImg2 != null ? this.selectedImg2 : (
-                        selectedImg1 == null ? BFME1_IMAGE : this.selectedImg1
+                        selectedImg1 == null ?
+                                BFME1_IMAGE
+                                : this.selectedImg1
                 ),
 
                 0, 0, null
         );
+
+        g2d.dispose();
+        repaint();
     }
 
     @Override
@@ -138,16 +142,37 @@ public class FadeInPanel extends JPanel implements ActionListener {
 
     public void chgImgSelectionsForActionCommands(String cmd1, String cmd2) {
         this.selectedImg1 = loadImageAssetFromActionCommand(cmd1);
-        this.selectedImg2 = loadImageAssetFromActionCommand(cmd2);
+        this.selectedImg2 =  new ImageIcon(getClass().getResource("assets/minas-morgul.png")).getImage(); // loadImageAssetFromActionCommand(cmd2);
         fireImgShouldChange();
     }
 
     private Image loadImageAssetFromActionCommand(String cmd) {
-        if (cmd == null || ImageAsset.BFME1.getSrcPath().contains(cmd)) {
+        if (cmd == null || ImageAsset.BFME1.getSrcPath().contains(cmd) || cmd.equals("BFME") || cmd.equals("BFME1")) {
+            try {
+                var imgUrl = getClass().getResource("assets/hd_1122.gif");
+                Icon imgIcon = new ImageIcon(imgUrl);
+                var img = ((ImageIcon) imgIcon).getImage();
+                //img.getScaledInstance(getWidth(), getHeight(), Image.SCALE_DEFAULT);
+                ((ImageIcon) imgIcon).setImageObserver(this);
+                var lbl = new JLabel(imgIcon);
+                getRootPane().getContentPane().add(lbl);
+                ((ImageIcon) imgIcon).getImage().flush();
+                //validate();
+                //repaint();
+                lbl = new JLabel(imgIcon);
+                getRootPane().getContentPane().remove(lbl);
+                getRootPane().getContentPane().add(lbl);
+                //validate();
+                repaint();
+                return ((ImageIcon) imgIcon).getImage();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             return BFME1_IMAGE;
-        } else if (ImageAsset.BFME2.getSrcPath().contains(cmd)) {
-            return BFME2_IMAGE;
-        } else if (ImageAsset.ROTWK.getSrcPath().contains(cmd)) {
+        } else if (ImageAsset.BFME2.getSrcPath().contains(cmd) || cmd.equals("BFME2")) {
+            return new ImageIcon(getClass().getResource("assets/minas-morgul.png")).getImage(); //BFME2_IMAGE;
+        } else if (ImageAsset.ROTWK.getSrcPath().contains(cmd) || cmd.equals("ROTWK")) {
             return ROTWK_IMAGE;
         }
 
