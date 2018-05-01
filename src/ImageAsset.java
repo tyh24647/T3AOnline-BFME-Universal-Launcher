@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public enum ImageAsset {
     BFME1("assets/BFME1.png"),
-    BFME2("assets/BFME2.png"),
+    BFME2("assets/minas-morgul.png"),// BFME2.png"),
     ROTWK("assets/ROTWK.png"),
     DIFF_CLOUDS("assets/differenceClouds.png"),
     SHADED_BLUR("assets/shaded_blur.png"),

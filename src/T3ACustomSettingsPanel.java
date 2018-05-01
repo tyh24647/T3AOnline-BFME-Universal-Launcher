@@ -1,6 +1,7 @@
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -57,20 +58,19 @@ public class T3ACustomSettingsPanel extends JPanel implements ActionListener, IS
     }
 
     private void initSettingsView() throws Exception {
-        var mainPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 30));
+        //var tmpPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 30));
+        var tmpPanel = new JPanel(new FlowLayout(FlowLayout.LEADING, 10, 10));
         //setLayout(new FlowLayout(FlowLayout.CENTER, 30, 30));
         setLayout(new BorderLayout(10, 10));
 
 
-        mainPanel.add(advancedBtn);
-        mainPanel.add(new JLabel());
-        mainPanel.add(resetBtn);
-        mainPanel.setOpaque(false);
-        mainPanel.setForeground(Color.WHITE);
+        tmpPanel.add(advancedBtn);
+        tmpPanel.add(new JLabel());
+        tmpPanel.add(resetBtn);
+        tmpPanel.setOpaque(false);
+        tmpPanel.setForeground(Color.WHITE);
 
-        var southPanel = new JPanel(new FlowLayout());
-
-        URL url = new URL("https://info.server.cnc-online.net/");
+        URL url = new URL(StringConstants.T3AOnline.SERVER_JSON_DATA_URL);
         HttpURLConnection request = (HttpURLConnection) url.openConnection();
         request.setRequestMethod("GET");
         request.setRequestProperty("Accept-Encoding", "br, gzip, deflate");
@@ -83,7 +83,6 @@ public class T3ACustomSettingsPanel extends JPanel implements ActionListener, IS
             request.connect();
             Log.d("Successfully connected to the server.");
         } else {
-
             Log.d("No internet connection available.\nSkipping procedure.");
         }
 
@@ -110,24 +109,123 @@ public class T3ACustomSettingsPanel extends JPanel implements ActionListener, IS
         Log.d("Data downloaded successfully.");
         var totalUsers = (b1Ct + b2Ct + rkCt);
 
-        southPanel.add(new JLabel("TOTAL USERS: " + totalUsers));
-        Log.d();
-        Log.d("SERVER INFO:\nTotal users online: " + totalUsers);
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/assets/_fonts/anirm___.ttf")));
 
-        southPanel.add(new JLabel("BFME1: " + b1Ct));
-        Log.d("BFME1: " + b1Ct);
+        //var southPanel = new JPanel(new GridLayout(1, 6));
+        var southPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 25, 5));
+        //southPanel.setPreferredSize(new Dimension(mainPanel.getWidth(), 40));
 
-        southPanel.add(new JLabel("BFME2: " + b2Ct));
-        Log.d("BFME2: " + b2Ct);
+        for (String fontName : ge.getAvailableFontFamilyNames()) {
+            if (fontName.toLowerCase().contains("anirm")) {
+                southPanel.setFont(new Font(fontName, Font.BOLD, 16));
+                break;
+            }
+        }
 
-        southPanel.add(new JLabel("ROTWK: " + rkCt));
-        Log.d("ROTWK: " + rkCt);
-        Log.d();
+        var fontStream = new BufferedInputStream(new FileInputStream("src/assets/_fonts/anirm___.ttf"));
+        var ttfBase = Font.createFont(Font.TRUETYPE_FONT, fontStream);
+        final Font lotrFont = ttfBase.deriveFont(Font.PLAIN, 16);
 
         southPanel.setForeground(Color.WHITE);
-        southPanel.setOpaque(false);
+        southPanel.setBackground(Color.BLACK);
+        southPanel.setFont(lotrFont);
+        southPanel.add(new JLabel("Players Online: " + totalUsers) {
+            @Override
+            public Color getForeground() {
+                return new Color(215, 186, 147); //return Color.WHITE;
+            }
 
-        add(mainPanel, BorderLayout.CENTER);
+            @Override
+            public Color getBackground() {
+                return Color.BLACK;
+            }
+
+            @Override
+            public Font getFont() {
+                return lotrFont.deriveFont(Font.PLAIN, 12);
+            }
+        });
+
+        southPanel.add(new JLabel("           "));
+        southPanel.add(new JLabel("           "));
+        southPanel.add(new JLabel("bfme1: " + b1Ct) {
+            @Override
+            public Color getForeground() {
+                return new Color(215, 186, 147); //return Color.WHITE;
+            }
+
+            @Override
+            public Color getBackground() {
+                return Color.BLACK;
+            }
+
+            @Override
+            public Font getFont() {
+                return lotrFont.deriveFont(Font.PLAIN, 13);
+            }
+        });
+        Log.d("\tBFME1: " + b1Ct);
+
+        southPanel.add(new JLabel("bfme2: " + b2Ct) {
+            @Override
+            public Color getForeground() {
+                return new Color(215, 186, 147); //return Color.WHITE;
+            }
+
+            @Override
+            public Color getBackground() {
+                return Color.BLACK;
+            }
+
+            @Override
+            public Font getFont() {
+                return lotrFont.deriveFont(Font.PLAIN, 13);
+            }
+        });
+        Log.d("\tBFME2: " + b2Ct);
+
+        southPanel.add(new JLabel("rotwk: " + rkCt) {
+            @Override
+            public Color getForeground() {
+                return new Color(215, 186, 147); //return Color.WHITE;
+            }
+
+            @Override
+            public Font getFont() {
+                return lotrFont.deriveFont(Font.PLAIN, 13);
+            }
+        });
+
+        southPanel.setLocation(southPanel.getLocation().x, southPanel.getLocation().y + 20);
+
+
+        Log.d();
+        Log.d("SERVER INFO:");
+        Log.d("\tTotal users online: " + totalUsers);
+        Log.d("\tROTWK: " + rkCt);
+        Log.d();
+        Log.d();
+        Log.d("CURRENT USERS:");
+        Log.d("\tBFME1:");
+        var b1Arr = bfme1Data.values().toArray();
+        for (var b1Usr : b1Arr) Log.d("\t" + b1Usr + ", ");
+        Log.d();
+        Log.d("\tBFME2:");
+        var b2Arr = bfme2Data.values().toArray();
+        for (var b2Usr : b2Arr) Log.d("\t" + b2Usr + ", ");
+        Log.d();
+        Log.d("\tROTWK:");
+        var rkArr = rotwkData.values().toArray();
+        for (var rkUsr : rkArr) Log.d("\t" + rkUsr);
+        Log.d();
+
+        //southPanel.setPreferredSize(new Dimension(mainPanel.getWidth(),mainPanel.getHeight() / 3));
+        southPanel.setOpaque(true);
+
+        add(tmpPanel, BorderLayout.CENTER);
+        //add(southPanel, BorderLayout.SOUTH);
+        add(southPanel, BorderLayout.AFTER_LAST_LINE);
 
         setOpaque(false);
         requestFocusInWindow();
@@ -156,18 +254,47 @@ public class T3ACustomSettingsPanel extends JPanel implements ActionListener, IS
         var savedSettings = new Settings();
 
         /*
-
         TODO        LOAD DATA FROM SAVED SETTINGS OBJECT AND ASSIGN TO A SETTINGS OBJECT!!!!!!
-
-
          */
-
 
         return savedSettings;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+
+        Runnable thing = () -> {
+            try {
+                rest();
+                URL url = this.getClass().getResource("assets/hd_1122.gif");
+                Image imgFromUrl = ImageIO.read(url).getScaledInstance(1280, 720, Image.SCALE_SMOOTH);
+                imgFromUrl.setAccelerationPriority(1);
+                Icon gifIcon = new ImageIcon(imgFromUrl);
+                JLabel imageLbl = new JLabel(gifIcon);
+
+                imageLbl.setPreferredSize(getSize());
+                getRootPane().getContentPane().add(imageLbl, BorderLayout.CENTER);
+                var gif = imgFromUrl.getScaledInstance(800, 640, Image.SCALE_REPLICATE);
+
+                imgFromUrl.flush();
+                gif.flush();
+                getRootPane().getTopLevelAncestor().repaint();
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        };
+
+        Thread testThread = new Thread(thing);
+        rest();
+        testThread.start();
+
+        /*
+        fr.pack();
+        fr.setVisible(true);
+        */
+
         try {
 
             if (e.getSource() instanceof JButton) {
@@ -176,23 +303,33 @@ public class T3ACustomSettingsPanel extends JPanel implements ActionListener, IS
                 if (btn.equals(cancelBtn)) {
 
                     /*
-
                     TODO Change me!!!!
-
                      */
 
                     System.exit(0);
                 }
             } else if (e.getSource() instanceof JRadioButton) {
                 var radioBtn = (JRadioButton) e.getSource();
-                radioBtn.setSelected(!radioBtn.isSelected());
                 radioBtn.setText(radioBtn.isSelected() ? "Show Advanced Settings" : "Hide Advanced Settings");
+                radioBtn.setSelected(!radioBtn.isSelected());
+
+                /*
                 validate();
                 repaint();
+                */
+                getRootPane().getTopLevelAncestor().repaint();
             }
         } catch (Exception ex) {
             System.out.println("\n\nERROR: " + ex.getMessage());
             JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+    }
+
+    private void rest() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException ignored) {
+            ignored.printStackTrace();
         }
     }
 
@@ -203,5 +340,10 @@ public class T3ACustomSettingsPanel extends JPanel implements ActionListener, IS
     @Override
     public void paint(Graphics g) {
         super.paint(g);
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
     }
 }
