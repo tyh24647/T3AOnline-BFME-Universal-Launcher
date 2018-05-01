@@ -46,7 +46,7 @@ import java.awt.image.BufferedImage;
  * behind it with the given bounds.
  * 
  * @see org.jdesktop.swingx.JXPanel for Inherited superclass method implementations.
- * @see T3ALauncher#performJava9UpdateBeforeLaunch for a usage example
+ * @see T3ALauncher #performJava9UpdateBeforeLaunch() for a usage example
  * @see <a href="http://www.curious-creature.com/2007/08/01/blurred-background-for-dialogs-extreme-gui-makeover-2007/>Curious-Creature</a>
  *     for original process used in these classes
  *
@@ -105,7 +105,7 @@ public class DetailsView extends JXPanel {
      * throw a {@link NullPointerException}.
      * 
      * If the object doesn't have a specified size, an exception will be thrown in the
-     * method: {@link GraphicsUtilities.createThumbnail(BufferedImage image, int newSize)}
+     * method: {@link GraphicsUtilities #createThumbnail(BufferedImage image, int newSize)}
      * 
      * @see GraphicsUtilities for implementation details
       */

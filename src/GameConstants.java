@@ -24,7 +24,8 @@
 
 
 /**
- * <p></p>
+ *
+ * <p>
  *
  * @author Tyler Hostager
  * @version ${build.number}

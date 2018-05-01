@@ -87,10 +87,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         JPanel empty = new JPanel(new BorderLayout());
         layeredPane = new JLayeredPane();
         backgroundPanel = new JPanel(new BorderLayout());
-
-        if (mainPanel == null) {
-            mainPanel = new JPanel(new BorderLayout());
-        }
+        mainPanel = new JPanel(new BorderLayout());
 
         b1Btn = new JRadioButton("BFME1");
         b2Btn = new JRadioButton("BFME2");
@@ -197,19 +194,14 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
 
 
         //TODO TEST TEST TEST TEST
-
         centerContents.add(new T3ACustomSettingsPanel(), BorderLayout.CENTER);
-
         centerPanel.add(centerContents, BorderLayout.CENTER);
-
-
 
         //TODO TEST TEST TEST TEST
         //centerPanel.add(new T3ACustomSettingsPanel(), BorderLayout.SOUTH);
         //TODO TEST TEST TEST TEST
 
-
-
+        
         label = new JLabel("");
         label.setPreferredSize(new Dimension(60, getContentPane().getHeight()));
         centerPanel.add(label, EAST);

@@ -7,83 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a7fd658-b391-4ba4-a1e1-76769d64b6a8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/azureSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copyright/MIT_License.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BFMECustomResolutionSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CrossPlatformMenuBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/T3AHTTPRequestDelegate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/T3AHTTPRequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/T3APersistentDataHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/T3AServerJSONDataj.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/T3AServerJSONDelegate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/T3AServerJSONParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/T3AServerJSONUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/T3AServerJSONWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/T3AServerLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/hd_1122 copy.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/hd_1122-copy-2.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tyhostager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/tyhostager.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RedditCustomScrollingBkgd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/DetailsView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/DetailsView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/DetailsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/DetailsView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/FadeInPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/FadeInPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/GameConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/GameConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/GlassPanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/GlassPanel$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/GlassPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/GlassPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/ImageAsset.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/ImageAsset.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/Log.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/MainGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/MainGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/MainGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/MainGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/MainGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/MainGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/OS_Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/OS_Type.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/ResObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/ResObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$BFME1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$BFME1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$BFME2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$BFME2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$GameSettings$Resolution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$GameSettings$Resolution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$GameSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$GameSettings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$OperatingSystems.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$OperatingSystems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$System.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$System.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$Titles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$Titles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/SysInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/SysInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncherModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncherModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/ViewController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/ViewController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/ViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/ViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DefaultSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DefaultSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DetailsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DetailsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FadeInPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FadeInPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GlassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GlassPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IConsoleWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IConsoleWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ISharedApplicationObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISharedApplicationObjects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageAsset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageAsset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IniWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IniWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Log.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OS_Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OS_Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StringConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StringConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SysInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SysInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/T3ACustomSettingsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/T3ACustomSettingsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/T3ALauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/T3ALauncher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/T3ALauncherModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/T3ALauncherModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TDetailPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TDetailPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -122,7 +49,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.46101695">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="T3AServerLabel.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="T3AServerLabel.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/T3AServerLabel.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="510">
@@ -152,12 +79,33 @@
           <file leaf-file-name="DetailsView.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/DetailsView.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1479">
-                  <caret line="24" selection-start-line="24" selection-end-line="24" />
+                <state relative-caret-position="-1119">
+                  <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
                   <folding>
                     <element signature="e#0#7567#0" expanded="true" />
                     <element signature="imports" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="GameConstants.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/GameConstants.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="345">
+                  <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+                  <folding>
+                    <element signature="e#0#1261#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Settings.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="468">
+                  <caret line="84" column="38" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
@@ -178,13 +126,17 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="MainGUI.java" pinned="true" current-in-tab="false">
+          <file leaf-file-name="MainGUI.java" pinned="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="813">
-                  <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+                <state relative-caret-position="605">
+                  <caret line="203" column="8" selection-start-line="203" selection-start-column="8" selection-end-line="203" selection-end-column="8" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#5707#5708#0" expanded="true" />
+                    <element signature="e#5751#5752#0" expanded="true" />
+                    <element signature="e#6024#6025#0" expanded="true" />
+                    <element signature="e#6068#6069#0" expanded="true" />
                     <element signature="e#13593#13594#0" expanded="true" />
                     <element signature="e#13628#13629#0" expanded="true" />
                     <element signature="e#14132#14133#0" expanded="true" />
@@ -207,10 +159,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="GlassPanel.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="GlassPanel.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/GlassPanel.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1298">
+                <state relative-caret-position="555">
                   <caret line="37" column="2" lean-forward="true" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
                   <folding>
                     <element signature="e#0#4934#0" expanded="true" />
@@ -313,11 +265,8 @@
         <option value="$PROJECT_DIR$/src/DefaultSettings.java" />
         <option value="$PROJECT_DIR$/src/T3ALauncher.java" />
         <option value="$PROJECT_DIR$/src/BFMECustomResolutionSelector.java" />
-        <option value="$PROJECT_DIR$/src/DetailsView.java" />
-        <option value="$PROJECT_DIR$/src/MainGUI.java" />
         <option value="$PROJECT_DIR$/src/FadeInPanel.java" />
         <option value="$PROJECT_DIR$/src/Game.java" />
-        <option value="$PROJECT_DIR$/src/GameConstants.java" />
         <option value="$PROJECT_DIR$/src/IConsoleWriter.java" />
         <option value="$PROJECT_DIR$/src/ImageAsset.java" />
         <option value="$PROJECT_DIR$/src/OS_Type.java" />
@@ -342,6 +291,9 @@
         <option value="$PROJECT_DIR$/src/ViewController.java" />
         <option value="$PROJECT_DIR$/src/GlassPanel.java" />
         <option value="$PROJECT_DIR$/src/T3AServerLabel.java" />
+        <option value="$PROJECT_DIR$/src/DetailsView.java" />
+        <option value="$PROJECT_DIR$/src/GameConstants.java" />
+        <option value="$PROJECT_DIR$/src/MainGUI.java" />
       </list>
     </option>
   </component>
@@ -381,12 +333,6 @@
               <item name="T3AOnlineLauncherv3Java10" type="b2602c69:ProjectViewProjectNode" />
               <item name="T3AOnlineLauncherv3Java10" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="T3AOnlineLauncherv3Java10" type="b2602c69:ProjectViewProjectNode" />
-              <item name="T3AOnlineLauncherv3Java10" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -514,12 +460,12 @@
       <workItem from="1525154728437" duration="189000" />
       <workItem from="1525154972908" duration="190000" />
       <workItem from="1525155858312" duration="97000" />
-      <workItem from="1525156007430" duration="635000" />
+      <workItem from="1525156007430" duration="1124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191403000" />
+    <option name="totallyTimeSpent" value="191892000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -559,8 +505,9 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32923076" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32923076" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32102564" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7227586" visible="true" weight="0.122023806" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7227586" visible="true" weight="0.122023806" />
       <window_info anchor="right" id="CodeHelp" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32865733" />
       <window_info anchor="bottom" id="Remote Spark Job in Cluster" order="7" />
       <window_info anchor="bottom" id="Debug Remote Spark Job in Cluster" order="7" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -568,7 +515,6 @@
       <window_info anchor="bottom" id="Inspection Results" order="7" weight="0.32923076" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Dependency Viewer" order="9" weight="0.32923076" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32923076" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Module Dependencies" order="4" weight="0.32967034" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -834,16 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#1261#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IConsoleWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -1034,13 +970,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="21" column="3" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Log.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1059,20 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13593#13594#0" expanded="true" />
-            <element signature="e#13628#13629#0" expanded="true" />
-            <element signature="e#14132#14133#0" expanded="true" />
-            <element signature="e#14186#14187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/T3ACustomSettingsPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5220">
@@ -1080,17 +995,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#13239#13268#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DetailsView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1479">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#7567#0" expanded="true" />
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1108,7 +1012,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GlassPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1298">
+        <state relative-caret-position="555">
           <caret line="37" column="2" lean-forward="true" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
           <folding>
             <element signature="e#0#4934#0" expanded="true" />
@@ -1125,6 +1029,52 @@
             <element signature="imports" expanded="true" />
             <element signature="e#3475#3504#0" expanded="true" />
             <element signature="n#!!doc;n#getTitle#0;n#T3AServerLabel#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DetailsView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1119">
+          <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#7567#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="84" column="38" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#1261#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="203" column="8" selection-start-line="203" selection-start-column="8" selection-end-line="203" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5707#5708#0" expanded="true" />
+            <element signature="e#5751#5752#0" expanded="true" />
+            <element signature="e#6024#6025#0" expanded="true" />
+            <element signature="e#6068#6069#0" expanded="true" />
+            <element signature="e#13593#13594#0" expanded="true" />
+            <element signature="e#13628#13629#0" expanded="true" />
+            <element signature="e#14132#14133#0" expanded="true" />
+            <element signature="e#14186#14187#0" expanded="true" />
           </folding>
         </state>
       </provider>
