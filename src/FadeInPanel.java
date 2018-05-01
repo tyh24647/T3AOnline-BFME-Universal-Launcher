@@ -34,7 +34,8 @@ import java.awt.image.ImageObserver;
 import static java.awt.RenderingHints.*;
 
 /**
- * <p></p>
+ *
+ * <p>
  *
  * @author Tyler Hostager
  * @version ${build.number}
@@ -59,12 +60,11 @@ public class FadeInPanel extends JPanel implements ActionListener, ImageObserver
     public FadeInPanel() {
         repaint();
 
-
         /*
 
         TODO TEST TESTA TEST TESTE TSETES
         */
-        //loadImageAssetFromActionCommand("BFME1");     DOESNT WORK
+        loadImageAssetFromActionCommand("BFME1");  //   DOESNT WORK
         /*
         TODO TEST TESTA TEST TESTE TSETES
 
@@ -74,10 +74,8 @@ public class FadeInPanel extends JPanel implements ActionListener, ImageObserver
     @Override
     public boolean imageUpdate(Image img, int infoflags, int x, int y, int w, int h) {
         return super.imageUpdate(img, infoflags, x, y, w, h);
-
     }
 
-    ;
     @Override
     public void paint(Graphics g) {
         super.paint(g);
@@ -212,7 +210,6 @@ public class FadeInPanel extends JPanel implements ActionListener, ImageObserver
                         Graphics2D g2d = (Graphics2D) g;
                         g2d.drawImage(img, tmpRect.x, tmpRect.y, tmpRect.width, tmpRect.height, this); //graphics2D.drawImage(img, 0, 0, 800, 640, null);
 
-
                         g2d.dispose();
                         FadeInPanel.this.repaint();
                         repaint();
@@ -229,10 +226,10 @@ public class FadeInPanel extends JPanel implements ActionListener, ImageObserver
                     }
                 };
 
-                //getRootPane().getContentPane().add(bkgdPanel, BorderLayout.CENTER);
-                //bkgdPanel.repaint();
-                //validate();
-                //repaint();
+                getRootPane().getContentPane().add(bkgdPanel, BorderLayout.CENTER);
+                bkgdPanel.repaint();
+                validate();
+                repaint();
 
 
                 img.flush();

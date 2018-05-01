@@ -201,7 +201,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         //centerPanel.add(new T3ACustomSettingsPanel(), BorderLayout.SOUTH);
         //TODO TEST TEST TEST TEST
 
-        
+
         label = new JLabel("");
         label.setPreferredSize(new Dimension(60, getContentPane().getHeight()));
         centerPanel.add(label, EAST);
@@ -297,7 +297,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         menuBar.add(windowMenu);
         menuBar.add(devMenu);
         menuBar.add(helpMenu);
-
+        
         return menuBar;
     }
 
