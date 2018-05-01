@@ -54,22 +54,8 @@ public class FadeInPanel extends JPanel implements ActionListener, ImageObserver
     private static float alpha2 = 0.1f;
     private boolean shouldReverse = false;
 
-    /**
-     * Default constructor
-     */
-    public FadeInPanel() {
-        repaint();
-
-        /*
-
-        TODO TEST TESTA TEST TESTE TSETES
-        */
-        loadImageAssetFromActionCommand("BFME1");  //   DOESNT WORK
-        /*
-        TODO TEST TESTA TEST TESTE TSETES
-
-         */
-    }
+    /** Default constructor */
+    public FadeInPanel() { repaint(); }
 
     @Override
     public boolean imageUpdate(Image img, int infoflags, int x, int y, int w, int h) {
@@ -85,12 +71,10 @@ public class FadeInPanel extends JPanel implements ActionListener, ImageObserver
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
         try {
             var imgUrl = getClass().getResource("assets/hd_1122-copy-2.gif");
-            Icon imgIcon = new ImageIcon(imgUrl);
+            var imgIcon = (Icon) new ImageIcon(imgUrl);
             var img = ((ImageIcon) imgIcon).getImage();
-
             var tmpRect = getVisibleRect();
 
             Graphics2D g2d = (Graphics2D) g;
@@ -98,9 +82,7 @@ public class FadeInPanel extends JPanel implements ActionListener, ImageObserver
             g2d.setRenderingHint(KEY_ANTIALIASING, VALUE_ANTIALIAS_OFF);
             g2d.setRenderingHint(KEY_RENDERING, VALUE_RENDER_DEFAULT);
             g2d.setRenderingHint(KEY_RESOLUTION_VARIANT, VALUE_RESOLUTION_VARIANT_SIZE_FIT);
-
             imageUpdate(img, Image.SCALE_SMOOTH, 0, 0, 800, 680);
-
             FadeInPanel.this.repaint();
             g2d.dispose();
         } catch (Exception e) {
@@ -192,57 +174,31 @@ public class FadeInPanel extends JPanel implements ActionListener, ImageObserver
                 var imgUrl = getClass().getResource("assets/hd_1122-copy-2.gif");
                 Icon imgIcon = new ImageIcon(imgUrl);
                 var img = ((ImageIcon) imgIcon).getImage();
-                //img.getScaledInstance(getWidth(), getHeight(), Image.SCALE_DEFAULT);
                 ((ImageIcon) imgIcon).setImageObserver(this);
+
                 var lbl = new JLabel(imgIcon);
-                //getRootPane().getContentPane().add(lbl);
-
-
-
                 var bkgdPanel = new JPanel(new BorderLayout()) {
-
-                    @Override
-                    protected void paintComponent(Graphics g) {
+                    @Override protected void paintComponent(Graphics g) {
                         super.paintComponent(g);
-
                         var tmpRect = getVisibleRect();
 
                         Graphics2D g2d = (Graphics2D) g;
-                        g2d.drawImage(img, tmpRect.x, tmpRect.y, tmpRect.width, tmpRect.height, this); //graphics2D.drawImage(img, 0, 0, 800, 640, null);
-
+                        g2d.drawImage(img, tmpRect.x, tmpRect.y, tmpRect.width, tmpRect.height, this);
                         g2d.dispose();
                         FadeInPanel.this.repaint();
                         repaint();
                     }
 
-                    @Override
-                    public Dimension getPreferredSize() {
-                        return new Dimension(800, 640);
-                    }
-
-                    @Override
-                    public boolean isVisible() {
-                        return true;
-                    }
+                    @Override public Dimension getPreferredSize() { return new Dimension(800, 640); }
+                    @Override public boolean isVisible() { return true; }
                 };
 
                 getRootPane().getContentPane().add(bkgdPanel, BorderLayout.CENTER);
                 bkgdPanel.repaint();
                 validate();
                 repaint();
-
-
                 img.flush();
-                //validate();
-                //repaint();
 
-                //lbl = new JLabel(imgIcon);
-
-
-                //getRootPane().getContentPane().remove(lbl);
-                //getRootPane().getContentPane().add(lbl);
-                //validate();
-                //repaint();
                 return img;
             } catch (Exception e) {
                 e.printStackTrace();
@@ -250,13 +206,7 @@ public class FadeInPanel extends JPanel implements ActionListener, ImageObserver
 
             return BFME1_IMAGE;
         } else if (ImageAsset.BFME2.getSrcPath().contains(cmd) || cmd.equals("BFME2")) {
-            return
-                    BFME2_IMAGE;
-                    /*
-                    new ImageIcon(getClass().getResource(
-                          "assets/hd_1122-copy-2.gif" // "assets/minas-morgul.png"
-                    )).getImage(); //
-                    */
+            return BFME2_IMAGE;
         } else if (ImageAsset.ROTWK.getSrcPath().contains(cmd) || cmd.equals("ROTWK")) {
             return ROTWK_IMAGE;
         }

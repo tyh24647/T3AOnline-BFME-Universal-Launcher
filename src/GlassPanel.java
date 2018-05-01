@@ -68,25 +68,7 @@ public class GlassPanel extends JPanel implements FocusListener {
     /**
      *
      */
-    private void initViewDefaults() {
-
-        /*
-        addMouseListener(new MouseAdapter() {});
-
-        addMouseMotionListener(new MouseAdapter() {
-            @Override
-            public void mouseMoved(MouseEvent e) {
-                super.mouseMoved(e);
-            }
-        });
-        */
-
-        addFocusListener(this);
-        setOpaque(true/*false*/);
-        //setFocusable(true);
-        setFocusable(false);
-        setBackground(new Color(1, 1, 1, 0.10f));
-    }
+    private void initViewDefaults()  
 
     /**
      *
@@ -94,7 +76,6 @@ public class GlassPanel extends JPanel implements FocusListener {
      */
     @Override
     public final void setVisible(boolean v) {
-        // Make sure we grab the focus so that key events don't go astray.
         if (v) {
             requestFocus();
 
@@ -132,11 +113,7 @@ public class GlassPanel extends JPanel implements FocusListener {
      */
     @Override
     public final void focusLost(FocusEvent fe) {
-        /*
-        if (isVisible()) {
-            requestFocus();
-        }
-        */
+
     }
 
     /**
@@ -145,15 +122,6 @@ public class GlassPanel extends JPanel implements FocusListener {
     @Override
     public final void paint(Graphics g) {
         super.paint(g);
-
-        /*
-        if (transparencyImg != null) {
-            Graphics2D g2d = transparencyImg.createGraphics();
-            g2d.setComposite(AlphaComposite.SrcAtop.derive(0.75f));
-            g2d.drawImage(transparencyImg, 0, 0, 400, 300, null);
-            g2d.dispose();
-        }
-        */
     }
 
     /**

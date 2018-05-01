@@ -34,19 +34,13 @@ import java.io.Console;
  * @since 2/26/18
  */
 public interface ISharedApplicationObjects {
-
-    public static T3ALauncherModel sharedModel = null;
-
-    public static ViewController sharedVC = null;
-
-    public static MainGUI sharedUI = null;
-
-    public static final Log LOG = new Log();
-
+    T3ALauncherModel sharedModel = null;
+    ViewController sharedVC = null;
+    MainGUI sharedUI = null;
+    Log LOG = new Log();
     static void LOG(Object...args) {
         Log.d(args);
     }
-
     static void ERR(Object...args) {
         Log.e(args);
     }

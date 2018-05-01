@@ -49,9 +49,7 @@ public class UserInfo {
             osType = OS_Type.WINDOWS;
         } else if (osStr.contains("mac")) {
             osType = OS_Type.MAC;
-        } else if (osStr.contains("nix")) {
-            osType = OS_Type.Linux;
-        } else if (osStr.contains("nux")) {
+        }  else if (osStr.contains("nux")) {
             osType = OS_Type.LINUX;
         } else if (osStr.contains("sunos")) {
             osType = OS_Type.SOLARIS;

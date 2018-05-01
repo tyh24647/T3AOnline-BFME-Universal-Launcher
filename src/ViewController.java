@@ -22,7 +22,6 @@
  */
 
 
-
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -38,13 +37,16 @@ import java.awt.event.*;
  * @since 2/18/18
  */
 public class ViewController implements ActionListener, ISharedApplicationObjects {
-    private boolean isDebug;
     private T3ALauncherModel model;
     private MainGUI view;
     private String previousCmd;
     private JRadioButton previousBtn, currentBtn;
+    private boolean isDebug;
     private boolean hasSeenResPrompt;
+
     public static ViewController CURRENT_VC;
+    public static MainGUI CURRENT_UI;
+    public static T3ALauncherModel CURRENT_MODEL;
 
     //region - CONSTRUCTORS
     /**
@@ -75,6 +77,10 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
     public ViewController(@NotNull T3ALauncherModel model, @NotNull MainGUI view) {
         this.model = model;
         this.view = view;
+
+        ViewController.CURRENT_UI = this.view;
+        ViewController.CURRENT_VC = this;
+        ViewController.CURRENT_MODEL = this.model;
     }
 
     /**
@@ -90,6 +96,10 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
         this.previousCmd = "BFME1";
         this.previousBtn = view.getB1Btn();
         this.currentBtn = view.getB1Btn();
+
+        ViewController.CURRENT_MODEL = this.model;
+        ViewController.CURRENT_VC = this;
+        ViewController.CURRENT_UI = this.view;
 
         initUI();
         addActionListeners();
