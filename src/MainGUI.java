@@ -1,3 +1,26 @@
+/*
+ *  (c) Tyler Hostager, 2018.
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining
+ *  a copy of this software and associated documentation files (the
+ *  "Software"), to deal in the Software without restriction, including
+ *  without limitation the rights to use, copy, modify, merge, publish,
+ *  distribute, sublicense, and/or sell copies of the Software, and to
+ *  permit persons to whom the Software is furnished to do so, subject to
+ *  the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be
+ *  included in all copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ *  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ *  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 
 
 import org.jdesktop.swingx.graphics.GraphicsUtilities;
@@ -12,11 +35,20 @@ import static java.awt.BorderLayout.WEST;
 import static javax.swing.JLayeredPane.DEFAULT_LAYER;
 import static javax.swing.JLayeredPane.FRAME_CONTENT_LAYER;
 
-
 /**
- * @author Tyler Hostager
+ * The main user-interface object which contains the necessary buttons, text areas, panels,
+ * etc. in order to allow the user to interact with the data directly.
+ * <p>
+ * This UI class serves as a skeleton for the user interaction, with only containers and layouts
+ * of the objects. Most of the controlling of this view object is done via the 'view controller',
+ * which acts as a delegate between the data model itself and what to change for the view to reflect
+ * the data accordingly.
+ *
+ * @see ViewController      for implementation, functionality, and how it alters {@link T3ALauncherModel}.
+ *
+ * @author  Tyler Hostager
  * @version 1.0.0
- * @since 2/18/18
+ * @since   2/18/18
  */
 public class MainGUI extends JFrame implements WindowFocusListener, ISharedApplicationObjects {
     public static final String DEFAULT_LOTR_TITLE_TXT = "Lord of the Rings - The Battle for Middle-Earth";
@@ -47,14 +79,15 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         this.resOptions = DEFAULT_RES_OPTIONS;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLayeredPane generateMainPanel() {
         JPanel empty = new JPanel(new BorderLayout());
         layeredPane = new JLayeredPane();
         backgroundPanel = new JPanel(new BorderLayout());
-
-        if (mainPanel == null) {
-            mainPanel = new JPanel(new BorderLayout());
-        }
+        mainPanel = new JPanel(new BorderLayout());
 
         b1Btn = new JRadioButton("BFME1");
         b2Btn = new JRadioButton("BFME2");
@@ -161,19 +194,14 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
 
 
         //TODO TEST TEST TEST TEST
-
         centerContents.add(new T3ACustomSettingsPanel(), BorderLayout.CENTER);
-
         centerPanel.add(centerContents, BorderLayout.CENTER);
-
-
 
         //TODO TEST TEST TEST TEST
         //centerPanel.add(new T3ACustomSettingsPanel(), BorderLayout.SOUTH);
         //TODO TEST TEST TEST TEST
 
-
-
+        
         label = new JLabel("");
         label.setPreferredSize(new Dimension(60, getContentPane().getHeight()));
         centerPanel.add(label, EAST);
@@ -235,7 +263,10 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         return layeredPane;
     }
 
-
+    /**
+     *
+     * @return
+     */
     public JMenuBar generateMenuBar() {
         menuBar = new JMenuBar();
 
@@ -270,6 +301,10 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         return menuBar;
     }
 
+    /**
+     *
+     * @throws NullPointerException
+     */
     public void initUI() throws NullPointerException {
         setJMenuBar(generateMenuBar());
         //add(generateMainPanel());

@@ -1,3 +1,28 @@
+/*
+ *  (c) Tyler Hostager, 2018.
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining
+ *  a copy of this software and associated documentation files (the
+ *  "Software"), to deal in the Software without restriction, including
+ *  without limitation the rights to use, copy, modify, merge, publish,
+ *  distribute, sublicense, and/or sell copies of the Software, and to
+ *  permit persons to whom the Software is furnished to do so, subject to
+ *  the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be
+ *  included in all copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ *  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ *  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+
+
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -20,11 +45,18 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
     private JRadioButton previousBtn, currentBtn;
     private boolean hasSeenResPrompt;
 
+    public static ViewController CURRENT_VC;
+
+    //region - CONSTRUCTORS
     /**
      * Default constructor
+     *
+     * Only use this if you need static access to something or aboslutely must create a
+     * new empty instance of a controller. Otherwise, eternal sadness and other bad things
+     * will occur.
      */
     public ViewController() {
-
+        /* Do nothing... woohoo! */
     }
 
     /**
@@ -62,14 +94,20 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
 
         initUI();
         addActionListeners();
-
     }
+    //endregion
+
 
     public void initUI() {
         initUI(true);
     }
 
+    /**
+     *
+     * @param isDebug
+     */
     public void initUI(boolean isDebug) {
+        ViewController.CURRENT_VC = this;
         this.isDebug = isDebug;
 
         try {
@@ -109,6 +147,10 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
         return model;
     }
 
+    /**
+     *
+     * @param model
+     */
     public void setModel(T3ALauncherModel model) {
         this.model = model;
     }
@@ -117,6 +159,10 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
         return view;
     }
 
+    /**
+     *
+     * @param view
+     */
     public void setView(MainGUI view) {
         this.view = view;
     }
@@ -200,7 +246,6 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
 
                         if (!currentBtn.isSelected()) {
                             currentBtn.setSelected(true);
-                            otherBtn.setSelected(false);
 
                             model.setSelectedGame(
                                     currentBtn.getActionCommand().equals("BFME2") ? Game.BFME2 : (

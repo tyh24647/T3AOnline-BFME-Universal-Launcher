@@ -7,59 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a7fd658-b391-4ba4-a1e1-76769d64b6a8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/10423889_626403004148226_972117517027377593_n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/10805773_626401237481736_3492693113222727547_n-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/4439f8783985301af97d9e4cb2ec1d91.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/774641_289592491162614_35932008_o.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/7h5vm1w.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/BrowserPreview_tmp.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Il_Signore_degli_Anelli_234-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/ROTWK_wallpaper2_10x7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Rj5oXo5Vl9E9a.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Subtle Mordor Cinematrography - Imgur.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/battle-for-middle-earth-2-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/battle-for-middle-earth-ii-gloin-and-glorfindel-journey-to-the-blue-mountains.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/bfme2-hd1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/byung-ju-bong-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/c5iRPkrIqDHQk.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/creepy-green.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/elrond-council.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/giphy.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/giphy2.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/giphy3.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/hanging.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/hd_1122.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/hqGif1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icon.icns" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/minas-morgul.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/orks-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/ruins___panoramic_by_blinck-d3kjnuo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/slideshow-download.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/the-white-council.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/FadeInPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/ImageAsset.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/ImageAsset.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/Log.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$BFME1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$BFME1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$BFME2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$BFME2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$GameSettings$Resolution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$GameSettings$Resolution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$GameSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$GameSettings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$OperatingSystems.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$OperatingSystems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$System.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$System.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$Titles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants$Titles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/StringConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3AOnline BFME Universal Launcher/T3ALauncher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FadeInPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FadeInPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageAsset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageAsset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StringConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StringConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/T3ACustomSettingsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/T3ACustomSettingsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/T3ALauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/T3ALauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DetailsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DetailsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,8 +20,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
+  <component name="CodeExplorer">
+    <option name="filters">
+      <list>
+        <LibraryFilter />
+      </list>
+    </option>
+    <option name="showMethodBody" value="true" />
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/T3AOnlineLauncherv3Java10$T3ALauncher.ic" NAME="T3ALauncher Coverage Results" MODIFIED="1525047493088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -90,44 +46,75 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46064982">
+    <splitter split-orientation="horizontal" split-proportion="0.46101695">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="T3ALauncher.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/T3ALauncher.java">
+          <file leaf-file-name="T3AServerLabel.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/T3AServerLabel.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4259">
-                  <caret line="286" selection-start-line="286" selection-end-line="286" />
+                <state relative-caret-position="510">
+                  <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#3475#3504#0" expanded="true" />
+                    <element signature="n#!!doc;n#getTitle#0;n#T3AServerLabel#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="T3ACustomSettingsPanel.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="T3ACustomSettingsPanel.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/T3ACustomSettingsPanel.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2095">
-                  <caret column="3" selection-start-column="3" selection-end-column="3" />
+                <state relative-caret-position="5220">
+                  <caret line="391" column="24" lean-forward="true" selection-start-line="391" selection-start-column="24" selection-end-line="391" selection-end-column="24" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#11066#11067#0" expanded="true" />
-                    <element signature="e#11145#11146#0" expanded="true" />
-                    <element signature="e#11206#11207#0" expanded="true" />
-                    <element signature="e#11236#11237#0" expanded="true" />
-                    <element signature="e#11299#11300#0" expanded="true" />
-                    <element signature="e#11338#11339#0" expanded="true" />
+                    <element signature="e#13239#13268#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Log.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Log.java">
+          <file leaf-file-name="DetailsView.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/DetailsView.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="36" column="59" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+                <state relative-caret-position="-1119">
+                  <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+                  <folding>
+                    <element signature="e#0#7567#0" expanded="true" />
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="GameConstants.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/GameConstants.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="345">
+                  <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+                  <folding>
+                    <element signature="e#0#1261#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Settings.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="468">
+                  <caret line="84" column="38" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="T3ALauncher.java" pinned="true" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/T3ALauncher.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -139,73 +126,21 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ImageAsset.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ImageAsset.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#614#615#0" expanded="true" />
-                    <element signature="e#649#650#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GlassPanel.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/GlassPanel.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-368">
-                  <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="StringConstants.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/StringConstants.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="585">
-                  <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TDetailPanel.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/TDetailPanel.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="18">
-                  <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="UserInfo.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/UserInfo.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-110">
-                  <caret line="19" selection-start-line="19" selection-end-line="20" />
-                  <folding>
-                    <element signature="e#1249#1250#0" expanded="true" />
-                    <element signature="e#1295#1296#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="MainGUI.java" pinned="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="199">
-                  <caret line="59" column="39" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="39" />
+                <state relative-caret-position="605">
+                  <caret line="203" column="8" selection-start-line="203" selection-start-column="8" selection-end-line="203" selection-end-column="8" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#10842#10870#0" expanded="true" />
-                    <element signature="e#14746#14747#0" expanded="true" />
-                    <element signature="e#14774#14775#0" expanded="true" />
+                    <element signature="e#5707#5708#0" expanded="true" />
+                    <element signature="e#5751#5752#0" expanded="true" />
+                    <element signature="e#6024#6025#0" expanded="true" />
+                    <element signature="e#6068#6069#0" expanded="true" />
+                    <element signature="e#13593#13594#0" expanded="true" />
+                    <element signature="e#13628#13629#0" expanded="true" />
+                    <element signature="e#14132#14133#0" expanded="true" />
+                    <element signature="e#14186#14187#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -214,30 +149,34 @@
           <file leaf-file-name="ViewController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ViewController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="369">
-                  <caret line="239" column="59" lean-forward="true" selection-start-line="239" selection-start-column="59" selection-end-line="239" selection-end-column="59" />
+                <state relative-caret-position="1125">
+                  <caret line="98" selection-start-line="98" selection-end-line="98" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1545#1546#0" expanded="true" />
-                    <element signature="e#1573#1574#0" expanded="true" />
+                    <element signature="e#1774#1797#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FadeInPanel.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/FadeInPanel.java">
+          <file leaf-file-name="GlassPanel.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/GlassPanel.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1072">
-                  <caret line="74" column="21" selection-start-line="73" selection-start-column="20" selection-end-line="74" selection-end-column="21" />
+                <state relative-caret-position="555">
+                  <caret line="37" column="2" lean-forward="true" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
                   <folding>
-                    <element signature="n#!!doc" expanded="true" />
+                    <element signature="e#0#4934#0" expanded="true" />
                     <element signature="imports" expanded="true" />
-                    <element signature="e#2315#2316#0" expanded="true" />
-                    <element signature="e#2340#2341#0" expanded="true" />
-                    <element signature="e#2460#2461#0" expanded="true" />
-                    <element signature="e#2499#2500#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ISharedApplicationObjects.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ISharedApplicationObjects.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="45">
+                  <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
                 </state>
               </provider>
             </entry>
@@ -258,16 +197,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hdutil</find>
-      <find>attach</find>
-      <find>&quot;.&quot;</find>
-      <find>Process</find>
-      <find>proc</find>
-      <find>downloadfolder</find>
-      <find>dmgpath</find>
-      <find>error</find>
-      <find>mount</find>
-      <find>test</find>
       <find>bfme reso</find>
       <find>installing java</find>
       <find>b</find>
@@ -288,6 +217,16 @@
       <find>radioBtns</find>
       <find>gif</find>
       <find>BFME2</find>
+      <find>add</find>
+      <find>b2</find>
+      <find>saveMI</find>
+      <find>getfile</find>
+      <find>generatemenubar</find>
+      <find>selectionpa</find>
+      <find>maingui</find>
+      <find>while (true</find>
+      <find>while (true</find>
+      <find>server</find>
     </findStrings>
     <replaceStrings>
       <replace>T3AOnline BFME Universal Launcher</replace>
@@ -304,19 +243,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/macOS_configurations.xml" />
-        <option value="$PROJECT_DIR$/src/SharedApplicationObjects.java" />
-        <option value="$PROJECT_DIR$/src/ConsoleWriter.java" />
-        <option value="$PROJECT_DIR$/src/SysInfo.java" />
-        <option value="$PROJECT_DIR$/automatic_versioning_config.xml" />
-        <option value="$PROJECT_DIR$/src/UserInfo.java" />
-        <option value="$PROJECT_DIR$/src/Game.java" />
-        <option value="$PROJECT_DIR$/src/Images.java" />
-        <option value="$PROJECT_DIR$/src/UIComponents/GlassPanel.java" />
-        <option value="$PROJECT_DIR$/src/UIComponents/BackgroundImageFadePanel.java" />
-        <option value="$PROJECT_DIR$/src/Interfaces/ConsoleWriter.java" />
-        <option value="$PROJECT_DIR$/src/Interfaces/SharedApplicationObjects.java" />
-        <option value="$PROJECT_DIR$/src/Utilities/SharedApplicationObjects.java" />
         <option value="$PROJECT_DIR$/src/Utilities/Log.java" />
         <option value="$PROJECT_DIR$/src/UIComponents/ImageAsset.java" />
         <option value="$PROJECT_DIR$/src/UIComponents/FadeInPanel.java" />
@@ -327,25 +253,47 @@
         <option value="$PROJECT_DIR$/src/Utils/Game.java" />
         <option value="$PROJECT_DIR$/src/Utils/GameConstants.java" />
         <option value="$PROJECT_DIR$/src/BackgroundImageFadePanel.java" />
-        <option value="$PROJECT_DIR$/src/ResObject.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/GlassPanel.java" />
         <option value="$PROJECT_DIR$/src/DWMBlurBehind.java" />
-        <option value="$PROJECT_DIR$/src/ViewController.java" />
         <option value="$PROJECT_DIR$/src/assets/T3ACustomSettingsPanel.java" />
-        <option value="$PROJECT_DIR$/src/Settings.java" />
-        <option value="$PROJECT_DIR$/src/DefaultSettings.java" />
-        <option value="$PROJECT_DIR$/src/ServerInfo.java" />
         <option value="$PROJECT_DIR$/src/assets/ServerInfo.js" />
         <option value="$PROJECT_DIR$/src/JSONParser.java" />
-        <option value="$PROJECT_DIR$/src/Log.java" />
-        <option value="$PROJECT_DIR$/src/StringConstants.java" />
         <option value="$PROJECT_DIR$/src/assets/CustomGifPlaybackApplet.java" />
-        <option value="$PROJECT_DIR$/src/MainGUI.java" />
-        <option value="$PROJECT_DIR$/src/T3ACustomSettingsPanel.java" />
-        <option value="$PROJECT_DIR$/src/ImageAsset.java" />
+        <option value="$PROJECT_DIR$/src/SPLabel.java" />
+        <option value="$PROJECT_DIR$/src/T3AServerJSONDataj.java" />
+        <option value="$PROJECT_DIR$/src/CrossPlatformMenuBar.java" />
+        <option value="$PROJECT_DIR$/src/DefaultSettings.java" />
         <option value="$PROJECT_DIR$/src/T3ALauncher.java" />
+        <option value="$PROJECT_DIR$/src/BFMECustomResolutionSelector.java" />
         <option value="$PROJECT_DIR$/src/FadeInPanel.java" />
+        <option value="$PROJECT_DIR$/src/Game.java" />
+        <option value="$PROJECT_DIR$/src/IConsoleWriter.java" />
+        <option value="$PROJECT_DIR$/src/ImageAsset.java" />
+        <option value="$PROJECT_DIR$/src/OS_Type.java" />
+        <option value="$PROJECT_DIR$/src/ResObject.java" />
+        <option value="$PROJECT_DIR$/src/ServerInfo.java" />
+        <option value="$PROJECT_DIR$/src/StringConstants.java" />
+        <option value="$PROJECT_DIR$/src/SysInfo.java" />
+        <option value="$PROJECT_DIR$/src/T3AHTTPRequestDelegate.java" />
+        <option value="$PROJECT_DIR$/src/T3AHTTPRequestHandler.java" />
+        <option value="$PROJECT_DIR$/src/T3ALauncherModel.java" />
+        <option value="$PROJECT_DIR$/src/T3APersistentDataHandler.java" />
+        <option value="$PROJECT_DIR$/src/T3AServerJSONDelegate.java" />
+        <option value="$PROJECT_DIR$/src/Settings.java" />
+        <option value="$PROJECT_DIR$/src/T3AServerJSONParser.java" />
+        <option value="$PROJECT_DIR$/src/T3AServerJSONUtils.java" />
+        <option value="$PROJECT_DIR$/src/T3AServerJSONWriter.java" />
+        <option value="$PROJECT_DIR$/src/TDetailPanel.java" />
+        <option value="$PROJECT_DIR$/src/UserInfo.java" />
+        <option value="$PROJECT_DIR$/src/Log.java" />
+        <option value="$PROJECT_DIR$/src/ISharedApplicationObjects.java" />
+        <option value="$PROJECT_DIR$/src/T3ACustomSettingsPanel.java" />
+        <option value="$PROJECT_DIR$/src/ViewController.java" />
+        <option value="$PROJECT_DIR$/src/GlassPanel.java" />
+        <option value="$PROJECT_DIR$/src/T3AServerLabel.java" />
+        <option value="$PROJECT_DIR$/src/DetailsView.java" />
+        <option value="$PROJECT_DIR$/src/GameConstants.java" />
+        <option value="$PROJECT_DIR$/src/MainGUI.java" />
       </list>
     </option>
   </component>
@@ -371,9 +319,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -385,12 +333,6 @@
               <item name="T3AOnlineLauncherv3Java10" type="b2602c69:ProjectViewProjectNode" />
               <item name="T3AOnlineLauncherv3Java10" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="T3AOnlineLauncherv3Java10" type="b2602c69:ProjectViewProjectNode" />
-              <item name="T3AOnlineLauncherv3Java10" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -415,7 +357,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -512,12 +454,18 @@
       <workItem from="1525031765700" duration="1579000" />
       <workItem from="1525033802964" duration="297000" />
       <workItem from="1525034152208" duration="15072000" />
-      <workItem from="1525056268308" duration="20347000" />
+      <workItem from="1525056268308" duration="26684000" />
+      <workItem from="1525111292942" duration="895000" />
+      <workItem from="1525126912068" duration="19730000" />
+      <workItem from="1525154728437" duration="189000" />
+      <workItem from="1525154972908" duration="190000" />
+      <workItem from="1525155858312" duration="97000" />
+      <workItem from="1525156007430" duration="1124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163330000" />
+    <option name="totallyTimeSpent" value="191892000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -533,36 +481,46 @@
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32923076" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.33641025" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info id="Azure Explorer" order="2" />
+      <window_info anchor="right" id="Code explorer" order="4" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Json Parser" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32923076" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32923076" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32102564" />
+      <window_info anchor="bottom" id="Azure Activity Log" order="7" />
+      <window_info anchor="bottom" id="RNConsole" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7227586" visible="true" weight="0.15445666" />
+      <window_info anchor="right" id="JSON Utils" order="4" />
       <window_info anchor="right" id="Database" order="3" weight="0.32967034" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32923076" />
       <window_info id="Structure" order="1" sideWeight="0.27724138" side_tool="true" weight="0.14529915" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24969475" />
       <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.31262526" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32923076" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="HDInsight Spark Submission" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32923076" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32923076" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32102564" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7227586" visible="true" weight="0.122023806" />
+      <window_info anchor="right" id="CodeHelp" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32865733" />
+      <window_info anchor="bottom" id="Remote Spark Job in Cluster" order="7" />
+      <window_info anchor="bottom" id="Debug Remote Spark Job in Cluster" order="7" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.31282052" />
-      <window_info anchor="bottom" id="Dependency Viewer" order="9" weight="0.32923076" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Module Dependencies" order="4" weight="0.32967034" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection Results" order="7" weight="0.32923076" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="9" weight="0.32923076" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Module Dependencies" order="4" weight="0.32967034" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.33567134" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="2" />
@@ -579,23 +537,23 @@
       <window_info anchor="bottom" id="Inspection Results" order="7" weight="0.32923076" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.33641025" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.33567134" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7227586" visible="true" weight="0.122023806" />
       <window_info anchor="right" id="Module Dependencies" order="9" weight="0.32967034" />
       <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.32923076" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32923076" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32102564" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7227586" visible="true" weight="0.15445666" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Database" order="6" weight="0.32967034" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32923076" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Structure" order="1" sideWeight="0.27724138" side_tool="true" weight="0.14529915" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32923076" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.31282052" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.31262526" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,19 +566,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MainGUI.java</url>
-          <line>29</line>
+          <url>file://$PROJECT_DIR$/src/FadeInPanel.java</url>
+          <line>212</line>
           <properties />
-          <option name="timeStamp" value="79" />
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/FadeInPanel.java</url>
-          <line>178</line>
+          <line>108</line>
           <properties />
-          <option name="timeStamp" value="80" />
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="81" />
+      <option name="time" value="87" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -641,211 +599,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/lib/src.zip!/java.base/java/util/TimerTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-466">
-          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="841" column="16" selection-start-line="841" selection-start-column="16" selection-end-line="841" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/lib/src.zip!/java.base/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8595">
-          <caret line="613" column="18" selection-start-line="613" selection-start-column="18" selection-end-line="613" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="2569" column="23" selection-start-line="2569" selection-start-column="23" selection-end-line="2569" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JProgressBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="450" column="16" selection-start-line="450" selection-start-column="16" selection-end-line="450" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Process.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="179" column="24" selection-start-line="179" selection-start-column="24" selection-end-line="179" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JOptionPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="331" column="36" selection-start-line="331" selection-start-column="36" selection-end-line="331" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/Container.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-588">
-          <caret line="775" column="16" selection-start-line="775" selection-start-column="16" selection-end-line="775" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DWMBlurBehind.java" />
-    <entry file="file://$PROJECT_DIR$/src/assets/load_w_ea.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="4397" column="16" selection-start-line="4397" selection-start-column="16" selection-end-line="4397" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/BFME1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/_fonts/RINGM___.TTF">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/json-simple-1.1.1-sources.jar!/org/json/simple/JSONArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/ServerInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="115" column="19" selection-start-line="115" selection-start-column="19" selection-end-line="115" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JSONParser.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Iterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/bfme1blurred.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DefaultSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#627#628#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-            <element signature="e#925#926#0" expanded="true" />
-            <element signature="e#972#973#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-            <element signature="e#2142#2143#0" expanded="true" />
-            <element signature="e#2193#2194#0" expanded="true" />
-            <element signature="e#2230#2231#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Settings.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/json-20180130-sources.jar!/org/json/JSONArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="1323" column="22" selection-start-line="1323" selection-start-column="22" selection-end-line="1323" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/json-20180130-sources.jar!/org/json/JSONObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="730" column="22" selection-start-line="730" selection-start-column="22" selection-end-line="730" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="524" column="15" selection-start-line="524" selection-start-column="15" selection-end-line="524" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SysInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Log.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="36" column="59" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/CustomGifPlaybackApplet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/Component.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="3419" column="16" selection-start-line="3419" selection-start-column="16" selection-end-line="3419" selection-end-column="16" />
-          <folding>
-            <element signature="e#115028#115029#0" expanded="true" />
-            <element signature="e#115075#115076#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/Toolkit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="696" column="42" selection-start-line="696" selection-start-column="42" selection-end-line="696" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="979">
-          <caret line="2571" column="23" selection-start-line="2571" selection-start-column="23" selection-end-line="2571" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Downloads/timingframework-1.0.jar!/org/jdesktop/animation/timing/Animator.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -860,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="843" selection-start-line="843" selection-end-line="843" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/BrowserPreview_tmp.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -877,152 +623,458 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GlassPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-368">
-          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/StringConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ISharedApplicationObjects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DetailsView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="141" column="5" lean-forward="true" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ImageAsset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#614#615#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/minas-morgul.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/T3ALauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4259">
-          <caret line="286" selection-start-line="286" selection-end-line="286" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/T3ACustomSettingsPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2095">
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11066#11067#0" expanded="true" />
-            <element signature="e#11145#11146#0" expanded="true" />
-            <element signature="e#11206#11207#0" expanded="true" />
-            <element signature="e#11236#11237#0" expanded="true" />
-            <element signature="e#11299#11300#0" expanded="true" />
-            <element signature="e#11338#11339#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/7h5vm1w.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TDetailPanel.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/Container.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="260">
+          <caret line="1711" column="19" selection-start-line="1711" selection-start-column="19" selection-end-line="1711" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserInfo.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/image/ImageObserver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-110">
-          <caret line="19" selection-start-line="19" selection-end-line="20" />
+        <state relative-caret-position="624">
+          <caret line="166" column="42" lean-forward="true" selection-start-line="166" selection-start-column="42" selection-end-line="166" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/sun/java2d/loops/TransformHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="92" column="23" selection-start-line="92" selection-start-column="23" selection-end-line="92" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15075">
+          <caret line="1073" selection-start-line="1073" selection-end-line="1073" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/shaded_blur.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/Font.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="232" column="13" selection-start-line="232" selection-start-column="13" selection-end-line="232" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JMenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="116" column="8" selection-start-line="116" selection-start-column="8" selection-end-line="118" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JRadioButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/net/SocketInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/jdk/internal/misc/Unsafe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="2293" column="23" selection-start-line="2293" selection-start-column="23" selection-end-line="2293" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="1101" column="32" selection-start-line="1101" selection-start-column="32" selection-end-line="1101" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CrossPlatformMenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
           <folding>
-            <element signature="e#1249#1250#0" expanded="true" />
-            <element signature="e#1295#1296#0" expanded="true" />
+            <element signature="e#0#2901#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1138#1139#0" expanded="true" />
+            <element signature="e#1239#1240#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#1120#1121#0" expanded="true" />
+            <element signature="e#1199#1200#0" expanded="true" />
+            <element signature="e#1281#1282#0" expanded="true" />
+            <element signature="e#1313#1314#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
+    <entry file="file://$PROJECT_DIR$/src/DefaultSettings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="59" column="39" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="39" />
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#10842#10870#0" expanded="true" />
-            <element signature="e#14746#14747#0" expanded="true" />
-            <element signature="e#14774#14775#0" expanded="true" />
+            <element signature="e#0#3371#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ViewController.java">
+    <entry file="file://$PROJECT_DIR$/src/BFMECustomResolutionSelector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="239" column="59" lean-forward="true" selection-start-line="239" selection-start-column="59" selection-end-line="239" selection-end-column="59" />
+        <state relative-caret-position="180">
+          <caret line="12" column="50" lean-forward="true" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1545#1546#0" expanded="true" />
-            <element signature="e#1573#1574#0" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#2173#2174#0" expanded="true" />
+            <element signature="e#2204#2205#0" expanded="true" />
+            <element signature="e#2146#2147#0" expanded="true" />
+            <element signature="e#2196#2197#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2282#2283#0" expanded="true" />
+            <element signature="e#2390#2391#0" expanded="true" />
+            <element signature="e#2431#2432#0" expanded="true" />
+            <element signature="e#2485#2486#0" expanded="true" />
+            <element signature="e#2517#2518#0" expanded="true" />
+            <element signature="e#2644#2645#0" expanded="true" />
+            <element signature="e#2682#2683#0" expanded="true" />
+            <element signature="e#2798#2799#0" expanded="true" />
+            <element signature="e#2838#2839#0" expanded="true" />
+            <element signature="e#4679#4680#0" expanded="true" />
+            <element signature="e#4760#4761#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FadeInPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1072">
-          <caret line="74" column="21" selection-start-line="73" selection-start-column="20" selection-end-line="74" selection-end-column="21" />
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#0#8586#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#2315#2316#0" expanded="true" />
-            <element signature="e#2340#2341#0" expanded="true" />
-            <element signature="e#2460#2461#0" expanded="true" />
-            <element signature="e#2499#2500#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#1628#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IConsoleWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#3647#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImageAsset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OS_Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#1300#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServerInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#1258#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#3316#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StringConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#4939#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SysInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#1889#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/T3AHTTPRequestDelegate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#1307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/T3AHTTPRequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#1309#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/T3ALauncherModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#2755#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/T3APersistentDataHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#1309#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/T3AServerJSONDataj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/T3AServerJSONDelegate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#2444#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/T3AServerJSONParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#1265#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/T3AServerJSONUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#1264#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/T3AServerJSONWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#1261#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/T3ALauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TDetailPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#2377#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#3106#0" expanded="true" />
+            <element signature="e#1249#1250#0" expanded="true" />
+            <element signature="e#1295#1296#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Log.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#7761#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ISharedApplicationObjects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/T3ACustomSettingsPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5220">
+          <caret line="391" column="24" lean-forward="true" selection-start-line="391" selection-start-column="24" selection-end-line="391" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#13239#13268#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1774#1797#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GlassPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="2" lean-forward="true" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#4934#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/T3AServerLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3475#3504#0" expanded="true" />
+            <element signature="n#!!doc;n#getTitle#0;n#T3AServerLabel#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DetailsView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1119">
+          <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#7567#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="84" column="38" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#1261#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="203" column="8" selection-start-line="203" selection-start-column="8" selection-end-line="203" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5707#5708#0" expanded="true" />
+            <element signature="e#5751#5752#0" expanded="true" />
+            <element signature="e#6024#6025#0" expanded="true" />
+            <element signature="e#6068#6069#0" expanded="true" />
+            <element signature="e#13593#13594#0" expanded="true" />
+            <element signature="e#13628#13629#0" expanded="true" />
+            <element signature="e#14132#14133#0" expanded="true" />
+            <element signature="e#14186#14187#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1039,6 +1091,18 @@
               <list>
                 <option value="0.2" />
                 <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="Copyright.UI">
+        <settings>
+          <last-edited>MIT License</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1106,6 +1170,17 @@
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>com.googlecode.json-simple:json-simple:1.1.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
