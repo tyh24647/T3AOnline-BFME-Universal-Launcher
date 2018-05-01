@@ -1,14 +1,40 @@
-import org.jdesktop.swingx.graphics.GraphicsUtilities;
+/*
+ *  (c) Tyler Hostager, 2018.
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining
+ *  a copy of this software and associated documentation files (the
+ *  "Software"), to deal in the Software without restriction, including
+ *  without limitation the rights to use, copy, modify, merge, publish,
+ *  distribute, sublicense, and/or sell copies of the Software, and to
+ *  permit persons to whom the Software is furnished to do so, subject to
+ *  the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be
+ *  included in all copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ *  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ *  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
-import java.awt.*;
-import java.awt.event.*;
+
+
+import javax.swing.JPanel;
+import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
+
+import java.awt.*;;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.image.BufferedImage;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-
 /**
- * <p></p>
+ *
+ * <p>
  *
  * @author Tyler Hostager
  * @version 1.0.0
@@ -19,7 +45,6 @@ public class GlassPanel extends JPanel implements FocusListener {
     private final Image DIFFERENCE_CLOUDS = ImageAsset.DIFF_CLOUDS.getImage();
     private BufferedImage background, transparencyImg;
     private Image test;
-
 
     /**
      *
@@ -40,7 +65,12 @@ public class GlassPanel extends JPanel implements FocusListener {
         }
     }
 
+    /**
+     *
+     */
     private void initViewDefaults() {
+
+        /*
         addMouseListener(new MouseAdapter() {});
 
         addMouseMotionListener(new MouseAdapter() {
@@ -49,20 +79,24 @@ public class GlassPanel extends JPanel implements FocusListener {
                 super.mouseMoved(e);
             }
         });
+        */
 
         addFocusListener(this);
-        setOpaque(false);
-        setFocusable(true);
+        setOpaque(true/*false*/);
+        //setFocusable(true);
+        setFocusable(false);
         setBackground(new Color(1, 1, 1, 0.10f));
     }
 
+    /**
+     *
+     * @param v
+     */
     @Override
     public final void setVisible(boolean v) {
         // Make sure we grab the focus so that key events don't go astray.
         if (v) {
             requestFocus();
-
-
 
             Container parent = SwingUtilities.getAncestorOfClass(JRootPane.class, this);
             if (parent != null) {
@@ -90,12 +124,12 @@ public class GlassPanel extends JPanel implements FocusListener {
         }
 
         super.setVisible(v);
-
-
-
     }
 
-    // Once we have focus, keep it if we're visible
+    /**
+     *
+     * @param fe
+     */
     @Override
     public final void focusLost(FocusEvent fe) {
         /*
@@ -123,6 +157,10 @@ public class GlassPanel extends JPanel implements FocusListener {
 
     }
 
+    /**
+     *
+     * @param g
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -135,6 +173,10 @@ public class GlassPanel extends JPanel implements FocusListener {
         }
     }
 
+    /**
+     *
+     * @param fe
+     */
     @Override
     public void focusGained(FocusEvent fe) {
         // nothing to do
