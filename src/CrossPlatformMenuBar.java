@@ -39,10 +39,9 @@ import javax.swing.JMenuItem;
 public class CrossPlatformMenuBar extends JMenuBar implements ISharedApplicationObjects {
     private JMenu[] menus = new JMenu[6];
     private JMenuItem[] menuItems = new JMenuItem[5];
+    private String[] resolutions;
 
-    /**
-     *
-     */
+    /** Default constructor */
     public CrossPlatformMenuBar() {
         super();
         setFocusTraversalKeysEnabled(false);
@@ -63,10 +62,13 @@ public class CrossPlatformMenuBar extends JMenuBar implements ISharedApplication
         setupCustomizations();
     }
 
-
+    /**  */
     private void setupCustomizations() {
-        setMenus(new JMenu[] {
+        var ui = ViewController.CURRENT_UI;
 
+        setMenus(new JMenu[] {
+                ui.getFileMenu(), ui.getEditMenu(),
+                ui.getViewMenu(), ui.getDevMenu(), getHelpMenu()
         });
     }
 
@@ -74,9 +76,7 @@ public class CrossPlatformMenuBar extends JMenuBar implements ISharedApplication
      *
      * @param menus
      */
-    public void setMenus(JMenu[] menus) {
-        this.menus = menus == null ? this.menus : menus;
-    }
+    public void setMenus(JMenu[] menus) { this.menus = menus == null ? this.menus : menus; }
 
     /**
      *
@@ -84,6 +84,23 @@ public class CrossPlatformMenuBar extends JMenuBar implements ISharedApplication
      */
     public JMenu[] getMenus() {
         return menus;
+    }
+
+    /**
+     *
+     * @param resolutions
+     */
+    public void setResolutions(String[] resolutions) {
+        this.resolutions = resolutions == null ? this.resolutions == null ?
+                GameConstants.DEFAULT_RESOLUTIONS : this.resolutions : resolutions;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String[] getResolutions() {
+        return this.resolutions == null ? GameConstants.DEFAULT_RESOLUTIONS : resolutions;
     }
 
     /**
@@ -106,14 +123,5 @@ public class CrossPlatformMenuBar extends JMenuBar implements ISharedApplication
      *
      * @return
      */
-    @Override
-    public String toString() {
-        return super.toString();
-
-        /*
-
-        TODO
-
-         */
-    }
+    @Override public String toString() { return super.toString(); }
 }

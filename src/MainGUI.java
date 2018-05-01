@@ -24,12 +24,10 @@
 
 
 import org.jdesktop.swingx.graphics.GraphicsUtilities;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
-
 import static java.awt.BorderLayout.EAST;
 import static java.awt.BorderLayout.WEST;
 import static javax.swing.JLayeredPane.DEFAULT_LAYER;
@@ -54,14 +52,10 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
     public static final String DEFAULT_LOTR_TITLE_TXT = "Lord of the Rings - The Battle for Middle-Earth";
     public static final String ROTWK_TXT = " II + Rise of the Witch King";
 
-    private static final String[] DEFAULT_RES_OPTIONS = {
-            "Select...", "800x600", "1280x800", "1440x900", "1680x1050", "1920x1080"
-    };
-
     private JLayeredPane layeredPane;
     private JPanel mainPanel, gameSelectionPanel, backgroundPanel, centerPanel, titleTxtPanel,  resChoosingPanel, btnPanel, testFormPanel; //, centerContents;
     private GlassPanel centerContents;
-    private JMenuBar menuBar;
+    private JMenuBar menuBar; //CrossPlatformMenuBar menuBar; //
     private JMenu fileMenu, editMenu, viewMenu, windowMenu, devMenu, helpMenu;
     private JMenuItem saveMI, exitMI, undoMI, redoMI, showDebugMI;
     private JRadioButton b1Btn, b2Btn, rotwkBtn;
@@ -75,24 +69,19 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
     /**
      * Create a new instance of the UI
      */
-    public MainGUI() {
-        this.resOptions = DEFAULT_RES_OPTIONS;
-    }
+    public MainGUI() { this.resOptions = GameConstants.DEFAULT_RESOLUTIONS; }
 
     /**
      *
      * @return
      */
     public JLayeredPane generateMainPanel() {
-        JPanel empty = new JPanel(new BorderLayout());
         layeredPane = new JLayeredPane();
         backgroundPanel = new JPanel(new BorderLayout());
         mainPanel = new JPanel(new BorderLayout());
-
         b1Btn = new JRadioButton("BFME1");
         b2Btn = new JRadioButton("BFME2");
         rotwkBtn = new JRadioButton("ROTWK");
-
         gameSelectionPanel = new JPanel(new BorderLayout());
         gameSelectionPanel.setOpaque(false);
         gameSelectionPanel.setBackground(Color.BLACK);
@@ -120,59 +109,26 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         radioBtns.add(b1Btn);
         radioBtns.add(b2Btn);
         radioBtns.add(rotwkBtn);
-
-        //btnPanel.setBackground(Color.BLACK);
         btnPanel.setAlignmentX(CENTER_ALIGNMENT);
         btnPanel.setAlignmentY(CENTER_ALIGNMENT);
         gameSelectionPanel.add(btnPanel);
         btnPanel.setOpaque(true);
         btnPanel.setBackground(Color.BLACK);
         gameSelectionPanel.setOpaque(false);
-        //gameSelectionPanel.setBounds(0,0, 800, 40);
         gameSelectionPanel.setPreferredSize(new Dimension(800, 40));
-
-
         centerPanel = new JPanel(new BorderLayout(30, 30));
-        //centerContents = new JPanel(new BorderLayout(60, 30));
         centerContents = new GlassPanel(new BorderLayout(60, 30));
-
-        resChoosingPanel = new JPanel(new FlowLayout()) {
-            @Override
-            public boolean isOpaque() {
+        resChoosingPanel = new JPanel(new FlowLayout()) { @Override public boolean isOpaque() {
                 return false;
-            }
-        };
-
+            }};
         centerContents.setOpaque(true);
         centerContents.setPreferredSize(new Dimension(500, 300));
         centerContents.setVisible(true);
-
         resChooser = new JComboBox<>(resOptions) {
-            @Override
-            public boolean isOpaque() {
-                return false;
-            }
-
-            @Override
-            protected void selectedItemChanged() {
-                if (getSelectedIndex() > 0) {
-                    super.selectedItemChanged();
-                }
-
-                layeredPane.repaint();
-            }
-
-            @Override
-            protected void fireActionEvent() {
-                super.fireActionEvent();
-                layeredPane.repaint();
-            }
-
-            @Override
-            public void firePopupMenuCanceled() {
-                super.firePopupMenuCanceled();
-                layeredPane.repaint();
-            }
+            @Override public boolean isOpaque() { return false; }
+            @Override protected void selectedItemChanged() { if (getSelectedIndex() > 0) { super.selectedItemChanged(); } layeredPane.repaint(); }
+            @Override protected void fireActionEvent() { super.fireActionEvent(); layeredPane.repaint(); }
+            @Override public void firePopupMenuCanceled() { super.firePopupMenuCanceled(); layeredPane.repaint(); }
         };
 
         resChooser.setOpaque(true);
@@ -181,26 +137,23 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         JLabel resolutionLbl = new JLabel("Display Resolution:", SwingConstants.LEFT);
         resolutionLbl.setForeground(Color.WHITE);
         resolutionLbl.setFont(resolutionLbl.getFont().deriveFont(Font.PLAIN, 14f));
+
         resChoosingPanel.add(resolutionLbl);
         resChoosingPanel.add(resChooser, BorderLayout.CENTER);
 
         JLabel label = new JLabel();
         label.setPreferredSize(new Dimension(150, 60));
+
         resChoosingPanel.setOpaque(false);
         resChoosingPanel.setForeground(new Color(0,0, 0, 0f));
         resChoosingPanel.add(label);
         centerContents.add(resChoosingPanel, BorderLayout.NORTH);
         resChoosingPanel.setPreferredSize(new Dimension(800, 200));
 
-
         //TODO TEST TEST TEST TEST
         centerContents.add(new T3ACustomSettingsPanel(), BorderLayout.CENTER);
         centerPanel.add(centerContents, BorderLayout.CENTER);
-
         //TODO TEST TEST TEST TEST
-        //centerPanel.add(new T3ACustomSettingsPanel(), BorderLayout.SOUTH);
-        //TODO TEST TEST TEST TEST
-
 
         label = new JLabel("");
         label.setPreferredSize(new Dimension(60, getContentPane().getHeight()));
@@ -215,9 +168,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         centerPanel.add(new JLabel(""), BorderLayout.NORTH);
         centerPanel.setOpaque(false);
         centerPanel.setPreferredSize(new Dimension(800, 600));
-
         mainPanel.add(centerPanel, BorderLayout.CENTER);
-
 
         bkgdImgPanel = new FadeInPanel();
         bkgdImgPanel.setOpaque(true);
@@ -226,10 +177,8 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         lotrTitleTxt1.setHorizontalAlignment(SwingConstants.CENTER);
         lotrTitleTxt1.setForeground(Color.WHITE);
         lotrTitleTxt1.setFont(lotrTitleTxt1.getFont().deriveFont(Font.PLAIN, 36));
-
         titleTxtPanel = new JPanel(new FlowLayout());
         titleTxtPanel.add(lotrTitleTxt1);
-        //titleTxtPanel.setBounds(0, 40, 800, 600);  <-- TODO fix this
         titleTxtPanel.setPreferredSize(new Dimension(800, 600));
         titleTxtPanel.setOpaque(true);
 
@@ -238,16 +187,13 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         gameSelectionPanel.setPreferredSize(new Dimension(800, 40));
 
         bkgdImgPanel.setBounds(0, 40, 800, 600);
-
         mainPanel.setOpaque(false);
         mainPanel.setBounds(0, 0, 800, 640);
 
         layeredPane.add(bkgdImgPanel, BorderLayout.CENTER, DEFAULT_LAYER);
         layeredPane.add(mainPanel, BorderLayout.CENTER, DEFAULT_LAYER);
-
         layeredPane.setLayer(bkgdImgPanel, FRAME_CONTENT_LAYER);
         layeredPane.setLayer(mainPanel, DEFAULT_LAYER);
-
         layeredPane.setBounds(0, 0, 800, 640);
         layeredPane.setOpaque(true);
 
@@ -267,7 +213,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
      *
      * @return
      */
-    public JMenuBar generateMenuBar() {
+    public JMenu generateMenuBar() {
         menuBar = new JMenuBar();
 
         if (UserInfo.isMac()) {
@@ -297,8 +243,8 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
         menuBar.add(windowMenu);
         menuBar.add(devMenu);
         menuBar.add(helpMenu);
-        
-        return menuBar;
+
+        return menuBar.getHelpMenu();
     }
 
     /**
@@ -307,14 +253,10 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
      */
     public void initUI() throws NullPointerException {
         setJMenuBar(generateMenuBar());
-        //add(generateMainPanel());
         setLayeredPane(generateMainPanel());
-        //setContentPane(mainPanel);
-
         configureMainWindow();
         pack();
         setVisible(false);
-        //launchMainWindow();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
@@ -333,14 +275,7 @@ public class MainGUI extends JFrame implements WindowFocusListener, ISharedAppli
 
     //region INHERITED METHODS
     @Override
-    public void setVisible(boolean b) {
-        if (b) {
-            super.requestFocus();
-            repaint();
-        }
-
-        super.setVisible(b);
-    }
+    public void setVisible(boolean b) { if (b) { super.requestFocus(); repaint(); } super.setVisible(b); }
 
     @Override
     public void windowGainedFocus(WindowEvent e) {

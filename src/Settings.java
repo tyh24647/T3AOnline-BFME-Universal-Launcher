@@ -130,9 +130,7 @@ public class Settings implements ISharedApplicationObjects {
         return showAdvancedSettings;
     }
 
-    public void setShowAdvancedSettings(boolean showAdvancedSettings) {
-        this.showAdvancedSettings = showAdvancedSettings;
-    }
+    public void setShowAdvancedSettings(boolean showAdvancedSettings) { this.showAdvancedSettings = showAdvancedSettings; }
 
     public boolean isDebug() {
         return isDebug;
@@ -186,9 +184,7 @@ public class Settings implements ISharedApplicationObjects {
         return resolutionWasDetected;
     }
 
-    public void setResolutionWasDetected(boolean resolutionWasDetected) {
-        this.resolutionWasDetected = resolutionWasDetected;
-    }
+    public void setResolutionWasDetected(boolean resolutionWasDetected) { this.resolutionWasDetected = resolutionWasDetected; }
 
     public String getBfme1Path() {
         return bfme1Path;

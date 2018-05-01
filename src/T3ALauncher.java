@@ -69,20 +69,18 @@ public class T3ALauncher implements ISharedApplicationObjects {
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-
             graphicsThread.checkAccess();
 
             if (!isDebug) {
                 javaInstallLoadingFrame = new JFrame("T3AOnline Helper");
-                //javaInstallLoadingFrame.setPreferredSize(new Dimension(200, 120));
                 javaInstallLoadingFrame.setPreferredSize(new Dimension(300, 200));
                 javaInstallLoadingFrame.setFocusable(false);
 
                 JPanel instSpinnerPanel = new JPanel(new BorderLayout());
                 instSpinnerPanel.setPreferredSize(new Dimension(200, 120));
+
                 var t = new JLabel("Checking current Java version...");
                 t.setForeground(Color.WHITE);
-                //instSpinnerPanel.add(new JLabel(new ImageIcon(ClassLoader.getSystemClassLoader().getResource("assets/revoraCustomLogo.png"))));
                 instSpinnerPanel.add(t, BorderLayout.NORTH);
                 instSpinnerPanel.setBackground(Color.BLACK);
                 instSpinnerPanel.setForeground(Color.WHITE);
@@ -96,15 +94,13 @@ public class T3ALauncher implements ISharedApplicationObjects {
                 var lsURL = ClassLoader.getSystemClassLoader().getResource("assets/wheel.gif");
                 javaInstallLoadingFrame.getRootPane().validate();
                 javaInstallLoadingFrame.getRootPane().repaint();
-                //var lsURL = ClassLoader.getSystemClassLoader().getResource("assets/LoadingSpinner.gif");
+
                 if (lsURL != null) {
                     var lsIcon = new ImageIcon(lsURL);
                     i.setIcon(new ImageIcon(lsIcon.getImage()));
-                    //i.setIcon(new ImageIcon(lsIcon.getImage().getScaledInstance(90, 220, Image.SCALE_SMOOTH)));
                     i.setFocusable(false);
                     javaInstallLoadingFrame.validate();
                     javaInstallLoadingFrame.repaint();
-                    //i.setIcon(lsIcon);
                 }
 
                 a.setOpaque(false);
@@ -117,9 +113,7 @@ public class T3ALauncher implements ISharedApplicationObjects {
                 ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/assets/_fonts/RINGM___.TTF")));
 
                 var titleFont = T3ALauncher.class.getResourceAsStream("src/assets/_fonts/RINGM___.TTF");
-
                 d.setForeground(new Color(215, 186, 147));
-                //d.setFont(new Font("RINGM___", Font.PLAIN, 28));
 
                 for (String fontName : ge.getAvailableFontFamilyNames()) {
                     if (fontName.toLowerCase().contains("ringm")) {
@@ -131,12 +125,11 @@ public class T3ALauncher implements ISharedApplicationObjects {
                 d.setBackground(Color.BLACK);
                 d.setFont(Font.getFont("RINGM___"));
 
-                var myStream = new BufferedInputStream(
-                        new FileInputStream("src/assets/_fonts/RINGM___.TTF"));
+                var myStream = new BufferedInputStream(new FileInputStream("src/assets/_fonts/RINGM___.TTF"));
                 var ttfBase = Font.createFont(Font.TRUETYPE_FONT, myStream);
                 var newFont = ttfBase.deriveFont(Font.PLAIN, 28);
-                d.setFont(newFont);
 
+                d.setFont(newFont);
                 a.setPreferredSize(new Dimension(80, 120));
                 b.setPreferredSize(new Dimension(200, 30));
                 c.setPreferredSize(new Dimension(80, 120));
@@ -152,27 +145,19 @@ public class T3ALauncher implements ISharedApplicationObjects {
                 instSpinnerPanel.add(d, BorderLayout.NORTH);
                 instSpinnerPanel.add(i, BorderLayout.CENTER);
 
-                var cDialgFr = new JFrame() {
-                    @Override
-                    public boolean isResizable() {
-                        return false;
-                    }
-                };
-
+                var cDialgFr = new JFrame() { @Override public boolean isResizable() { return false; }};
                 var result = JOptionPane.showConfirmDialog(cDialgFr, "A Java update is required in order to launch this application.\n"
                                 + "\n\t\t\t\t\t- Current Java Version: \"" + getJavaVersion() + "\""
                                 + "\n\t\t\t\t\t- Required Java Version: " + "\"10.0\""
                                 + "\n\nThe Battle for Middle-Earth Launcher will open automatically when\nthe update is finished."
                                 + "\n\nClick \"OK\" to perform the installation, \"Cancel\" to exit.",
-                        "The Lord of the Rings: The Battle for Middle-Earth Launcher", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-//                    JOptionPane.showMessageDialog(null, "A Java update is required in order to launch this application.\n"
-//                            + "\nApplication requirement: " + "\"10\"" + "\nInstalled version: \"" + getJavaVersion()
-//                            + "\"\n\nPerforming Java update...");
+                        "The Lord of the Rings: The Battle for Middle-Earth Launcher", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE
+                );
 
                 if (result == JOptionPane.OK_OPTION) {
                     cDialgFr.dispose();
-                    var bkdImgLabel = new JLabel(new ImageIcon(ImageIO.read(lsURL)));
 
+                    var bkdImgLabel = new JLabel(new ImageIcon(ImageIO.read(lsURL)));
                     javaInstallLoadingFrame.add(bkdImgLabel);
                     javaInstallLoadingFrame.add(instSpinnerPanel);
                     javaInstallLoadingFrame.setLocationByPlatform(true);
@@ -196,23 +181,18 @@ public class T3ALauncher implements ISharedApplicationObjects {
             if (isDebug) {
                 JOptionPane.showMessageDialog(null, e.getMessage());
             } else {
-//                cmdOutput.append(e.getMessage());
                 appendCmdOutput(e.getMessage(), false, Color.RED);
                 e.printStackTrace();
             }
         }
     }
 
-    /**
-     *
-     */
+    /**  */
     private static void initApplication() {
         SwingUtilities.invokeLater(T3ALauncher::initObjs);
     }
 
-    /**
-     *
-     */
+    /**  */
     private static void initObjs() {
         model = new T3ALauncherModel();
         ui = new MainGUI();
@@ -228,10 +208,7 @@ public class T3ALauncher implements ISharedApplicationObjects {
      * @param vc
      */
     private static void initSharedApplicationObjs(T3ALauncherModel model, MainGUI ui, ViewController vc) {
-
-        /*
-        TODO
-         */
+        /* TODO */
     }
 
     /**
@@ -249,30 +226,19 @@ public class T3ALauncher implements ISharedApplicationObjects {
         };
     }
 
-    /**
-     *
-     */
+    /**  */
     private static void performJavaUpdateBeforeLaunch() {
-
         try {
-            if ( getJavaVersion()
-                            //< 10 /*Integer.valueOf("9.0")*/) {//.substring(0, 4).replaceAll(".", ""))) {
-                            < 11
-                            //< 10
-                            && needsJavaUpdate) {
-
-
-                //Thread.sleep(300l);
+            if (getJavaVersion() < 11 && needsJavaUpdate) {    // 10 ) {
                 String cdCmd = null;
-                var javaUpdateDownloadCmd = "/bin/sh curl -j -k -L -H " +
-                        "\"Cookie: oraclelicense=accept-securebackup-cookie" +
-                        "\" -O http://download.oracle.com/otn-pub/java/jdk/10+46/76eac37278c24557a3c4199677f19b62/" +
-                        "jre-10_osx-x64_bin.dmg > jre-10_osx-x64_bin.dmg";
                 String autoJavaInstallCmd = null;
                 String deleteInstallerCmd = null;
                 String downloadFolder = null;
 
-                ///*
+                var javaUpdateDownloadCmd = "/bin/sh curl -j -k -L -H " +
+                        "\"Cookie: oraclelicense=accept-securebackup-cookie" +
+                        "\" -O http://download.oracle.com/otn-pub/java/jdk/10+46/76eac37278c24557a3c4199677f19b62/" +
+                        "jre-10_osx-x64_bin.dmg > jre-10_osx-x64_bin.dmg";
                 if (UserInfo.isMac()) {
                     downloadFolder = "~/Downloads/";
                     cdCmd = "/bin/sh -c " + downloadFolder;
@@ -305,110 +271,41 @@ public class T3ALauncher implements ISharedApplicationObjects {
                 var isSolaris = UserInfo.isSolaris();
                 var isLinux = UserInfo.isLinux();
 
-                    /*
-                    try {
-                        if (UserInfo.isMac()) {
-                            //  Launching via command-line
-                            Process p = Runtime.getRuntime().exec(new String[]{
-                                    "/bin/sh", "-c", "cd ~/Downloads/ &&" +
-
-                                    //"curl -C - -j -L -H \"Cookie: oraclelicense=accept-securebackup-cookie\" -k http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jre-9.0.4_osx-x64_bin.dmg > jre-9.0.4_osx-x64_bin.dmg; " +
-//                                    "curl -C - -LR#OH \"Cookie: oraclelicense=accept-securebackup-cookie\" " +
-//                                              //"http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jre-9.0.4_osx-x64_bin.dmg > jre-9.0.4_osx-x64_bin.dmg; " +
-//                                    "http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html" +
-
-                                    //"curl -C - -LR#OH \"Cookie: oraclelicense=accept-securebackup-cookie\"" +
-                                    "curl -L -C - -b \"oraclelicense=accept-securebackup-cookie\" -O " +
-                                    "http://download.oracle.com/otn-pub/java/jdk/10+46/76eac37278c24557a3c4199677f19b62/jre-10_osx-x64_bin.dmg > jre-10_osx-x64_bin.dmg";
-                                    //"http://download.oracle.com/otn-pub/java/jdk/10+46/76eac37278c24557a3c4199677f19b62/jre-10_osx-x64_bin.dmg > jre-10_osx-x64_bin.dmg";
-
-                                    "wait; " +
-                                    "open jre-10_osx-x64_bin.dmg && " +
-                                    "sudo installer -pkg /Volumes/Java\\ 10/Java\\ 10.app/Contents/Resources/JavaAppletPlugin.pkg -target /; " +
-                                    "wait; " +
-                                    "diskutil unmount /Volumes/Java\\ 10/ && " +
-                                    "rm -rf jre-10_osx-x64_bin.dmg && " +
-                                    "wait; "
-                            });
-                        }
-                    } catch (Exception e) {
-                        JOptionPane.showMessageDialog(null, e.getMessage());
-                        e.printStackTrace();
-                    }
-                    */
-
-
                 if (UserInfo.isMac()) {
                     File javaDmgInstaller = new File(T3ALauncher.class.getResource("assets/_JavaUpdater/jre-10_osx-x64_bin.dmg").getPath());
-                    var poStr = javaDmgInstaller.getPath().toString();
+                    var poStr = javaDmgInstaller.getPath();
                     var fmtdDmgPath = javaDmgInstaller.getPath().replaceAll("%20", "\\ ");
+
                     fmtdDmgPath = fmtdDmgPath.replaceAll(" ", "\\ ");
                     File dmg = new File(fmtdDmgPath);
-
                     String dmgPath = downloadFolder + "jre-10_osx-x64_bin.dmg";
-                    //fmtdDmgPath = dmgPath.replaceAll("%20", "\\ ");
-
                     appendCmdOutput("T3ALauncher:~ Searching for disk image file named: " +
                             "\"jre-10_osx-x64_bin.dmg\" at path: \"" + fmtdDmgPath + "\"", true);
 
                     if (dmg.exists()) {
-
-
-                        //Desktop.getDesktop().open(dmg);
-                        //Runtime.getRuntime().exec(new String[]{"open", "-j", "-g", dmgPath});
                         appendCmdOutput("T3ALauncher:~ " + "Attempting to mount disk image", true);
                         appendCmdOutput("T3ALauncher:~ open -j -g " + fmtdDmgPath + " &");
                         proc = Runtime.getRuntime().exec(new String[]{
                                 "osascript", "-e", "do shell script \"hdiutil attach -debug -verbose '" + fmtdDmgPath + "'\""
                         });
 
-                        //proc = Runtime.getRuntime().exec(new String[]{"open", "-j", "-g", dmg.getAbsolutePath() + "/assets/_javaUpdater/jre-10_osx-x64_bin.dmg", "&" });
                         appendCmdOutput("\nT3ALauncher:~ " + "osascript -e 'do shell script \"" +
                                 "hdiutil attach -debug -verbose '" + fmtdDmgPath + "''");
-
-                            /*
-                            proc = Runtime.getRuntime().exec(new String[]{
-                                    "osascript", "-e", "do shell script \"hdiutil attach -debug -verbose '" + fmtdDmgPath + "'\""
-                            });
-                            */
-
                         appendCmdOutput("T3ALauncher:~ " + "Initializing disk...");
-
                         BufferedReader stdIn = new BufferedReader(new InputStreamReader(proc.getInputStream()));
                         BufferedReader stdErr = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
 
-                        // read the output from the command
-                        String s = null;
+                        String s;
                         JFrame tmp = new JFrame("T3ALauncher Console Output (Debug)") {
-                            @Override
-                            public boolean isOpaque() {
-                                return false;
-                            }
-
-                            @Override
-                            public void paint(Graphics g) {
+                            @Override public boolean isOpaque() { return false; }
+                            @Override public void setVisible(boolean b) { if (b) { super.requestFocus(); } super.setVisible(b); }
+                            @Override public String getTitle() { return "BFME T3AOnline Launcher - Debug Console"; }
+                            @Override public void paint(Graphics g) {
                                 super.paint(g);
                                 Graphics2D g2d = (Graphics2D) g.create();
-                                //g2d.setComposite(AlphaComposite.SrcOver.derive(0.85f));
-                                //g2d.setColor(new Color(1, 1, 1, 1));
-                                //g2d.setComposite(AlphaComposite.SrcIn.derive(0.01f));
                                 g2d.setComposite(AlphaComposite.SrcOver.derive(0.90f));
-                                //g2d.setComposite(AlphaComposite.SrcOver.derive(0f));
-                                //g2d.setColor(Color.WHITE);
                                 g2d.setColor(Color.BLACK);
-
                                 g2d.fillRect(0, 0, getWidth(), getHeight());
-                            }
-
-                            @Override
-                            public void setVisible(boolean b) {
-                                if (b) { super.requestFocus(); }
-                                super.setVisible(b);
-                            }
-
-                            @Override
-                            public String getTitle() {
-                                return "BFME T3AOnline Launcher - Debug Console";
                             }
                         };
 
@@ -416,7 +313,6 @@ public class T3ALauncher implements ISharedApplicationObjects {
                         tmp.setPreferredSize(new Dimension(600, 350));
                         tmp.setLocationRelativeTo(null);
                         tmp.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-
                         TDetailPanel mainPanel = new TDetailPanel(new BorderLayout());
                         mainPanel.setPreferredSize(new Dimension(tmp.getWidth(), tmp.getHeight()));
 
@@ -447,85 +343,47 @@ public class T3ALauncher implements ISharedApplicationObjects {
                                 setCaretPosition(getDocument().getLength());
                             }
 
-                                /*
-                            public void fadeIn() {
-                                createBlur();
-
-                                setVisible(true);
-                                SwingUtilities.invokeLater(new Runnable() {
-                                    public void run() {
-                                        Animator animator = PropertySetter.createAnimator(
-                                                400, this, "alpha", 1.0f);
-                                        animator.setAcceleration(0.2f);
-                                        animator.setDeceleration(0.3f);
-                                        animator.addTarget(
-                                                new PropertySetter(this, "alpha", 1.0f));
-                                        animator.start();
-                                    }
-                                });
-                            }
-                            */
-
-                            @Override
-                            public synchronized void addFocusListener(FocusListener l) {
+                            @Override public synchronized void addFocusListener(FocusListener l) {
                                 super.addFocusListener(new FocusListener() {
-                                    @Override
-                                    public void focusGained(FocusEvent e) {
-                                        setEnabled(true);
-                                        requestFocus();
-                                    }
-
-                                    @Override
-                                    public void focusLost(FocusEvent e) {
-                                        setEnabled(true);
-                                        requestFocus();
-                                    }
+                                    @Override public void focusGained(FocusEvent e) { setEnabled(true); requestFocus(); }
+                                    @Override public void focusLost(FocusEvent e) { setEnabled(true); requestFocus(); }
                                 });
                             }
 
-                            @Override
-                            public void requestFocus() {
+                            @Override public void requestFocus() {
                                 super.requestFocus();
                                 setEnabled(true);
                                 setCaretPosition(getDocument().getLength());
                                 repaint();
                             }
 
-                            @Override
-                            public void scrollRectToVisible(Rectangle aRect) {
+                            @Override public void scrollRectToVisible(Rectangle aRect) {
                                 super.scrollRectToVisible(aRect);
                                 setEnabled(true);
                                 setCaretPosition(getDocument().getLength());
                                 repaint();
                             }
 
-                            @Override
-                            public boolean requestFocusInWindow() {
+                            @Override public boolean requestFocusInWindow() {
                                 setEnabled(true);
                                 setCaretPosition(getDocument().getLength());
                                 repaint();
                                 return true;
                             }
 
-                            @Override
-                            protected void processFocusEvent(FocusEvent e) {
+                            @Override protected void processFocusEvent(FocusEvent e) {
                                 super.processFocusEvent(e);
                                 setEnabled(true);
                                 setCaretPosition(getDocument().getLength());
                                 repaint();
                             }
                         };
-
                         cmdOutput.setBackground(new Color(0, 0, 0, 0.5f));
                         cmdOutput.setForeground(Color.WHITE);
                         cmdOutput.setUI(new BasicTextAreaUI() {
-
-                            @Override
-                            protected void paintBackground(Graphics g) {
+                            @Override protected void paintBackground(Graphics g) {
                                 super.paintBackground(g);
-
                                 var g2d = (Graphics2D) g;
-
                                 Image img = null;
 
                                 try {
@@ -570,83 +428,8 @@ public class T3ALauncher implements ISharedApplicationObjects {
                         cmdOutput.setCaret(caret);
 
                         JXScrollPane scrollPane = new JXScrollPane(cmdOutput) {
-
-                            /*
-                            private BufferedImage blurBuffer;
-                            private BufferedImage backBuffer = ImageIO.read(getClass().getResource("assets/BFME1.png"));
-                            private float alpha = 0.8f;
-                            private final JXScrollPane SCROLL_PANE = this;
-                            private TDetailPanel detailPanel = new TDetailPanel();
-                            private DetailsView detailsView = new DetailsView(detailPanel);
-
-                            @Override
-                            protected void paintComponent(Graphics g) {
-                                if (isVisible() && blurBuffer != null) {
-                                    Graphics2D g2 = (Graphics2D) g.create();
-
-                                    g2.setRenderingHint(
-                                            RenderingHints.KEY_INTERPOLATION,
-                                            RenderingHints.VALUE_INTERPOLATION_BILINEAR
-                                    );
-
-                                    g2.drawImage(backBuffer, 0, 0, null);
-
-                                    alpha = 0.8f;
-                                    g2.setComposite(AlphaComposite.SrcAtop.derive(alpha));
-                                    g2.drawImage(backBuffer, 0, 0, 600, 400, null);
-                                    g2.dispose();
-                                    //return;
-                                }
-
-                                super.paintComponent(g);
-                            }
-
-                            @Override
-                            public void setEnabled(boolean enabled) {
-
-                                this.detailPanel.setAlpha(0.7f);
-                                add(detailPanel, new GridBagConstraints());
-                                super.setEnabled(true);
-                            }
-
-                            public void fadeIn() {
-                                createBlur();
-
-                                setVisible(true);
-                                SwingUtilities.invokeLater(() -> {
-
-                                    Animator animator = PropertySetter.createAnimator(
-                                            400, detailPanel, "alpha", 1.0f);
-                                    animator.setAcceleration(0.2f);
-                                    animator.setDeceleration(0.3f);
-                                    animator.addTarget(
-                                            new PropertySetter(SCROLL_PANE, "alpha", 1.0f));
-                                    animator.start();
-                                });
-                            }
-
-                            private BufferedImage createBlur() {
-                                JRootPane root = SwingUtilities.getRootPane(this);
-                                blurBuffer = GraphicsUtilities.createCompatibleImage(800, 600);
-                                Graphics2D g2 = blurBuffer.createGraphics();
-                                root.paint(g2);
-                                g2.dispose();
-
-                                backBuffer = blurBuffer;
-                                blurBuffer = GraphicsUtilities.createThumbnail(blurBuffer, 600);
-                                blurBuffer = new GaussianBlurFilter(20).filter(blurBuffer, null);
-                                return blurBuffer;
-                            }
-
-                            @Override
-                            public void addAncestorListener(AncestorListener listener) {
-                                //fadeIn();
-                                backBuffer = createBlur();
-                                super.addAncestorListener(listener);
-                            }
-                            */
+                            //
                         };
-
                         scrollPane.setPreferredSize(new Dimension(
                                 Double.valueOf(cmdOutput.getWidth() + 5).intValue(),
                                 Double.valueOf(cmdOutput.getHeight() + 5).intValue()
@@ -657,51 +440,26 @@ public class T3ALauncher implements ISharedApplicationObjects {
                         scrollPane.setBorder(BorderFactory.createEmptyBorder());
                         scrollPane.setWheelScrollingEnabled(true);
                         scrollPane.setFocusTraversalKeysEnabled(true);
-                        //scrollPane.getViewport().setBackground(new Color(0, 0, 0, 0f));
                         scrollPane.setBackground(new Color(0, 0, 0, 0.3f));
                         scrollPane.setForeground(new Color(0, 0, 0, 0f));
-                        //scrollPane.setForeground(Color.GREEN);
-
                         scrollPane.setViewportView(cmdOutput);
+
                         mainPanel.setOpaque(true);
-                        //mainPanel.setOpaque(false);
-
-
                         TDetailPanel popup = new TDetailPanel();
                         popup.setPreferredSize(new Dimension(20, 20));
 
-                        //scrollPane.add(popup);
                         glassPane = new DetailsView(popup);
-
-                        //glassPane = new DetailsView(popup);
-
-                        //scrollPane.setViewportViewGlassPane(glassPane);
-                        //scrollPane.setViewportViewGlassed(true);
-                        //glassPane.setRoot(tmp.getRootPane());
-                        //glassPane.setSize(20, 20);
                         glassPane.setPreferredSize(new Dimension(tmp.getWidth(), tmp.getHeight()));
-                        //scrollPane.setViewportViewGlassPane(glassPane);
-                        //tmp.getRootPane().setGlassPane(glassPane);
-
                         mainPanel.add(scrollPane, BorderLayout.CENTER);
-
                         tmp.add(mainPanel);
                         tmp.setContentPane(mainPanel);
                         tmp.validate();
                         tmp.setVisible(true);
                         tmp.pack();
 
-
                         glassPane.setVisible(true);
                         scrollPane.setViewportViewGlassPane(glassPane);
-                        //tmp.setComponentZOrder(glassPane, 0);
-                        //tmp.setComponentZOrder(glassPane, 0);
-                        //tmp.setGlassPane(glassPane);
-                        //tmp.setComponentZOrder(glassPane, 0);
-
                         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-                        //SwingUtilities.updateComponentTreeUI(tmp);
-
                         Thread.sleep(100L);
 
                         var diskImgMountSuccess = false;
@@ -714,11 +472,8 @@ public class T3ALauncher implements ISharedApplicationObjects {
                             }
                         }
 
-                        // read any errors from the attempted command
                         while ((s = stdErr.readLine()) != null) {
-
                             appendCmdOutput("\nhdutil:~ ERROR: " + s);
-
                             if (proc.exitValue() == 0) {
                                 proc.destroy();
                                 appendCmdOutput("\nhdutil:~ Process exited with code 0");
@@ -736,12 +491,10 @@ public class T3ALauncher implements ISharedApplicationObjects {
                         }
 
                         proc.destroy();
-
                         appendCmdOutput("\nT3ALauncher:~ " + "osascript -e 'do shell script \"sudo " +
                                 "installer -verbose -pkg '/Volumes/Java 10/Java 10.app/" +
                                 "Contents/Resources/JavaAppletPlugin.pkg' -target /\" " +
                                 "with administrator privileges'");
-
                         proc = Runtime.getRuntime().exec(new String[]{
                                 "osascript", "-e", "do shell script \"sudo installer -verbose -pkg " +
                                 "'/Volumes/Java 10/Java 10.app/Contents/Resources/" +
@@ -749,19 +502,13 @@ public class T3ALauncher implements ISharedApplicationObjects {
                         });
 
                         appendCmdOutput("", true);
-
                         cmdOutput.requestFocus();
 
                         BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
                         BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
 
-                        // read the output from the command
                         s = null;
-                        while ((s = stdInput.readLine()) != null) {
-                            Thread.sleep(100L);
-                        }
-
-                        // read any errors from the attempted command
+                        while ((s = stdInput.readLine()) != null) { Thread.sleep(100L); }
                         while ((s = stdError.readLine()) != null) {
                             if (s.toLowerCase().contains("0:159".toLowerCase())) {
                                 appendCmdOutput("\nJavaAppletPluginInstaller:~ User canceled installation");
@@ -777,19 +524,13 @@ public class T3ALauncher implements ISharedApplicationObjects {
                         }
 
                         appendCmdOutput("\nT3ALauncher:~ Java update installed successfully!");
-
                         while (true) {
-                            //int exitVal = proc.waitFor();
-
                             if (proc.exitValue() == 0) {
                                 proc.destroy();
-
                                 Thread.sleep(1200L);
                                 tmp.dispose();
                                 Thread.sleep(500L);
-
                                 appendCmdOutput("\nT3ALauncher:~ Initializing application", true);
-
                                 Runnable initApp = T3ALauncher::initApplication;
                                 Thread initTask = new Thread(initApp);
 
@@ -809,9 +550,7 @@ public class T3ALauncher implements ISharedApplicationObjects {
 
                         appendCmdOutput("\nT3ALauncher:~ " + "diskutil unmount /Volumes/Java 10/; wait;");
                         appendCmdOutput("\nT3ALauncher:~ " + "Unmounting disk", true);
-
                         proc = Runtime.getRuntime().exec("diskutil unmount /Volumes/Java 10/; wait;");
-
                         appendCmdOutput("\nT3ALauncher:~ " + "Disk image \"jre-10_osx-x64_bin.dmg\" unmounted successfully!");
                         appendCmdOutput("\nT3ALauncher:~ ");
                         cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
@@ -835,11 +574,8 @@ public class T3ALauncher implements ISharedApplicationObjects {
      * @param msg
      */
     private static void appendCmdOutput(String msg) {
-        try {
-            appendCmdOutput(msg, false);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        try { appendCmdOutput(msg, false); }
+        catch (Exception e) { e.printStackTrace(); }
     }
 
     /**
@@ -859,7 +595,6 @@ public class T3ALauncher implements ISharedApplicationObjects {
      */
     private static void appendCmdOutput(String msg, boolean hasEllipse, Color color) {
         try {
-            //appendToPane(msg, color);
             cmdOutput.append(msg);
             cmdOutput.setCaretPosition(cmdOutput.getDocument().getLength());
             cmdOutput.requestFocus();
@@ -894,32 +629,6 @@ public class T3ALauncher implements ISharedApplicationObjects {
         }
     }
 
-    /*
-    public static void executeMacTerminalCmd (String...cmd){
-        if (cmd == null) {
-            return;
-        }
-
-        try {
-            String[] tmp1 = new String[]{"/bin/sh", "-c"};
-
-            ArrayList<String> combinedCmdLst = new ArrayList<>(tmp1.length + cmd.length);
-            combinedCmdLst.addAll(Arrays.asList(tmp1));
-            combinedCmdLst.addAll(Arrays.asList(cmd));
-
-            String[] cmdObjs = new String[combinedCmdLst.size()];
-            for (int i = 0; i < combinedCmdLst.size(); i++) {
-                cmdObjs[i] = combinedCmdLst.get(i);
-            }
-
-            //Runtime.getRuntime().exec(cmdObjs);     // Execute the command
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-            e.printStackTrace();
-        }
-    }
-    */
-
     /**
      *
      * @param msg
@@ -930,30 +639,16 @@ public class T3ALauncher implements ISharedApplicationObjects {
             cmdOutput.append(msg);
             StyleContext sc = StyleContext.getDefaultStyleContext();
             AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, c);
-
             aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Lucida Console");
             aset = sc.addAttribute(aset, StyleConstants.Alignment, StyleConstants.ALIGN_JUSTIFIED);
-
-            //int len = cmdOutput.getStyledDocument().getLength();
-            //cmdOutput.setCaretPosition(len);
-            //cmdOutput.setCharacterAttributes(aset, false);
             cmdOutput.replaceSelection(msg);
         } catch (Exception e) {
-            if (isDebug) {
-                JOptionPane.showMessageDialog(null, e.getMessage());
-            }
-
+            if (isDebug) { JOptionPane.showMessageDialog(null, e.getMessage()); }
             e.printStackTrace();
         }
     }
 
-    /**
-     *
-     * @return
-     */
-    private static boolean verifyJavaVersion () {
-        return needsJavaUpdate = getJavaVersion() < Double.valueOf("11"); //< Integer.valueOf("10");
-    }
+    private static boolean verifyJavaVersion () { return needsJavaUpdate = getJavaVersion() < Double.valueOf("11"); }
 
     /**
      *
@@ -961,17 +656,7 @@ public class T3ALauncher implements ISharedApplicationObjects {
      */
     private static @NotNull Double getJavaVersion () {
         String version = System.getProperty("java.version");
-
-        var tmp = "";
         return Double.parseDouble(version);
-
-        /*
-        int pos = version.indexOf('.');
-        pos = version.indexOf('.', pos + 1);
-        return Double.parseDouble(version.substring(0, pos));
-        */
     }
-
-
 }
 
