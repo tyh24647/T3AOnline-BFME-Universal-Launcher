@@ -24,12 +24,14 @@
 
 
 /**
- * <p></p>
+ *
+ * <p>
  *
  * @author Tyler Hostager
  * @version ${build.number}
  * @since 2/18/18
  */
-public enum OS_Type {
-    WINDOWS, MAC, LINUX, SOLARIS, UNKNOWN
+public class GameConstants {
+
+
 }
