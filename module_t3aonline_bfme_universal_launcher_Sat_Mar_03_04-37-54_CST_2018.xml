@@ -6,7 +6,7 @@
   <property name="module.jdk.bin.t3aonline_bfme_universal_launcher" value="${project.jdk.bin}"/>
   <property name="module.jdk.classpath.t3aonline_bfme_universal_launcher" value="${project.jdk.classpath}"/>
   
-  <property name="compiler.args.t3aonline_bfme_universal_launcher" value="-encoding UTF-8 -source 10 -target 10 ${compiler.args}"/>
+  <property name="compiler.args.t3aonline_bfme_universal_launcher" value="-encoding UTF-8 -source 9 -target 9 ${compiler.args}"/>
   
   <property name="t3aonline_bfme_universal_launcher.output.dir" value="${module.t3aonline_bfme_universal_launcher.basedir}/out/production/T3AOnline BFME Universal Launcher"/>
   <property name="t3aonline_bfme_universal_launcher.testoutput.dir" value="${module.t3aonline_bfme_universal_launcher.basedir}/out/test/T3AOnline BFME Universal Launcher"/>
@@ -19,36 +19,26 @@
     <path refid="${module.jdk.classpath.t3aonline_bfme_universal_launcher}"/>
     <pathelement location="${idea.home}/redist/annotations-java8.jar"/>
     <path refid="library.filters.classpath"/>
+    <pathelement location="${basedir}/../../Downloads/swingx-1.6.1.jar"/>
     <pathelement location="${basedir}/../../Downloads/swingx-core-1.6.2-2.jar"/>
     <pathelement location="${basedir}/../../Downloads/timingframework-1.0.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-awt-0.9.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-swing-0.9.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-core-0.9.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-swing-customizer-0.9.jar"/>
-    <path refid="library.jsonbinding.classpath"/>
-    <pathelement location="${basedir}/../../Downloads/swingx-1.6.1.jar"/>
-    <path refid="library.jsonprocessing.classpath"/>
-    <path refid="library.org.json:json:20180130.classpath"/>
-    <path refid="library.softsmithy-lib-swing-0.9.classpath"/>
-    <path refid="library.com.googlecode.json-simple:json-simple:1.1.1.classpath"/>
   </path>
   
   <path id="t3aonline_bfme_universal_launcher.runtime.production.module.classpath">
     <pathelement location="${t3aonline_bfme_universal_launcher.output.dir}"/>
     <pathelement location="${idea.home}/redist/annotations-java8.jar"/>
     <path refid="library.filters.classpath"/>
+    <pathelement location="${basedir}/../../Downloads/swingx-1.6.1.jar"/>
     <pathelement location="${basedir}/../../Downloads/swingx-core-1.6.2-2.jar"/>
     <pathelement location="${basedir}/../../Downloads/timingframework-1.0.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-awt-0.9.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-swing-0.9.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-core-0.9.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-swing-customizer-0.9.jar"/>
-    <path refid="library.jsonbinding.classpath"/>
-    <pathelement location="${basedir}/../../Downloads/swingx-1.6.1.jar"/>
-    <path refid="library.jsonprocessing.classpath"/>
-    <path refid="library.org.json:json:20180130.classpath"/>
-    <path refid="library.softsmithy-lib-swing-0.9.classpath"/>
-    <path refid="library.com.googlecode.json-simple:json-simple:1.1.1.classpath"/>
   </path>
   
   <path id="t3aonline_bfme_universal_launcher.module.classpath">
@@ -56,18 +46,13 @@
     <pathelement location="${t3aonline_bfme_universal_launcher.output.dir}"/>
     <pathelement location="${idea.home}/redist/annotations-java8.jar"/>
     <path refid="library.filters.classpath"/>
+    <pathelement location="${basedir}/../../Downloads/swingx-1.6.1.jar"/>
     <pathelement location="${basedir}/../../Downloads/swingx-core-1.6.2-2.jar"/>
     <pathelement location="${basedir}/../../Downloads/timingframework-1.0.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-awt-0.9.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-swing-0.9.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-core-0.9.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-swing-customizer-0.9.jar"/>
-    <path refid="library.jsonbinding.classpath"/>
-    <pathelement location="${basedir}/../../Downloads/swingx-1.6.1.jar"/>
-    <path refid="library.jsonprocessing.classpath"/>
-    <path refid="library.org.json:json:20180130.classpath"/>
-    <path refid="library.softsmithy-lib-swing-0.9.classpath"/>
-    <path refid="library.com.googlecode.json-simple:json-simple:1.1.1.classpath"/>
   </path>
   
   <path id="t3aonline_bfme_universal_launcher.runtime.module.classpath">
@@ -75,18 +60,13 @@
     <pathelement location="${t3aonline_bfme_universal_launcher.output.dir}"/>
     <pathelement location="${idea.home}/redist/annotations-java8.jar"/>
     <path refid="library.filters.classpath"/>
+    <pathelement location="${basedir}/../../Downloads/swingx-1.6.1.jar"/>
     <pathelement location="${basedir}/../../Downloads/swingx-core-1.6.2-2.jar"/>
     <pathelement location="${basedir}/../../Downloads/timingframework-1.0.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-awt-0.9.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-swing-0.9.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-core-0.9.jar"/>
     <pathelement location="${basedir}/../../Downloads/softsmithy-lib-swing-customizer-0.9.jar"/>
-    <path refid="library.jsonbinding.classpath"/>
-    <pathelement location="${basedir}/../../Downloads/swingx-1.6.1.jar"/>
-    <path refid="library.jsonprocessing.classpath"/>
-    <path refid="library.org.json:json:20180130.classpath"/>
-    <path refid="library.softsmithy-lib-swing-0.9.classpath"/>
-    <path refid="library.com.googlecode.json-simple:json-simple:1.1.1.classpath"/>
   </path>
   
   

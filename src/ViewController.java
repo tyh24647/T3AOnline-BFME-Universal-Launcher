@@ -44,7 +44,6 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
     private String previousCmd;
     private JRadioButton previousBtn, currentBtn;
     private boolean hasSeenResPrompt;
-
     public static ViewController CURRENT_VC;
 
     //region - CONSTRUCTORS
@@ -97,7 +96,9 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
     }
     //endregion
 
-
+    /**
+     *
+     */
     public void initUI() {
         initUI(true);
     }
@@ -109,19 +110,12 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
     public void initUI(boolean isDebug) {
         ViewController.CURRENT_VC = this;
         this.isDebug = isDebug;
-
         try {
             view.initUI();
             Runnable prompt = this::promptResolutionDetectionDialog;
             Thread promptThread = new Thread(prompt);
             promptThread.start();
-
-            while (true) {
-                if (!promptThread.isAlive()) {
-                    view.launchMainWindow();
-                    break;
-                }
-            }
+            while (true) { if (!promptThread.isAlive()) { view.launchMainWindow(); break; } }
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -147,10 +141,7 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
         return model;
     }
 
-    /**
-     *
-     * @param model
-     */
+    /**  */
     public void setModel(T3ALauncherModel model) {
         this.model = model;
     }
@@ -159,24 +150,19 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
         return view;
     }
 
-    /**
-     *
-     * @param view
-     */
+    /**  */
     public void setView(MainGUI view) {
         this.view = view;
     }
 
+    /**  */
     private void promptResolutionDetectionDialog() {
-
         try {
-            //Runtime.getRuntime().exec(new String[] { "/bin/sh", "-c", "open -n \"Terminal\"" });
             Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
             Double x = dimension.getWidth();
             Double y = dimension.getHeight();
             Integer xInt = Math.round(x.intValue());
             Integer yInt = Math.round(y.intValue());
-
 
             if (!hasSeenResPrompt) {
                 Runnable dialogTask = () -> JOptionPane.showMessageDialog(
@@ -196,7 +182,6 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
                 );
 
                 hasSeenResPrompt = true;
-
                 Thread dThread = new Thread(dialogTask);
                 dThread.start();
             }
@@ -218,35 +203,33 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
                 view.repaint();
             } else {
                 view.initUI();
-                promptResolutionDetectionDialog();  //recurse back in
+                promptResolutionDetectionDialog();
             }
-
         } catch (Exception e) {
             System.err.println(e.getMessage());
             System.out.println();
             e.printStackTrace();
-            /* DO NOTHING -- triggered a few times during instantiation */
         }
     }
 
+    /**
+     *
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
             if (e.getSource() instanceof JComponent) {
                 JComponent component = (JComponent) e.getSource();
-
                 if (component instanceof JRadioButton) {
                     JRadioButton btn = (JRadioButton) component;
                     JRadioButton otherBtn = previousBtn == null ? view.getB1Btn() : previousBtn;
                     currentBtn = btn;
-
                     if (!btn.getActionCommand().equals(previousCmd) && !btn.getActionCommand().equals(model.getSelectedGame().getName())) {
                         String btmTxt = "Lord of the Rings - The Battle for Middle-Earth";
                         view.getLotrTitleTxt1().setText(btmTxt);
-
                         if (!currentBtn.isSelected()) {
                             currentBtn.setSelected(true);
-
                             model.setSelectedGame(
                                     currentBtn.getActionCommand().equals("BFME2") ? Game.BFME2 : (
                                             currentBtn.getActionCommand().equals("BFME1") ? Game.BFME1 : Game.ROTWK
@@ -255,7 +238,6 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
                         }
 
                         String selectedGame = model.getSelectedGame().getName();
-
                         String newTxt = btmTxt.concat(
                                 selectedGame.contains("ROTWK") ? " Rise of the Witch King" : (
                                         selectedGame.contains("2") ? " II" : ""
@@ -283,7 +265,6 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
                     String cmd1 = otherBtn.getActionCommand();
                     String cmd2 = btn.getActionCommand();
                     view.getBkgdImgPanel().chgImgSelectionsForActionCommands(cmd1, cmd2);
-
                     previousBtn = btn;
                     currentBtn = null;
                 } else if (component instanceof JComboBox) {
@@ -307,8 +288,6 @@ public class ViewController implements ActionListener, ISharedApplicationObjects
                     if (xRes != null && yRes != null) {
                         resolution = new ResObject(xVal, yVal);
                     }
-
-                    // TODO write resolution to user info
                 }
             }
         } catch (Exception ex) {

@@ -70,6 +70,8 @@ public class T3ALauncher implements ISharedApplicationObjects {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
+            graphicsThread.checkAccess();
+
             if (!isDebug) {
                 javaInstallLoadingFrame = new JFrame("T3AOnline Helper");
                 //javaInstallLoadingFrame.setPreferredSize(new Dimension(200, 120));
@@ -201,17 +203,21 @@ public class T3ALauncher implements ISharedApplicationObjects {
         }
     }
 
-
+    /**
+     *
+     */
     private static void initApplication() {
         SwingUtilities.invokeLater(T3ALauncher::initObjs);
     }
 
+    /**
+     *
+     */
     private static void initObjs() {
         model = new T3ALauncherModel();
         ui = new MainGUI();
         vc = new ViewController(isDebug, model, ui);
         vc.initUI(isDebug);
-
         initSharedApplicationObjs(model, ui, vc);
     }
 
@@ -222,7 +228,6 @@ public class T3ALauncher implements ISharedApplicationObjects {
      * @param vc
      */
     private static void initSharedApplicationObjs(T3ALauncherModel model, MainGUI ui, ViewController vc) {
-        //ISharedApplicationObjects.sharedModel = model;
 
         /*
         TODO
@@ -250,8 +255,7 @@ public class T3ALauncher implements ISharedApplicationObjects {
     private static void performJavaUpdateBeforeLaunch() {
 
         try {
-            if (
-                    getJavaVersion()
+            if ( getJavaVersion()
                             //< 10 /*Integer.valueOf("9.0")*/) {//.substring(0, 4).replaceAll(".", ""))) {
                             < 11
                             //< 10
@@ -398,10 +402,7 @@ public class T3ALauncher implements ISharedApplicationObjects {
 
                             @Override
                             public void setVisible(boolean b) {
-                                if (b) {
-                                    super.requestFocus();
-                                }
-
+                                if (b) { super.requestFocus(); }
                                 super.setVisible(b);
                             }
 
@@ -698,7 +699,7 @@ public class T3ALauncher implements ISharedApplicationObjects {
                         //tmp.setGlassPane(glassPane);
                         //tmp.setComponentZOrder(glassPane, 0);
 
-                        //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                         //SwingUtilities.updateComponentTreeUI(tmp);
 
                         Thread.sleep(100L);
@@ -797,7 +798,6 @@ public class T3ALauncher implements ISharedApplicationObjects {
                                 }
 
                                 initTask.run();
-
                                 appendCmdOutput("\nT3ALauncher:~ Launcher initialized successfully!");
                                 break;
                             } else {
@@ -818,8 +818,6 @@ public class T3ALauncher implements ISharedApplicationObjects {
                         cmdOutput.requestFocus();
                     }
                 }
-
-
             } else {
                 JOptionPane.showMessageDialog(null,
                         "Your version of Java is up to date!\nJava version: "

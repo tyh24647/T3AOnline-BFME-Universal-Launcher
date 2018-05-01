@@ -154,7 +154,6 @@ public class GlassPanel extends JPanel implements FocusListener {
             g2d.dispose();
         }
         */
-
     }
 
     /**
